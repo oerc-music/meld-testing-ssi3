@@ -1,3 +1,7 @@
+This file is an initial list of activities for the MELD testing project.
+The intent is to tick these off as they cease to become planned tasks, or move them to the GitHub issue list.
+
+
 ## 2020-07-29
 
 - [x] Prepare SOFA intro for MELDfest (done)
@@ -95,11 +99,12 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 
 ## 2020-11-04
 
-- [ ] TODO: raise simple app in internal SSI3 MELD testing discussion in Oxford.  (see also: minimal selectable-score application, see https://github.com/trompamusic/selectable-score-demo and https://github.com/trompamusic/selectable-score)
+- [x] TODO: raise simple app in internal SSI3 MELD testing discussion in Oxford.  (see also: minimal selectable-score application, see https://github.com/trompamusic/selectable-score-demo and https://github.com/trompamusic/selectable-score)
 
 - [ ] TODO: consider support for tracking React changes?  (Note: any form of testing should go a way toward this.  More generally, problems of moving dependencies.)  Consider effect on choice of testing framework.
 
 - [ ] TODO: look at changing names of blackList/whiteList in meld core codebase  (dev branch)
+    - see issue #1
 
 
 ## 20290-11-04
@@ -114,6 +119,7 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 - [ ] TODO: work with David/Mark to get MELD simple annotation example running
     - [x] Simple Help MELD app is running, with basic score rendering.
     - [ ] Add selectable score to "Hello MELD" family
+        - see issue #2
 
 - [ ] TODO: investigate toolchain for MEI creation.
     - [x] "Hello MELD" score created in MuseScore
