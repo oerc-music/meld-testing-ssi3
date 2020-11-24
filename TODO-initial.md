@@ -104,7 +104,7 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 - [ ] TODO: consider support for tracking React changes?  (Note: any form of testing should go a way toward this.  More generally, problems of moving dependencies.)  Consider effect on choice of testing framework.
 
 - [ ] TODO: look at changing names of blackList/whiteList in meld core codebase  (dev branch)
-    - see issue #1
+    - see [issue #1](https://github.com/oerc-music/meld-testing-ssi3/issues/1)
 
 
 ## 20290-11-04
@@ -119,7 +119,7 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 - [ ] TODO: work with David/Mark to get MELD simple annotation example running
     - [x] Simple Help MELD app is running, with basic score rendering.
     - [ ] Add selectable score to "Hello MELD" family
-        - see issue #2
+        - see [issue #2](https://github.com/oerc-music/meld-testing-ssi3/issues/2)
 
 - [ ] TODO: investigate toolchain for MEI creation.
     - [x] "Hello MELD" score created in MuseScore
