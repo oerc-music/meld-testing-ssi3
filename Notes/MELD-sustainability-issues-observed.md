@@ -80,11 +80,17 @@ Example: many examples seen with MELD.  The MELD dev-meld-2.0 branch was depende
 
 Documentation can be a 2-edged sword.  Out of date documentation can be confusing.  But enough documentation needs to be provided to get a new user up-and-running.
 
-Documentation for setting up a development/test environment is also important.
-
 Simple runnable examples and scripts can often serve also as documentation.
 
 Examples: on first attempt, I was unable to get the selectable-score app running.  Turns out it would only work out-of-the-box on an older version of node.
+
+### Document development environment setup
+
+Documentation for setting up a development/test environment is also important.  
+
+Example: could not get Hello MELD app to run using a local, modified copy of meld-clients-core.   The same app was working when built using the published meld-clients-core library.  Whatever I do, there seems to be some dependency missing.
+
+Say npm link in your local m-c-c and then npm link meld-clients-core in the app
 
 
 ### Software platform complexity
@@ -105,6 +111,27 @@ Understanding even a simple application can be difficult if the running environm
 Example: selectable-score app running on NodeJS / React / Redux
 
 Also: remove any un-needed dependencies.
+
+
+### Defensive coding: expect and report errors
+
+I've encountered situations where a feature is not implemented, but may fail silently if encountered in a running app.  In such cases, it is better to fail noisily than silently - e.g. add a log message or assertion, with enough infrmation to identify the point of failure.
+
+More generally, if a failure or unexpected exception occurs, don't ignore it silently, but generate error messages that will help future developers to know that a problem exists and hopefully to understand where it is coming from.
+
+Related to this, if you are calling an external function that expects some conditions to be satisfied, it may help to check those conditions beforehand as it is oftemn popssible to produce more meaningful diagnostics in tjis way.
+
+
+Example: Unimplemented features
+
+Example: graph traversal encounters non-JSON RDF resource.
+
+
+### Governance: process for updating core code
+
+Simple outline of process for adding updates to the main branch.  Need not be complex, but there's an implied governance model here - should that be explicit?
+
+Example: PR for updating graph traversal code; not sure when it's OK to merge; updates to main branch creating conflicts while PR is being developed; how to resolve PR conflicts
 
 
 ### Data preparation
@@ -145,4 +172,10 @@ Very simple, minimal, incremental examples can help new developers to see how th
 
 NOTE: this need not require much additional effort:  if an application is built incrementally, keep copies of each runnable version, especially early in the development process.
 
+
+### Technical debt
+
+Example: applications not updated to use latest MELD library version.
+
+Example: deprecated environment and/or library dependencies allowed to accumulate.
 

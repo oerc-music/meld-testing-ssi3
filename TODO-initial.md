@@ -255,11 +255,9 @@ hello-meld-4 - with interactions
 
 Further ACTIONS:
 
-MELD fest - think about what to present - "Hello MELD" + testing framework
+MELDfest - think about what to present - "Hello MELD" + testing framework
 
 Project timeline outline  (MELDfest as milestone - what alternative topics are coming up?)  Note timeline for work...  thinks we want to explore and things we want to explore.  Allow for feedback on write-up.  Aim for early feedback on parts of report.
 
-
-
-
+2020-12-09 - Hello MELD discussion.  Register MIME type for MEI.  (application/mei+xml)  (See TEI: https://www.rfc-editor.org/rfc/rfc6129.html)
 
