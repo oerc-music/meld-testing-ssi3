@@ -108,9 +108,9 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
     - see [issue #1](https://github.com/oerc-music/meld-testing-ssi3/issues/1)
     - proposed name changes - see issue
     - [x] proposed name changes - see issue
-    - [ ] discuss new name choices with team
-    - [ ] apply name changes to codebase
-    - [ ] see if anything breaks
+    - [.] discuss new name choices with team
+    - [.] apply name changes to codebase
+    - [.] see if anything breaks
 
 
 ## 20290-11-04
@@ -168,13 +168,13 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 
 - [ ] consider support for tracking React changes?  (Note: any form of testing should go a way toward this.  More generally, problems of moving dependencies.)  Consider effect on choice of testing framework.
 
-- [ ] look at changing names of blackList/whiteList in meld core codebase  (dev branch)
+- [.] look at changing names of blackList/whiteList in meld core codebase  (dev branch)
     - see [issue #1](https://github.com/oerc-music/meld-testing-ssi3/issues/1)
     - [x] created local "unblacking" branch from git-meld-2.0 branch
     - [x] proposed name changes - see issue
-    - [ ] discuss new name choices with team
-    - [ ] apply name changes to codebase
-    - [ ] see if anything breaks
+    - [.] discuss new name choices with team
+    - [.] apply name changes to codebase
+    - [.] see if anything breaks
 
 ## 20290-11-04
 
@@ -189,12 +189,12 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 
 - [ ] think about presenting test framework at mini-MELDfest in spring 2021
 
-- [ ] set up project for MELD testing
+- [x] set up project for MELD testing
     - [x] create project on GitHub
-    - [ ] experiment with testing frameworks
+    - [x] experiment with testing frameworks
         - leaning to MochaJS, but for testing node+React server apps, thinking about how the apps should be structured.  Will initially test with "Hello MELD"
-    - [ ] pick testing framework; MochaJS? (alt JestJS)
-    - [ ] Create simple test suite for "Hello MELD"
+    - [x] pick testing framework; MochaJS? (alt JestJS)
+    - [x] Create simple test suite for "Hello MELD"
 
 
 # Activities to report in period to 2020-12-08
@@ -231,13 +231,22 @@ Live demo (best effort availability): https://nyphil.linkedmusic.org/
 - [ ] look at changing names of blackList/whiteList in meld core codebase  (dev branch)
     - see [issue #1](https://github.com/oerc-music/meld-testing-ssi3/issues/1)
     - [x] proposed name changes - see issue
-    - [ ] created local "unblacking" branch from git-meld-2.0 branch
-    - [ ] discuss new name choices with team
-    - [ ] apply name changes to codebase
-    - [ ] see if anything breaks
+    - [x] created local "unblacking" branch from git-meld-2.0 branch
+    - [.] discuss new name choices with team
+    - [.] apply name changes to codebase
+    - [.] see if anything breaks
 
 - [x] Note that MELD mini-FEST is scheduled for 2021-02-08 (tentative)
 
+Further ACTIONS:
+
+- [x] MELDfest - think about what to present - "Hello MELD" + testing framework
+
+- [x] Project timeline outline  (MELDfest as milestone - what alternative topics are coming up?)  Note timeline for work...  thinks we want to explore and things we want to explore.  Allow for feedback on write-up.  Aim for early feedback on parts of report.
+
+- [ ] 2020-12-09 - Hello MELD discussion.  Register MIME type for MEI.  (application/mei+xml)  (See TEI: https://www.rfc-editor.org/rfc/rfc6129.html)
+
+...
 
 NOTE: warnings about node package versions.
 
@@ -245,19 +254,11 @@ NOTE: By end of project need to articulate an approach (or approaches) to avoidi
 
 NOTE: for MELD, raise this early.  E.g. raise an issue against meld-client-core.  Also suggest possible solutions? (incl CI.)
 
-hello-meld-3 - with linked data (e.g., cross-link media)
+hello-meld-3 - with linked data
 
 hello-meld-4 - with interactions 
 
 @@@ARC app 
 
-...
 
-Further ACTIONS:
-
-MELDfest - think about what to present - "Hello MELD" + testing framework
-
-Project timeline outline  (MELDfest as milestone - what alternative topics are coming up?)  Note timeline for work...  thinks we want to explore and things we want to explore.  Allow for feedback on write-up.  Aim for early feedback on parts of report.
-
-2020-12-09 - Hello MELD discussion.  Register MIME type for MEI.  (application/mei+xml)  (See TEI: https://www.rfc-editor.org/rfc/rfc6129.html)
 

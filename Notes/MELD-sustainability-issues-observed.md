@@ -179,3 +179,16 @@ Example: applications not updated to use latest MELD library version.
 
 Example: deprecated environment and/or library dependencies allowed to accumulate.
 
+
+....
+
+NOTE: warnings about node package versions.
+
+NOTE: By end of project need to articulate an approach (or approaches) to avoiding deprecated library dependencies, as part of SSI3 activity.  Also node version dependencies. (see next)  Articulate problems of technical debt?   Note maintenance load from building on new, fast-moving projects.  Isolate dependencies behind API.  Use MELD as example...
+
+NOTE: for MELD, raise this early.  E.g. raise an issue against meld-client-core.  Also suggest possible solutions? (incl CI.)
+
+Unnecessary dependencies
+
+
+

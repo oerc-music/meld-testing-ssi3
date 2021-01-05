@@ -58,11 +58,19 @@ Note: MELD is implemented using node, React and Redux, so the implementation and
 
 ## Testing
 
+@@ React/redux components (browser client UI generation)
+
+@@ Data management (non-browser client API)
+
 @@
 
 ## Continuous integration
 
 @@
+
+## Performance
+
+@@ especially, profile to help identify bottlenecks; e.g. graph traversal
 
 ## @@others?
 
