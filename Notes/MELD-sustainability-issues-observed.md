@@ -69,11 +69,21 @@ E.g. testing React components, but not applications.
 Example: testing hello-meld-1
 
 
+### Consistent build environment
+
+Some difficult problems with MELD were tracked down to older versions of Node/JS libraries sometimes getting picked up despite explicit version constraints in the `package.json` files.  I don't know why this was happening, but it meant that tests might pass or fail without anything visible being changed.
+
+
 ### Application code version management
 
 In a dynamic environment, it is very easy to end up with an application that depends on a version of one or more libraries that is not under active development.
 
 Example: many examples seen with MELD.  The MELD dev-meld-2.0 branch was dependent on deprecated modules and an older node version before it was even released.  And many applications
+
+
+### React multiple versions
+
+This is a problem specific to React.  If multiple copies of React are included in a  build, which can happen easily if React is mentioned as a dependency in a library and also in a calling app, the resulting code falls foul of a React Hook rules problem, and fails.  This adds an additional layer of complexity to the problem of code and dependency version management.
 
 
 ### Documentation
@@ -84,13 +94,14 @@ Simple runnable examples and scripts can often serve also as documentation.
 
 Examples: on first attempt, I was unable to get the selectable-score app running.  Turns out it would only work out-of-the-box on an older version of node.
 
+
 ### Document development environment setup
 
 Documentation for setting up a development/test environment is also important.  
 
 Example: could not get Hello MELD app to run using a local, modified copy of meld-clients-core.   The same app was working when built using the published meld-clients-core library.  Whatever I do, there seems to be some dependency missing.
 
-Say npm link in your local m-c-c and then npm link meld-clients-core in the app
+[[Say npm link in your local m-c-c and then npm link meld-clients-core in the app  Unfortunately, this doesn't seem to work when using test environments like Mocha/Jest]]
 
 
 ### Software platform complexity
@@ -106,7 +117,7 @@ Example: hello-meld-1 (?)
 
 ### Code complexity: understanding the codebase
 
-Understanding even a simple application can be difficult if the running environment is unfamiliar.  A trivial example, in the style of "Hello World", can be veruy useful as the number of unfamiliar parts is reduced to a minimum.
+Understanding even a simple application can be difficult if the running environment is unfamiliar.  A trivial example, in the style of "Hello World", can be very useful as the number of unfamiliar parts is reduced to a minimum.
 
 Example: selectable-score app running on NodeJS / React / Redux
 
@@ -164,13 +175,25 @@ Example: Verovio web site
 
 ### Monoliths
 
-Monoliths can be a big source of confusion, as it can be difficult to tell which partys of an application are connected to which functionality, especially when built using an unfamiliar run-time environment.
+Monoliths can be a big source of confusion, as it can be difficult to tell which parts of an application are connected to which functionality, especially when built using an unfamiliar run-time environment.
 
 Example: selectable-score app built with MELD built with NodeJS / React / Redux
 
 Very simple, minimal, incremental examples can help new developers to see how the pieces fit together, and provide a useful basis for tutorial materials.
 
 NOTE: this need not require much additional effort:  if an application is built incrementally, keep copies of each runnable version, especially early in the development process.
+
+
+### Application architecture
+
+(Affect of architecture design choices on testability.)
+
+(Possible recommendation: expose more through network interface?)
+
+
+
+
+
 
 
 ### Technical debt

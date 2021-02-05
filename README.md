@@ -4,7 +4,7 @@ Testing framework for MELD, developed as part of SSI3 project for exploring deve
 
 ## Outline plan
 
-The initial plan was to focus immediately on automated testing for the forthcoming MELD 2.0 release, on the basis that this would provide a way to cap;ture API functionality upon which apps would depend, and provide a way to quickly catch regressions as he MELD core is evolved, with the final report focusing on tools and techniques.  In practice, we have found that getting started with MELD was quite a big impediment, and significant effort has gone into creating a series of simple MELD apps (under the banner "Hello MELD") as a way of onboarding a new developers.  In the process, a number of sustainability issues were noted.  My revised plan is to treat this whole exercise as a kind of case study in sustainability issues that have been observed, and to offer suggestions - some with implementations - about how they might be resolved.
+The initial plan was to focus immediately on automated testing for the forthcoming MELD 2.0 release, on the basis that this would provide a way to capture API functionality upon which apps would depend, and provide a way to quickly catch regressions as he MELD core is evolved, with the final report focusing on tools and techniques.  In practice, we have found that getting started with MELD was quite a big impediment, and significant effort has gone into creating a series of simple MELD apps (under the banner "Hello MELD") as a way of onboarding a new developers.  In the process, a number of sustainability issues were noted.  My revised plan is to treat this whole exercise as a kind of case study in sustainability issues that have been observed, and to offer suggestions - some with implementations - about how they might be resolved.
 
 Also in the initial plan was to focus on the HTTP interface between MELD applications and the LDP-accessed storage.  Examination of the MELD applications showed that there was a lot of in-browser logic that was sufficiently tricky to need separate testing.  Further, the process of developer-onboarding with MELD takes place without reference to an external store.  So in the revised plan, the initial focus is on the MELD rendering capabilities, especially Verovio rendering of music scores.
 
@@ -36,7 +36,7 @@ Also in the initial plan was to focus on the HTTP interface between MELD applica
 ### 2021: January
 
 - [ ] Flesh out further "Hello MELD" apps, with testing
-- [ ] Organize test suite for meld-clients-core
+- [ ] Organize test suite for meld-clients-core, based initially on the "Hello MELD" tests
 - [ ] Review text fixture setup for MELD publication (e.g. Solid and/or mocks?)
 - [ ] Updates to SSI3 report
 
@@ -59,7 +59,7 @@ Also in the initial plan was to focus on the HTTP interface between MELD applica
 
 ### 2021: April
 
-- [ ] With tests in  place, look at graph traversal refactoring to improve performance
+- [ ] With tests in place, look at graph traversal refactoring to improve performance
 - [ ] Review sustainability lessons to date
 - [ ] Articulate possible follow-on work
 - [ ] Draft initial SSI3 report with suggestions for further developments
