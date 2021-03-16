@@ -68,3 +68,9 @@ In order to support component testing I’m moving my “Hello MELD” apps to u
 
 This means that I can test all the UI/App logic without having to fire up a server, hooking instead into a component-level testing framework.
 
+
+## solid-auth-client 
+
+Appears to drag in a whole raft of incompatible dependencies (esp react version), including react-native stuff
+
+

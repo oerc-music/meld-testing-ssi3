@@ -8,6 +8,8 @@ MELD is itself a kind of platform for others to build diverse applications that 
 
 @@TODO: for each issue mentioned, link out to more detailed discussion and recommendations.
 
+I've tried to record here all issues encountered when trying to build and run MELD applications.  Some of them are general programming issues rather than specifically sustainability concerns.
+
 
 ## Overview
 
@@ -85,6 +87,17 @@ Example: many examples seen with MELD.  The MELD dev-meld-2.0 branch was depende
 
 This is a problem specific to React.  If multiple copies of React are included in a  build, which can happen easily if React is mentioned as a dependency in a library and also in a calling app, the resulting code falls foul of a React Hook rules problem, and fails.  This adds an additional layer of complexity to the problem of code and dependency version management.
 
+The problem is exacerbated by allowing library versions used to become out of date.  The `node` ecosystem rather encourages each module to be tied to a restricted version of a module on which it depends.  When different modules have different version dependencies, multiple copies of the dependee module are typically installed; when this module is `reach`, the application subsequently fails with a hook rule violation.
+
+Working around this problem to get an application working requires playing with the installed libraries in undocumented fashion, which causes failures when trying to run code in a testing environment.  By now, we're seeing a series of cascading problems and workarounds that become very difficult to understand and manage in a sustainable way.
+
+
+### Project management
+
+It is quite important for a collaborative project to have a governance structure so that all parties know what they can do and what level of stability to expect.  The governance structure need not be complex (e.g. @@ link to MELD governance).
+
+But along with this, try to use existing system affordances to support process to the maximum extent possible.  Such as github pull requests and review structures.
+
 
 ### Documentation
 
@@ -93,6 +106,22 @@ Documentation can be a 2-edged sword.  Out of date documentation can be confusin
 Simple runnable examples and scripts can often serve also as documentation.
 
 Examples: on first attempt, I was unable to get the selectable-score app running.  Turns out it would only work out-of-the-box on an older version of node.
+
+
+### Operating system environment and command shell differences
+
+The MacOS operating system changed the default shell environment in its "Catalina" release from `bash` to `zsh`.  For existing users, the shell is not affected, but any new users will default to a different shell, which means that some commands may not work as expected.
+
+The broader lesson here is to be aware of different operating system environments and, as far as practical, design scripts and commands to work with all variants, or be specific about the expected operating system environment to be used - this is especially important in areas such as instructions for getting started with a package, such as may be found in a README or similar file.
+
+
+### Filename case variations
+
+File systems on MacOS (and Windows?) are presented as being case insensitive, where on Linux and Unix they are case sensitive.  This can lead to some strange inconsistencies, especially when working with git and GitGub.  Even when tools treat filenames as case insensitive, the underlying file system still Odd
+
+Filenames in GitHub are case sensitive, and development environments (such as node, etc.) often require filenames to be presented with a particular combination of upper and lower case.  A simple file rename may fail if the host system is trying to reat filenames as case insensitive.
+
+The kind of problems this can throw up should be caught by Continuous Integration.  Otherwise, the important lesson for sustainability is to pay attention to filename case, and especially don't depend on having different files ehose names differ only in the letter case used.
 
 
 ### Document development environment setup
@@ -192,10 +221,6 @@ NOTE: this need not require much additional effort:  if an application is built 
 
 
 
-
-
-
-
 ### Technical debt
 
 Example: applications not updated to use latest MELD library version.
@@ -212,6 +237,5 @@ NOTE: By end of project need to articulate an approach (or approaches) to avoidi
 NOTE: for MELD, raise this early.  E.g. raise an issue against meld-client-core.  Also suggest possible solutions? (incl CI.)
 
 Unnecessary dependencies
-
 
 
