@@ -4,10 +4,13 @@
 
 @@ distil out key observations and recommendations, with references to more detailed discussion
 
-@@ 5-7 point checklist for start of project?
+
+
+@@ 5-7 point checklist for planning/start of project?
 @@@@notes?
 (Social)
 - governance?
+- access to technical experience?
 (development support environment)
 - code management support
 - language/tools/platform/framework choice - is they paying their way?
@@ -16,6 +19,7 @@
 - components?   Can complex elements be separated?
 - how to test?   Establish testing early on
 @@@@
+
 
 
 # Introduction
@@ -42,19 +46,19 @@ In this activity, through hands-on experience of looking at sustainability of th
 
 ## What is sustainability?
 
-Oddly, I couldn't find any discussion of this on the [SSI web site]( https://www.software.ac.uk).  There is discussion of software sustainability  but it's hard to find a concrete definition of what it means.  It has been described thus: "Software sustainability covers a broad range of concepts, related to both environmental sustainability, and the longevity of a codebase." [1].
+Oddly, I couldn't find any discussion of this on the [SSI web site]( https://www.software.ac.uk).  There is discussion of software sustainability elsewhere, but it's hard to find a concrete definition of what it means.  It has been described thus: "Software sustainability covers a broad range of concepts, related to both environmental sustainability, and the longevity of a codebase." [1].
 
 [1] https://arxiv.org/pdf/1903.06039.pdf
 
-For the purposes of this activity, I take "codebase" to extend to data that may underpin research results.  Indeed, longevity of research data may be more important than longevity of any particular piece of code that creates or processes it.
+For the purposes of this activity, I take "codebase" to include data that may underpin research results.  Indeed, longevity of research data may be more important than longevity of any particular piece of code that creates or processes it.
 
-In theory, when a codebase and all its environment dependencies are frozen, the resulting system will keep running indefinitely.  In practice, there are many forces that work against this ideal: one of which is the need to apply a never-ending stream if security updates to any system that is accessible from the public Internet (or a large private intranet).  Over time, the underlying system can change to the point that any software running on it also needs to be updated in order to keep running.
+In theory, when a codebase and all its environment dependencies are frozen, the resulting system will keep running indefinitely.  In practice, there are many forces that work against this ideal: one of which is the need to apply a never-ending stream of security updates to any system that is accessible from the public Internet (or a large private intranet).  Over time, the underlying system can change to the point that any software running on it also needs to be updated in order to keep running.
 
 Other disruptive forces include hardware failures that necessitate reinstallation of the entire system.  Even if a complete copy of all the installed software is available, it is possible that there are underlying changes in any replacement hardware that require the operating system to be upgraded, which in turn may be incompatible with the application software.
 
-Similar problems arise when running on virtualized and/or cloud software.  My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.  For a longer active deployment life, an active process to keep all software components current may be required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.
+Similar problems arise when running on virtualized and/or cloud software.  My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.  For a longer active deployment life, an active process to keep all software components current is probably required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.
 
-Finally, upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem when it comnes to fixing them.
+Finally, upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
 
 
 ## Digital Humanities research software
@@ -67,7 +71,7 @@ Tasks:
 - heterogeneous data
 - diverse data sources
 - non-definitive data - needs context and interpretation
-- possibly contradictory data
+- possibly contradictory (but valid) data
 - supporting human researchers
 
 Environment:
@@ -77,13 +81,22 @@ Environment:
 - unclear requirements at outset
 - written by software non-experts 
 
-Of course, not all DH software is just like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.
 
-A particular consequence of then environment in which DH software is created is that it may be not possible or unrealistic to fully employ software engineering best practices.  Some particular functionality may be required quickly to support a particular scholarly output, with no immediate requirement or additional resource to ensure sustainability of the software.
+@@@@
+    - Combined resourcing of research and service support (e.g,. researcher and library, etc.)  Scholar/institutional aspects.  Failure of linked art 3 funding app.  Research questions driving tech development?  RQs as "predictions"?   Also, science vs creative.
+    - DH project characterization
+        - methodological issues (enginbeers and scholars having different perspectives)  
+        - technical vs scholarly requirements (MusicXML vs MEI).
+@@@@
 
-Because of the value in DH of capturing context and combining a wide range of data sources, it might be argued that sustainability is even more important for DH software than it is for, say, scientific software.  Once a computed scientific result has been established, there may be limited value in revisiting it later. but humanities research tends (by its nature?) to gain value through the accumulation of understanding and perspectives over time, and as such, access to and integration with previously accumulated data can greatly increase the value accrued by investing in sustainability for DH software, or at least the data that it generates.
 
-But when considering creation of sustainable software for DH, there is a risk of creating inflexible monoliths.  Most software systems tend to ossify over time, becoming harder to adapt and evolve as early design choices become more pervasive though the system implementation.
+Of course, not all DH software is like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.
+
+A particular consequence of the environment in which DH software is created is that it may be not possible or unrealistic to fully employ software engineering best practices.  Some functionality may be required quickly to support a particular scholarly output, with no immediate requirement or additional resource to ensure sustainability of the software.
+
+Because of the value in DH of capturing context and combining a wide range of data sources, it might be argued that sustainability is even more important for DH software than it is for, say, scientific software.  Once a computed scientific result has been established, there may be limited value in revisiting it later.  But humanities research tends (by its nature?) to gain value through the accumulation of understanding and perspectives over time, and as such, access to and integration with previously accumulated data can greatly increase the value accrued by investing in sustainability for DH software, or at least the data that it generates.
+
+When considering creation of sustainable software, there is a risk of creating inflexible monoliths.  Most software systems tend to ossify over time, becoming harder to adapt and evolve as early design choices become more pervasive though the system implementation.
 
 The previous paragraphs point to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate.  Yet it is often the case that the real value in both scientific and humanities software-based research project is in the data.  The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.
 
@@ -107,7 +120,7 @@ The MELD framework has a number of components, two of which are:
 
 ## Approach
 
-The original intent of this project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on [SOFA and MELD](https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md) as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing several hard lessons about software sustainability.
+The original intent of this project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on [SOFA and MELD](https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md) as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing and dealing with several specific software sustainability issues.
 
 On closer examination, the MELD functionality in the applications we surveyed for this project, [Lohengrin forbidden question study](https://github.com/oerc-music/ForbiddenQuestion) and [Delius annotation](https://github.com/oerc-music/delius-annotation), was mainly visible only to internal API calls, so a different testing approach was needed.
 
@@ -142,9 +155,9 @@ The main consequences of this revised approach was a deviation from the original
 Revised goals:
 
 - dropped (for now) the goal of testing at the HTTP interface
-- implemented a series of simple "Hello MELD" applications, designed with testability in mind, used for both learning and testing
+- implemented a series of simple "Hello MELD" applications, designed with testability in mind, and used for both learning and testing
 - implementing some simple tests using existing Javascript test frameworks (Mocha and Jest were trialled, and settled on Jest as it integrates more easily with React).
-- shift from testing as lead activity, to recording and documenting observed sustainability issues with the MELD libraries and applications.
+- a partial shift from testing as lead activity, to recording and documenting observed sustainability issues with the MELD libraries and applications.
 
 As a result, the outputs of this exercise will focus less on specific implementation of sustainability practices, and more on describing sustainability issues and possible mitigations, than was originally envisaged.
 
@@ -155,13 +168,13 @@ As a result, the outputs of this exercise will focus less on specific implementa
 
 The MELD client support code is implemented using NodeJS, React and Redux.  This environment offers a rich set of features, which have allowed complex functionality to be incorporated into MELD with relatively little initial software development effort.  
 
-But it is a complex, dynamic environment with many supporting tools.  This gives rise to a complex web of dependencies, some of which may be frequently changing.  This can give rise to incompatibilities and failures when the MELD software itself, and any supporting tools used, are not kept up-to-date with the latest React/Redux library modules.  Many of the updates to underlying software are to address security vulnerabilities, so are important to incorporate into a public-facing web application.
+But React is a complex, dynamic environment with many supporting tools.  This gives rise to a complex web of dependencies, some of which may be frequently changing.  This can give rise to incompatibilities and failures when the MELD software itself, and any supporting tools used, are not kept up-to-date with the latest React/Redux library modules.  Many of the updates to underlying software are to address security vulnerabilities, so are important to incorporate into a public-facing web application.
 
 #### Undetected problems in MELD code
 
-There were a number of areas where the MELD support code did not behave in ways that were expected.  This would cause problems with existing applications, which might work by virtue of unnoticed changes made to the runtime environment.   When encountered, these errors could be hard to track down and fix.
+There were a number of areas where the MELD support code did not behave in ways that were expected.  This would cause problems with existing applications, which might still work only by virtue of unrecorded changes made to the runtime environment, but which would fail when installed in a new environment.   When encountered, these failures are often hard to track down and fix.
 
-These are problems that automated tests, and especially continuous integration, are intended to catch.  The "Helo MELD" applications were helpful when it came to isolating and fixing such failures.
+These are problems that automated tests, and especially continuous integration, are intended to catch.  The "Hello MELD" applications proved helpful when it came to isolating and fixing such failures.
 
 Effective testing is a cornerstone of software sustainability.
 
@@ -169,24 +182,30 @@ Retro-fitting tests to existing applications has proved to be challenging, for r
 
 #### Browser vs non-browser code
 
-In theory, Javascript code is highly portable, possible to run in a browser, desktop or server computer.  This is very appealing for testing, as it can be tricky to run automated tests in a browser, and continuous integraton platforms are generally server-based.
+In theory, Javascript code is highly portable, possible to run in a browser, desktop or server computer.  This is very appealing for testing, as it can be tricky to run automated tests in a browser, and continuous integration platforms are generally server-based.  (There do exist mechanisms for testing in "headless" browsers, but these can add complexity for a small project)
 
 In practice, there are a number of significant differences: Javascript language variants, run-time support, module loading mechanisms, and more.  We ran into several cases of code that would run as expected in a browser, but would fail when run in a non-browser test environment, due to differences in the ways in which modules were loaded.
 
 The original intent to test the HTTP interface was dependent on a significant amount of application logic being implemented on a server.  When this is not not the case, effective testing requires that it uses code-level APIs, with test code directly invoking APIs in a way that that resembles application code.
 
-Setting up even a very simple test environment proved to be fraught with difficulties.  Theoretically, the testing framework would paper over any differences from the browser environment.  In practice, there were areas where differences would persist, and complex workarounds were adopted to avoid provoking these.
+Setting up even a very simple test environment for testing browser-based application code turned out to be challenging.  Theoretically, the testing framework would paper over any differences from the browser environment.  In practice, there were areas where differences would persist, and complex workarounds were adopted to avoid provoking these.
 
 #### Hello MELD series
 
-The  applications were extremely helpful, both for learning the framework and when bringing a new developer onboard, as it allowed the various parts of a complex set of interfaces to be mastered separately.  The "Hello MELD" series also provided fallback options when failures were experienced, allowing code-induced and environment-induced problems to be identified and separated.
+The "Hello MELD" applications were extremely helpful, both for learning the framework when bringing a new developer on board, as it allowed the various parts of a complex set of interfaces to be mastered separately, and creating code that was easier to test .  Also, the "Hello MELD" series of applications, which performed increasingly complex operations using MELD, provided fallback options when failures were encountered, allowing code-induced and environment-induced problems to be identified and separated.
 
 It was important that the first of these "Hello MELD" applications was so simple that one might easily think that there was nothing to go wrong.  In practice, things did go wrong, and even a trivially simple application served the important function of proving that a minimum set of runtime requirements had been set up correctly.  Having a trivial application provided a useful platform for exploring testing tools and frameworks without getting bogged down in application code minutiae, and allowed easy experimentation with application design options (using established MELD patterns) that would facilitate testing. 
+
+#### Value of part-time technical expertise
+
+The availability of occasional access to an experienced software developer was reported to be very valuable for project researchers who were primarily humanists, but engaged in software development.  While it can represent a significant cost to a project to employ a full-time developer, having part-time availability potentially offers many of the benefits of a full-time developer, and potentially facilitates training and technical capacity building for digital humanities projects.
+
+For MELD, the funded developer was at 20% FTE (1 day/week), with the effort split between (a) software maintenance and building testing capabilities (i.e. direct technical work), (b) supporting other project developers (indirect technical work) and (c) project management, SSI3 introspection and and reporting activities.  One day/week is relatively easy to schedule and manage, but the above suggests that 10%/0.5 day/week might be sufficient for technical support aspects.
 
 
 # Sustainability issues encountered
 
-This section aims to highlight key issues encountered.  Raw observations and notes are contained in a separate document:  MELD-sustainability-issues-observed.md
+This section aims to highlight key issues encountered.  Raw observations and notes are contained in a separate document:  [MELD sustainability issues observed](./MELD-sustainability-issues-observed.md).
 
 ## Working with a complex and dynamic software ecosystem
 
@@ -194,9 +213,9 @@ We ran into a number of compatibility problems while working with MELD on recent
 
 Keeping application and support code up-to-date with a complex evolving environment like React/Redux requires significant ongoing engineering effort, which can be challenging for a small research project.  This is especially true if the development is split over several research projects that don't necessarily have continuously available development effort - the wider world doesn't wait, and fragmented research activities are easily left behind.
 
-### Mitigations
+### Suggested mitigations
 
-- before adopting a complex support platform, consider whether the value provided (in terms of easy-to-use features) justifies the additional complexity and maintenance requirements.  (The consensus for MELD is that the features offered enabled results that would otherwise have probably not been achieved.)
+- before adopting a complex support platform, consider whether the value provided (in terms of easy-to-use features) justifies the additional complexity and maintenance requirements.  (The consensus for MELD is that the features offered by tghe React/Redux platform did enable results that otherwise would probably not have been achieved.)
 
 - when adopting a complex support platform, consider a strategy or practice to ensure that the underlying dependencies can be safely updated. Ideally, this will involve having some form of automated testing and continuous integration in place.  Try to keep dependencies up-to-date as you go, rather than relying on infrequent updates of multiple dependencies.
 
@@ -208,25 +227,23 @@ We found different developers were using different versions of the runtime envir
 
 Some of the build tools used were not always reliable.  For example, Node Package Manager (npm) is supposed to record package versions used, and thus ensure consistency.  In practice, we found that differences between different development environments were not being corrected, leading to inconsistencies noted.  
 
-Clear identification of supporting build tools used was lacking.  The Javascript/React/Redux environment used in particular relies on a range of tools to compile code to a form that can be run in the base runtime environment.  The tools needed are themselves somewhat dependent on the NodeJS and/or web browser versions used to run the application code.
+Clear identification of supporting build tools used was lacking.  The Javascript/React/Redux environment in particular relies on a range of tools to compile code to a form that can be run in a base runtime environment.  The tools needed are themselves somewhat dependent on the NodeJS and/or web browser versions used to run the application code.
 
-### Mitigations
+### Suggested mitigations
 
 - create automated scripts to create clean runtime and development environments from scratch.  Such scripts also serve usefully as documentation.
 
 - establish a continuous integration environment:  this forces the environment to be rebuilt from scratch (or from established and documented resources) whenever the software is updated.
 
-- maintain development/test envi=ronments separately from other aspects of the host system (e.g,. using tools like Node's `nvm` or Python's `venv`).  Provide detailed instructions and/or automated script for setting up a new development/test environment, or resetting an existing one.
+- maintain development/test environments separately from other aspects of the host system (e.g., using tools like Node's `nvm` or Python's `venv`).  Provide detailed instructions and/or automated script for setting up a new development/test environment, or resetting an existing one.
 
 ## Lack of automated testing and continuous integration
 
-Although MELD has a simple test application, there was no automated test suite of continuous integration set up.  (Continuous integration is used here to mean an environment that automatically installs the software into a clean environment, runs the tests and reports any failures whenever any changes are made to the software.  This allows problems to be detected rapidly, hence easier to fix because the changes made are still fresh in a developer's mind.)
+Although MELD has a simple test application, there was no automated test suite of continuous integration set up.  (Continuous integration is used here to mean an environment that automatically installs the software into a clean environment, runs the tests and reports any failures, whenever any changes are made to the software.  This allows problems to be detected rapidly, hence easier to fix because the breaking changes made are still fresh in a developer's mind.)
 
 The lack has resulted in uncertainty about the status of the software.  Attempts to install the simple test applications resulted in failures that would probably have been picked up by automated tests and continuous integration.
 
-(Not yet covered: something about setting up test fixtures and/or mocking.)
-
-### Mitigations
+### Suggested mitigations
 
 - establish an automated testing regime at the outset of a project, or very early in its lifetime.  Much of the value of automated testing can be realized even by very lightweight tests - 90%+ test coverage is great of you can afford it, but even very minimal coverage can provide valuable proof of life, and can be quick to implement.  In practice, once a testing regime is in place, I find it tends to collect coverage-improving tests over time  with very little additional effort.  Expect automated testing to pay back any initial investment of effort within a few weeks of development activity.
 
@@ -234,15 +251,21 @@ The lack has resulted in uncertainty about the status of the software.  Attempts
 
 - consider testability when designing code: ensure that important features are easy to invoke and access for testing.
 
-- treat tests as an important source of documentation.
+- treat tests as an important source of documentation: some of the effort put into documenting an interface may be better directed toward creating tests that can also be used as examples.
+
+### Test fixtures and mocking
+
+For data-intensive applications, including many DH applications, consideration should also be given to creation of text fixtures (e.g., datasets against which the tests are run), or "mocking" of the interfaces through which such data is accessed.  This aspect has not been explored as part of the project reported here.
+
+See also the section "Data preparation" below.
 
 ## Application code version management issues
 
 The MELD libraries are being used by different developers in different institutions, who also apply fixes and updates to the libraries themselves.  This has meant that different branches of the MELD code being used in different applications over extended periods of time, exacerbating the consistency issues noted previously.
 
-There was some lack of clarity about the code governance (e.g. the exact requirements for updating the reference version of the software that should be the basis of all new applications (and preferably any that are actively being developed).
+There was some early lack of clarity about the code governance (e.g. the exact requirements for updating the reference version of the software that should be the basis of all new applications (and preferably any that are actively being developed).
 
-### Mitigations
+### Suggested mitigations
 
 - establish a governance structure early in the project.  It doesn't need to be complex: one of it's main purposes is to let all developers know what is expected in order to update the main codebase.
 
@@ -253,7 +276,7 @@ There was some lack of clarity about the code governance (e.g. the exact require
 
 The MELD support libraries, and especially the underlying React/Redux framework, present a rich and flexible interface, which in turn forces a degree of complexity onto the application code that uses them.  This has meant that applications are initially difficult for new developers to understand.  We found that, in practice, it took a significant amount of hand-holding from an existing MELD application developer to bring a new developer up to speed using the MELD framework.
 
-### Mitigations
+### Suggested mitigations
 
 There's no silver bullet for solving this - it's a perennial software problem.  But some things to consider might be:
 
@@ -261,15 +284,15 @@ There's no silver bullet for solving this - it's a perennial software problem.  
 
 - try to conceive an application as independent modules with separate concerns.  An example of this approach is Unix command line tools that can be used alone, or combined in various ways.   It's not always easy or possible for web applications, but we had some success with SOFA (an earlier MELD application) using Solid (LDP) for data storage, and chainable command line tools for various features.
 
-- don't let technical debt accumulate.
+- don't let too much technical debt accumulate (for some value of "too much").
 
 ## Run time error detection and reporting
 
 Run time error detection  and reporting in the MELD libraries, and sometimes in the underlying React/Redux libraries, was very patchy.  This would result in applications failing for no apparent reason, or failing for indicated reasons that have no discernible connection with what the application is trying to do.  This can make problem diagnosis and rectification difficult and time-consuming.
 
-### Mitigations
+### Suggested mitigations
 
-Mitigations here are common software coder practices.
+Mitigations here are common software coding practices.
 
 - don't fail silently.  If something is wrong, or if an option is not (yet) implemented, report it.  Such reports don't have to be pretty, just obvious.  If possible, they should refer to application data and concepts, not internal software concepts.
 
@@ -283,150 +306,167 @@ MELD applications, in common with many Digital Humanities applications, typicall
 
 The MELD framework does provide data for testing and demonstration use, but it wasn't always easy to find.
 
-For creating a simple stripped-down application, we needed to create a new dataset using tools that are not part of the MNELD framework.  There MELD documentation did not contain pointers to easy-to-use options for creating such data, and this process alone took a few days of investigation and experimentation.
+For creating a simple stripped-down application, we needed to create a new dataset using tools that are not part of the MELD framework.  The MELD documentation did not contain pointers to easy-to-use options for creating such data, and this process alone took a few days of investigation and experimentation.
 
-### Mitigations
+### Suggested mitigations
 
 - for testing, provide ready-to-use datasets.  Ideally. they should be as simple as possible for the feature they are intended to test.
 
-- for users, provide sample instructions for creating input data.  For example, in the case of MELD, an MEI file can be created MuseScore to create a musical score, exported as MusicXML and then use the Verovio web service to convert this into MEI (e.g. as described for [`hello-meld-2`](https://github.com/oerc-music/meld-hello-meld/tree/main/hello-meld-2#use-verovio-to-generate-mei-from-musescore-musicxml))
+- for users, provide simple instructions for creating input data.  For example, in the case of MELD, an MEI file can be created from a MuseScore musical score, exported as MusicXML and then processed using the Verovio web service to convert it into MEI (e.g. as described for [`hello-meld-2`](https://github.com/oerc-music/meld-hello-meld/tree/main/hello-meld-2#use-verovio-to-generate-mei-from-musescore-musicxml))
 
-- provide pointers to file format and vocabulary term descrioptions.
+- provide pointers to file format and vocabulary term descriptions.
 
 ## Accumulated technical debt
 
-This isn't really a separate issue, but a consequence of the other factors reported above.
+This isn't really a separate issue, but more a consequence of the other factors reported above.
 
 Technical debt refers here to software additions and patches that are used to get some software running, but which don't represent an optimal way of solving the underlying problem.  It often results in code that has duplicated and/or tortured logic, and fails to maintain a clean separation of concerns between software elements.
 
-When developing software under time-and-resource constraints, it is often expedient to take short-cuts to validate an approach, or to demonstrate a result.  Individually, these shortcuts are often not problematic, but if they are allowed to accumulate in a codebase the resulting software can quickly become harder to understand and update.  And faced with with such difficulty, a developer will often use additional shortcuts or workarounds to avoid having to deal with the difficult code.  In this way, the accumulation of technical debt can appear to be exponential growth, and speed of making changes and fixes will decay accordingly.
+When developing software under time-and-resource constraints, it is often expedient to take short-cuts to validate an approach, or to demonstrate a result.  Individually, these shortcuts are often not problematic, but if they are allowed to accumulate in a codebase the resulting software can quickly become harder to understand and update.  And faced with with such difficulty, a developer will often use additional shortcuts or workarounds to avoid having to deal with the difficult code.  In this way, the accumulation of technical debt can grow exponentially, and the speed of making changes and fixes will decay accordingly.
 
-### Mitigations
+### Suggested mitigations
 
 Again, no magic bullets here.  It's mostly common software engineering practice and skills.
 
-- be aware of technical debt; keep notes of where it exists, and ideas for eliminating it.  When a change turns out to be more difficult than it should be, that may be an indication that the code should be refined.
+- be aware of technical debt; keep notes of where it exists, and ideas for eliminating it.  When a change turns out to be more difficult than it should be, that may be an indication that the code first should be refined.
 
 - don't let too much technical debt accumulate.
 
     How much is too much?  This is hard to say - it's also possible to spend too much time refining code.  A possible rule of thumb is this:  when a piece of code needs to be modified, first see if there are any changes that make the desired changes easier to apply while preserving its existing functionality.
 
-- try to maintain separation of concerns between software components
+- try to maintain separation of concerns between software components.
 
-- try to avoid duplicated logic (also known as DRY: "don't repeat yourself")
-
-
-# Strategies for sustainability
-
-@@@maybe...
-
-- small pieces, loosely coupled (e.g. free-standing command line tools)
-
-- design for visibility of intermediate results for testability
-
-- partial, minimal testing
-
-- small increments; save working versions (including basic instructions to reproduce)
-
-- when? include sustainability considerations when re-using
-
-- avoid complex UIs if possible?
-
-- separate presentation from processing and retrieval
-
-- carefully consider what using complex support frameworks actually provides
+- try to avoid duplicated logic (also known as DRY: "don't repeat yourself").
 
 
 # Discussion
 
+@@ Overlap with "observations" - may need to extract some material here
+
+Achieving long-lived utility for the software outputs of a digital humanities research activity (or any research activity?) is often a delicate balancing act between getting the work done, and putting in the extra effort to ensure longer term viability (i.e. so that the work done "stays done").
+
+This balancing act affects resource allocation, conduct of the project, and technical design choices, which are discussed below under the headings "Resourcing", "Technical activity" and "Technical design".
+
+The discussion that follows is not unique to DH software, but it is intended to focus on aspects that arise more commonly there.
 
 
 ## Resourcing
 
-@@ Note Kevin's comment about value of occasional S/W expert input
+Considerations of resourcing will necessarily involve trade-offs between immediate requirements and longer term utility and sustainability.  Such considerations are not unique to DH software: in "The Mythical Man-Month" chapter "The Tar Pit", Frederick Brooks discusses near order-of-magnitude costs associated with the evolution of a "program" (solving an immediate problem) into a "programming systems product" (providing long-term utility, and supporting evolution to address new problems).
 
-- [ ] (from 2021-01-05): to SSI report outline:  discuss DH project structures (resource constrained; discussion to have).  Dig out old notes and circulate?  Start collecting notes about project issues.  Quantify how much effort is required for various sustainability activities.
-    - Recognize the difference between long-term infra goals vs immediate requirements (cf. Brooks reference).
-    - Combined resourcing of research and service support (e.g,. researcher and library, etc.)  Scholar/institutional aspects.  Failure of linked art 3 funding app.  Research questions driving tech development?  RQs as "predictions"?   Also, science vs creative.
-    - Ethnographic study on DH research for wishlist?
-    - DH project characterization
-        - resource constrained; no budget for pure engineering concerns
-        - combining engineering and scholarship?
-        - tech people working with non-tech people 
-            - collaboration models
-        - methodological issues (enginbeers and scholars having different perspectives)  
-        - technical vs scholarly requirements (MusicXML vs MEI).
+More recently, such trade-offs are considered by "agile development" practices, which propose that it is futile to expend up-front effort to address future problems, but which also propose that evolution is a fundamental element of software development, and needs to be supported by development practices (such as continuous testing, refactoring, etc.)
+
+## Technical activity planning
+
+When planning (and budgeting) a development activity, some factors to consider are:
+
+- code management
+- dealing with technical debt
+- combating software decay ("bitrot")
+- code testing
+- automated builds
+
+This is not an exhaustive list, but reflects some key concerns that have been raised by  our work with MELD.
+
+Code management probably needs little discussion, as it seems to be a given for just about any software project.  The existence of a shared repository of source code, which includes a history of all changes made, is very common practice and, among other things, helps to safeguard all the efforts that go into creating some piece of code.  Some popular code management tools are `git`, GitHub and SourceForge.  There are plenty of challenges associated with code management and version control, but these have not proved to be a major issue with MELD, so their existence will simply be assumed.
+
+Technical debt arises when the overall structure of some software is misaligned with the functionality it is required to provide.  It accumulates through the application of quick (or not-so-quick) fixes to add new functionality, without adjusting the software structure to accommodate the changes.  Addressing technical debt requires a level of ongoing effort that does not, of itself, advance the capabilities of the software.  Not attending to technical debt typically results in software that becomes harder to maintain or modify with the result that new features become more difficult and more expensive to add.  But paying too much attention can result in wasted effort.
+
+Where technical debt arises (mainly) from changes to the software itself, decay may arise from changes to the external environment in which it is deployed and/or developed, including operating system, language compilers, runtime libraries, external libraries and utilities used, etc.  In  particular, software may decay even when it is not being changed;  security mitigations are a particular source of such changes.  Combating decay requires a degree of onging engineering effort to recompile and retest software with updated tools, libraries and operating environments, and to apply any software changes that may be needed to ensure its continued operation.
+
+Testing us required in all stages of technical activity.  While manual testing may be deemed sufficient when initially developing some software, automated testing is generally a cornerstone of activities to combat technical debt and decay.  There are many forms of automated testing discussed in software engineering literature, but for the purposes of discussion here it is proably safe to say that _any_ automated testing is better than none at all. 
+
+To be confident of being able to successfully install and use a software system, and automated build and deployment system is extremely valuable.  Many modern programing languages have relatively easy-to-use automatic build systems (e.g. NodeJS has `npm`, Python has `pip` and `setuptools`, Ruby has `gem`, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.
 
 
+## Technical design choices
+
+Sustainability of a codebase is affected by software archirtecture, and myriad technical design choices.  There is extensive technical literature on this subject, which is not covered here.  Just a few points for consideration are offered.
+
+Large monolithic applications are often harder to maintain, and hence harder to sustain.  Does an application need to be monolithic?  Sometimes, especially where non-technical users are involved, the answer may be "yes". The alternatives here would be to conceive an application as consisting of a number of smaller, independent pieces that are run separately, and pass information via files or data handling pipelines.  But this can place a greater burden of a technical user learning to use the application.  
+
+A monolith can sometimes be decomposed by separating data processing components from data presentation.  This can also facilitate testing, by creating explicit interfaces that can be used as test targets.
+
+In choosing to use a complex dynamic supporting framework (such as React, or any of numerous other web application frameworks), it is possible to incur dependencies that render the resulting software more prone to decay, and in needing additional effort for sustainability.
+
+Complex user interfaces require a lot of effort to build and maintain, and can be a source of sustainability problems.  Sometimes, sophisticated visualizations and flexible interactions are important for research software.  It may alternatively be the case that the important research value of the software can be achieved by simplified data presentation, or generating data in a form that can be consumed and presented by an off-the-shelf application.
 
 
+# Strategies for sustainability
 
-# Further work for this activity?
+The following commentary is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
 
-- More on testing
 
-- Performance evaluation and tuning
+## Technical architecture
 
-- @@ Ethnographic study on DH research for wishlist?
+Can the research software be effective if conceived as a set of independent tools that are designed to work together, possibly sharing information via well defined interfaces (such as simple files or data pipelines)?  Smaller, independent programs are usually easier to write, test and maintain.  Consider separating data presentation from data processing and/or retrieval.  As long as the interfaces remain stable, changes to one part of an application suite should not require changes to another part.  The downside may be that multiple independent applications are harder for non-technical users to learn and use.
 
+Avoid creating complex user interfaces, or limit the complexity of any that are needed.  Implementing a sophisticated user interface can require development effort disproportionate to the value provided, and subsequent maintenance effort is similarly magnified.
+
+In choosing to use a supporting application support platform, consider whether the value provided by the platform outweighs the additional dependencies that are introduced, and that may require ongoing maintenance effort to keep up to date.  Note that such platforms can take significant effort to learn, which may lead to difficulties finding future developers to help with software maintenance.
+
+
+## Design for testing
+
+When designing and planning a system implementation, think about how it can be tested.  Think about intermediate results that can provide insight into how the software is working, and how they can be made visible for testing.
+
+As the software is developed, implement some tests, however minimal.  These will serve to confirm that the software is (to some degree) testable, and also a simple "I'm alive" kind of test is extremely valuable.  Later, as problems are encountered, additional tests can be added to explore and diagnose the problem, and help to avoid future regression.
+
+Consider budgeting (say) 20% development effort for implementing automatic tests.  This number is arbitrary, without supporting evidence, so a different number might be chosen.  But consider this:  if a piece of software is developed over a week, does spending one day of that week writing some basic tests significantly undermine what can be achieved?  Even if that effort is not recouped within the week of initial development, I estimate from personal experience that the time would be recouped over a further 2-3 weeks of continued development.   Such tests can serve several purposes:  thinking more clearly about how the software should work; confidence that the code is (at least partially) working as expected; examples for new developers to learn about the software; executable specification of how the software is intended to work.  The effort saved in manual testing, documentation and learning can quickly outweigh the effort of writing the tests in the first place.
+
+Software engineering literature discusses the desirability of high levels of test coverage.  Yet even lower levels of test coverage can be very valuable, and with a test framework in place, additional tests are relatively easy to add as proiblems are uncovered.
+
+
+## Continuous integration
+
+With automated testing in place, even if very cursory, and assuming that software building and deployment is automated, it should be relatively easy to set up a continuous integration system so that errors can be detected very when code changes are applied.
+
+
+## Incremental development
+
+Develop in small increments, with testing at each stage.  When a failure occurs after a small number of changes have been made, it is easier to pinpoint the cause of failure compared with when many changes have been made to add multiple new features.
+
+At each stage, keep a copy of the working code (typically annotated in a version control system) along with instructions for running it (where the instructions can be as simple as identifying a script to use).
+
+When adding a new feature, consider first refactoring the code:  restructuring the code to accommodate the planned changes, without actually changing its functionality.  All existing tests should continue to pass.
+
+Ideally, any set of code changes should be a sufficiently small advance on an existing known working system that they can be thrown away if they don't work.  (This isn't always easy to do in practice, but something to think about.)
+
+
+## Dealing with technical debt
+
+Don't allow too much technical debt to accumulate.
+
+This begs a question: how much is too much?  A rule of thumb might be to eliminate technical debt when it becomes an impediment to adding a new feature.  It's usually better to eliminate problem code before changing it's functionality, rather than trying to do so after it has been further modified.
+
+Treat elimination of technical debt separately from adding new functionality, and save changes so that any functional enhancements are made from a recoverable baseine.
+
+
+## Keep dependencies up to date
+
+Don't put off updating dependencies.  As with incremental development, it's easier to troubleshoot any problems if relatively few things have changed.
+
+
+# Further work for MELD sustainability
+
+- More work on MELD testing - produce more examples of React/Redux platform
+
+- Example test fixtures and mocks
+
+- Continuous integration example
+
+- Performance evaluation and tuning  @@ especially, profile to help identify bottlenecks; e.g. graph traversal
+
+
+- Solid-based application examples?
+
+- Ethnographic study on DH research for wishlist?
 
 
 
 ----
 
-
-# Implementation notes
-
-Note: MELD is implemented using node, React and Redux, so the implementation and tools used are generally specific to this platform.
-
-## Developer onboarding: Hello MELD examples
-
-@@
-
-
-## Testing
-
-@@ React/redux components (browser client UI generation)
-
-@@ Data management (non-browser client API)
-
-@@
-
-
-
-Kevin:
-
-My initial questions, which would be very helpful to inform that discussion if you got a chance beforehand: 
-
-1) what is the best test practice, and/or the most widely used testing framework, for node/react development? It would be helpful if you could survey this (David and I won't know). 
-
-(While I wouldn't entire put it past the Facebooks of this world to not be using anything, my instinct is to assume they must be using *something* for testing) 
-
-2) If there were a solution to move MELD to use such a framework (assuming one exists. perhaps mocha or jest?), how much effort would it be? What changes to MELD would be required? 
- I think the below means you have an answer to Q1. I don't feel I have clear answers to Q2, so in that sense I don't think it's moot? So Q2 still stands; but to put it a different way, are you proposing: 
-
-- we ought to be using Jest, but there are problems with how it interacts with MELD as-is? If so I don't fully understand where the problem lies (beyond the libraries we use??). Or what you're proposing we'd need to do to overcome this? 
-
-or 
-
-- moving MELD to a sustainable footing is impossible, because it's impossible to build a test framework for it? (which intuitively leads back to the previous option?  depending on how absolute impossible is?!?) 
-
-I agree your findings so far indicate it may be a time to review next steps. If you could have a couple of alternative proposals for those next steps, along with pros/cons, that would be great! (that's pretty much what I'm trying to elicit from through those q). 
-
-
-
-
-
-
-## Continuous integration
-
-@@
-
-## Performance
-
-@@ especially, profile to help identify bottlenecks; e.g. graph traversal
-
-## Technical Debt
+@@ The following points should be covered somewhere in the main document above.
 
 @@ accumulated tech debt from a series of small projects...
 
@@ -437,7 +477,6 @@ I agree your findings so far indicate it may be a time to review next steps. If 
 
 - [ ] (from 2021-01-05): add reference to governance/update process to sustainability notes
     - need to discuss in the context of DH research project constraints
-    - [x] Note added in `MELD-sustainability-issues-observed.md`
     - [x] Check out governance document from MELD.
         - https://docs.google.com/document/d/1_ZBXb0QvDTauPmw1X_5w1vcHqtX6t7sm_BzbeZb6_uc/edit#heading=h.j3fekq3jzeiy
         - where is the list of maintained apps and branches.
@@ -447,28 +486,7 @@ I agree your findings so far indicate it may be a time to review next steps. If 
     - [ ] Also, make ref to older OSS Watch governance recommendations?
 
 
-
-
-
-
-## @@others?
-
-
-on reporting - project report vs advice and guidance ("practice led study") - reflections on MELD as case study - more than characterize problem - also add recommendations
-(e.g. "be aware, think about at outset")
-
-DL: "Hello MELD as method of "onboarding" very effective" 
-
-KP: interactions between experience programmer working with digital humanist, in small quantities spread over time, can have a massive multiplier effect.
-
-KP: capture different ways of looking at s/w (HTTP testing vs internal API testing)
-
 KP: try and situate the report against the Lohengrin/Delius app.  E.g., how would testing approach would work/apply to existing app.
 
-KP: different testing approaches - what is effect on technical debt?
-
-DL: noted the value of paying down tech debt away from pressures of immediate project (e.g. SSI3 work for MELD).
-
 KP: in framing report - think about what would be useful for a project like TanC or BitH, and offer recommendations that work towards that.
-
 
