@@ -1,5 +1,11 @@
 # Sustainability for Digital Humanities research software
 
+@@ When initial draft is done, circulate draft to DDeR to ask about definition of sustainability, and more
+
+@@ Add commentary that emphasizes and picks out personal observations.  Use italics?
+
+@@
+
 
 ## Table of contents
 
@@ -7,64 +13,55 @@
   * [Table of contents](#table-of-contents)
 - [Summary of conclusions](#summary-of-conclusions)
 - [1. Introduction](#1-introduction)
-  * [1.1 Abbreviations and technical terms used](#11-abbreviations-and-technical-terms-used)
-  * [1.2 What is sustainability?](#12-what-is-sustainability-)
-  * [1.3 Characteristics of DH research software](#13-characteristics-of-dh-research-software)
-- [2. Case study: Music Encoding and Linked Data](#2-case-study--music-encoding-and-linked-data)
-  * [2.1 MELD background @@](#21-meld-background---)
-  * [2.2 Approach](#22-approach)
-    + [2.2.1 Initial plan](#221-initial-plan)
-    + [2.2.2 What we actually did](#222-what-we-actually-did)
-    + [2.2.3 Observations](#223-observations)
+  * [1.1 About this report](#11-about-this-report)
+  * [1.2 Abbreviations and technical terms used](#12-abbreviations-and-technical-terms-used)
+  * [1.3 What is software sustainability?](#13-what-is-software-sustainability-)
+  * [2. Characteristics of DH research software](#2-characteristics-of-dh-research-software)
+- [3. Case study: Music Encoding and Linked Data](#3-case-study--music-encoding-and-linked-data)
+  * [3.1 MELD background](#31-meld-background)
+    + [3.1.1 Server and client code](#311-server-and-client-code)
+  * [3.2 Approach](#32-approach)
+    + [3.2.1 Initial plan](#321-initial-plan)
+    + [3.2.2 What we actually did](#322-what-we-actually-did)
+    + [3.2.3 Observations](#323-observations)
       - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
       - [Undetected problems in MELD code](#undetected-problems-in-meld-code)
       - [Browser vs non-browser code](#browser-vs-non-browser-code)
       - [Hello MELD series](#hello-meld-series)
       - [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
-- [3. Sustainability issues encountered](#3-sustainability-issues-encountered)
-  * [3.1 Working with a complex and dynamic software ecosystem](#31-working-with-a-complex-and-dynamic-software-ecosystem)
+- [4. Sustainability issues encountered](#4-sustainability-issues-encountered)
+  * [4.1 Working with a complex and dynamic software ecosystem](#41-working-with-a-complex-and-dynamic-software-ecosystem)
     + [Suggested mitigations](#suggested-mitigations)
-  * [3.2 Inconsistent build and runtime environments](#32-inconsistent-build-and-runtime-environments)
+  * [4.2 Inconsistent build and runtime environments](#42-inconsistent-build-and-runtime-environments)
     + [Suggested mitigations](#suggested-mitigations-1)
-  * [3.3 Lack of automated testing and continuous integration](#33-lack-of-automated-testing-and-continuous-integration)
+  * [4.3 Lack of automated testing and continuous integration](#43-lack-of-automated-testing-and-continuous-integration)
     + [Suggested mitigations](#suggested-mitigations-2)
     + [Test fixtures and mocking](#test-fixtures-and-mocking)
-  * [3.4 Application code version management issues](#34-application-code-version-management-issues)
+  * [4.4 Application code version management issues](#44-application-code-version-management-issues)
     + [Suggested mitigations](#suggested-mitigations-3)
-  * [3.5 Application code complexity](#35-application-code-complexity)
+  * [4.5 Application code complexity](#45-application-code-complexity)
     + [Suggested mitigations](#suggested-mitigations-4)
-  * [3.6 Run time error detection and reporting](#36-run-time-error-detection-and-reporting)
+  * [4.6 Run time error detection and reporting](#46-run-time-error-detection-and-reporting)
     + [Suggested mitigations](#suggested-mitigations-5)
-  * [3.7 Data preparation](#37-data-preparation)
+  * [4.7 Data preparation](#47-data-preparation)
     + [Suggested mitigations](#suggested-mitigations-6)
-  * [3.8 Accumulated technical debt](#38-accumulated-technical-debt)
+  * [4.8 Accumulated technical debt](#48-accumulated-technical-debt)
     + [Suggested mitigations](#suggested-mitigations-7)
-- [4. Lessons in sustainability for DH](#4-lessons-in-sustainability-for-dh)
-  * [4.1 Resourcing](#41-resourcing)
-  * [4.2 Technical activity planning](#42-technical-activity-planning)
-  * [4.3 Technical design choices](#43-technical-design-choices)
-- [5. Recommendations for DH software sustainability](#5-recommendations-for-dh-software-sustainability)
-  * [5.1 Recommendation 1: Technical architecture](#51-recommendation-1--technical-architecture)
-  * [5.2 Recommendation 2: Design for testing](#52-recommendation-2--design-for-testing)
-  * [5.3 Recommendation 3: Continuous integration](#53-recommendation-3--continuous-integration)
-  * [5.4 Recommendation 4: Incremental development](#54-recommendation-4--incremental-development)
-  * [5.5 Recommendation 5: Dealing with technical debt](#55-recommendation-5--dealing-with-technical-debt)
-  * [5.6 Recommendation 6: Keep dependencies up to date](#56-recommendation-6--keep-dependencies-up-to-date)
-  * [5.7 Recommendation 7: minimal application examples](#57-recommendation-7--minimal-application-examples)
-  * [5.8 Summary of conclusions](#58-summary-of-conclusions)
-- [6. Further sustainability issues requiring other investigation through the use-case](#6-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
-- [7. Acknowledgements](#7-acknowledgements)
-- [Additional notes, to be removed](#additional-notes--to-be-removed)
-  * [Governance](#governance)
-
-
-@@ Number sections to show up depth
-
-@@ When initial draft is done, circulate draft to DDeR to ask about definition of sustainability
-
-@@ Add commentary that emphasizes and picks out personal observations.  Use italics?
-
-@@
+- [5. Lessons in sustainability for DH](#5-lessons-in-sustainability-for-dh)
+  * [5.1 Resourcing](#51-resourcing)
+  * [5.2 Technical activity planning](#52-technical-activity-planning)
+  * [5.3 Technical design choices](#53-technical-design-choices)
+- [6. Recommendations for DH software sustainability](#6-recommendations-for-dh-software-sustainability)
+  * [6.1 Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
+  * [6.2 Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
+  * [6.3 Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
+  * [6.4 Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
+  * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
+  * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
+  * [6.7 Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
+  * [6.8 Summary of conclusions](#68-summary-of-conclusions)
+- [7. Further sustainability issues requiring other investigation through the use-case](#7-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
+- [8. Acknowledgements](#8-acknowledgements)
 
 
 # Summary of conclusions
@@ -99,7 +96,24 @@ These concerns are particularly acute with many Digital Humanities (DH) projects
 In this activity, through hands-on experience of looking at sustainability of the MELD framework, we aim to identify areas which give rise to sustainability problems, and steps towards sustainability that can be adopted even by projects operating with shoestring software development resources.
 
 
-## 1.1 Abbreviations and technical terms used
+## 1.1 About this report
+
+This report includes objectively observed phenomena, subjective personal impressions, andf widely accepted practices about the development and maintenance of a software system.
+
+> Software sustainability arises at the interface between technical environment within which it is performed, and the personal involvement of software developers who create and sustain the software.  As a research software engineer, I feel that it can be useful to highlight subjective issues faced by a working developer.  Such subjective views are highlighted in this document through presentation in the style of this paragraph.
+
+The main body of the report is structured thus:
+
+- Discussion of the characteristics of Digital Humanities research software, and how they may affect sustainability of software outputs.
+
+- Case study observations arising from attempts to test Music Encoding and Linked Data software.  Some of the issues encountered required some revision of the original plan, and as such provide useful insights into the effect of  sustainability issues on software development and maintenance.  Some possible mitigations that are specific to the case study are suggested.
+
+- A discussion of the lessons arising from our case study, and how they may apply more widely to other DH research.
+
+- A distillation of recommendations and considerations for software sustainability, particularly in the context of Digital Humanities research.
+
+
+## 1.2 Abbreviations and technical terms used
 
 - DH - Digital Humanities (research)
 
@@ -110,75 +124,63 @@ In this activity, through hands-on experience of looking at sustainability of th
 - SSI3 - EPSRC-funded phase 3 activity of SSI: see https://gtr.ukri.org/projects?ref=EP%2FS021779%2F1
 
 
-## 1.2 What is sustainability?
 
-Oddly, I couldn't find any discussion of this on the [SSI web site]( https://www.software.ac.uk).  There is discussion of software sustainability elsewhere, but it's hard to find a concrete definition of what it means.  It has been described thus: "Software sustainability covers a broad range of concepts, related to both environmental sustainability, and the longevity of a codebase." [1].
+## 1.3 What is software sustainability?
 
-[1] https://arxiv.org/pdf/1903.06039.pdf
+There is much discussion of software sustainability, but it's hard to find a consensus definition of what it means.  It has been described thus: "Software sustainability covers a broad range of concepts, related to both environmental sustainability, and the longevity of a codebase." [1].
 
-For the purposes of this activity, I take "codebase" to include data that may underpin research results.  Indeed, longevity of research data may be more important than longevity of any particular piece of code that creates or processes it.
+[1] [What Makes Research Software Sustainable? An
+Interview Study With Research Software Engineers](https://arxiv.org/pdf/1903.06039.pdf).
 
-In theory, when a codebase and all its environment dependencies are frozen, the resulting system will keep running indefinitely.  In practice, there are many forces that work against this ideal: one of which is the need to apply a never-ending stream of security updates to any system that is accessible from the public Internet (or a large private intranet).  Over time, the underlying system can change to the point that any software running on it also needs to be updated in order to keep running.
+> Oddly, I couldn't find any discussion of this on the [SSI web site]( https://www.software.ac.uk).  
 
-Other disruptive forces include hardware failures that necessitate reinstallation of the entire system.  Even if a complete copy of all the installed software is available, it is possible that there are underlying changes in any replacement hardware that require the operating system to be upgraded, which in turn may be incompatible with the application software.
+For the purposes of this activity, "codebase" is taken to include data that may underpin research results.  It may well be that longevity of research data is more important than longevity of the code that creates or processes it.
 
-Similar problems arise when running on virtualized and/or cloud software.  My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.  For a longer active deployment life, an active process to keep all software components current is probably required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.
+In theory, when a codebase and all its environment dependencies are frozen, the resulting system will keep running indefinitely.  In practice, there are many forces that work against this ideal: one of which is the need to apply a never-ending stream of security updates to any system that is accessible from the public Internet (or from a large private intranet).  Over time, the underlying system can change to the point that any software running on it also needs to be updated in order to keep running.
 
-Finally, upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
+Other disruptive forces include hardware failures that necessitate re-installation of the entire system.  Even if a complete copy of all the installed software is available, it is possible that there are underlying changes in any replacement hardware that require the operating system to be upgraded, which in turn may be incompatible with the application software.  Similar problems arise when running on virtualized and/or cloud software.
+
+> My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.  
+
+For a longer active deployment life, an active process to keep all software components current is likely to be required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.  Upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
 
 
-## 1.3 Characteristics of DH research software
+## 2. Characteristics of DH research software
 
 There are some characteristics of DH research software that can make its sustainability a different proposition than for, say, commercial or scientific software.  This may be in the nature of the task the DH software tries to accomplish, or may be the environment in which it is created and used.
 
 Tasks:
 
-- data intensive (as opposed to computation intensive)
-- heterogeneous data
-- diverse data sources
-- non-definitive data - needs context and interpretation
-- possibly contradictory (but valid) data
-- supporting human researchers
+- Digital humanities research is often data intensive (as opposed to computation intensive).
+- Humanities research typically draws upon and combines diverse data sources.
+- Digital humanities research data are often heterogeneous, describing a variety of subjects with variable degrees of detail.
+- Valid primary data, such as historical accounts, may also be contradictory.
+- Data to be presented or processed may be non-definitive, needing context and human interpretation in order to understand what they convey.
+- Data are not primarily a scholarly end in themselves, but used to support analyses by human researchers.
 
 Environment:
 
-- shoestring funding
-- short-term funding (e.g. months rather than years)
-- unclear requirements at outset
-- written by software non-experts 
+- Shoestring funding.  Also, short-term funding (e.g. months rather than years).
+- Unclear initial software requirements - the role of software in DH may be to facilitate exploration of data with a view to forming and evaluating scholarly conclusions.  Such software may be written _ad hoc_ by researchers without any software engineering training. 
+- Difficulty of obtaining funding for software maintenance that is not directly linked to new research; yet one of the reasons for sustaining software is to allow researchers without software development skills to benefit from existing developments.
+- DH scholars and software engineers have diverse perspectives, all of which contribute to achieving useful results.  The requirements for long-lived research software need to address both scholarly needs and engineering constraints.
+- Software development is a skill in high demand, and it is common for software developers to leave for better-funded work.  This can result in loss of knowledge that is needed to work on the software.  And software maintenance can be tedious, uninteresting work;  many developers would rather work on new software in which they have a greater sense of ownership.  Loss of developers can be mitigated by attention to good engineering practices, but may needs effort that is not costed in a research proposal.
+- Scholars, who may themselves be able to write small programs for a specific purpose, sometimes fail to recognize that "You just can't do things for no money", especially when it comes to writing software to serve multiple users over an extended period of time.  The effects of a lack of engineering resources may then be perceived as lack of competence.
 
-@@@@
-    - Combined resourcing of research and service support (e.g,. researcher and library, etc.)  Scholar/institutional aspects.  Failure of linked art 3 funding app.  Research questions driving tech development?  RQs as "predictions"?   Also, science vs creative.
-    - DH project characterization
-        - methodological issues (engineers and scholars having different perspectives)  
-        - technical vs scholarly requirements (MusicXML vs MEI).
-@@@@
-
-@@ "You just can't do things for no money"
-
-@@ Note that developers tend to disappear from projects @@
-
-@@ Sustainability isn't engaging work for researchers @@
-
-@@ It's easy to see (some ppl may see) effects of lack of resourcing as lack of competence? @@
-
-
-Of course, not all DH software is like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.
+> Of course, not all DH software is like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.
 
 A particular consequence of the environment in which DH software is created is that it may be not possible or unrealistic to fully employ software engineering best practices.  Some functionality may be required quickly to support a particular scholarly output, with no immediate requirement or additional resource to ensure sustainability of the software.
 
-Because of the value in DH of capturing context and combining a wide range of data sources, it might be argued that sustainability is even more important for DH software than it is for, say, scientific software.  Once a computed scientific result has been established, there may be limited value in revisiting it later.  But humanities research tends (by its nature?) to gain value through the accumulation of understanding and perspectives over time, and as such, access to and integration with previously accumulated data can greatly increase the value accrued by investing in sustainability for DH software, or at least the data that it generates.
+Because of the value in DH of capturing context and combining a wide range of data sources, it might be argued that sustainability is even more important for DH software than it is for, say, scientific software.  Once a computed scientific result has been established, there may be limited value in revisiting it later.  But humanities research tends (by its nature?) to gain value through the accumulation of understanding and perspectives over time, and as such, access to and integration with previously accumulated data can greatly increase the value accrued by investing in software sustainability, or at least sustainable access to generated data.
 
-When considering creation of sustainable software, there is a risk of creating inflexible monoliths.  Most software systems tend to ossify over time, becoming harder to adapt and evolve as early design choices become more pervasive though the system implementation.
-
-The previous paragraphs point to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate.  Yet it is often the case that the real value in both scientific and humanities software-based research project is in the data.  The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.
+The foregoing points to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate.  Yet it is often the case that the real value in both scientific and humanities software-based research project is in the data.  The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.
 
 Following a trail blazed by the bioinformatics community, humanities researchers have started looking to linked data and knowledge graph technologies to create sustainable interoperable data (@@refs: linked pasts, linked art, EMLO, etc).  But even when using standard data models and formats, divergent or inconsistent use of vocabularies (ontologies) can create barriers to re-use.  And maintenance (updating and correction) of substantial datasets can require significant resource.
 
 
-# 2. Case study: Music Encoding and Linked Data
+# 3. Case study: Music Encoding and Linked Data
 
-## 2.1 MELD background @@
+## 3.1 MELD background
 
 Music notation expresses performance instructions in a way commonly understood by musicians, but is limited to encoding static, a priori knowledge.  Music Encoding and Linked Data (MELD) [@@ref https://ora.ox.ac.uk/objects/uuid:945287f6-5dd3-4424-940c-b919b8ad2768] is a basis for communicating static and dynamic information between musicians, musicologists and others.  MELD is essentially a framework for distributed real-time annotation of digitally encoded music notation (including, but not limited to, musical scores).  MELD users and software agents create annotations of semantically distinguishable music concepts and relationships. These are associated with musical structure specified by the Music Encoding Initiative schema (MEI).  The use of standard Linked Data [@@RDF] and Web Annotations [@@] allows incorporation of further knowledge from non-musical sources.
 
@@ -190,8 +192,12 @@ The MELD framework has a number of components, two of which are:
 
 2. [`meld-web-services`](https://github.com/oerc-music/meld-web-services): a set of web services to support MELD client applications.  Historically, these were custom code to support sessions and annotations, but much of this is being replaced by off-the-shelf [Linked Data Platform (LDP)](https://www.w3.org/TR/ldp/) servers (e.g. [GOLD](https://github.com/linkeddata/gold), and more recently using various deployments of [Solid](https://github.com/solid/specification/).
 
+### 3.1.1 Server and client code
 
-## 2.2 Approach
+@@ add discussion of server and client code
+
+
+## 3.2 Approach
 
 The original intent of this project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on [SOFA and MELD](https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md) as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing and dealing with several specific software sustainability issues.
 
@@ -204,11 +210,11 @@ The original intent of this project was to focus on testing the web (HTTP) inter
 On closer examination, the MELD functionality in the applications we surveyed for this project, [Lohengrin time machine study](https://github.com/oerc-music/ForbiddenQuestion) and [Delius annotation](https://github.com/oerc-music/delius-annotation), was mainly visible only to internal API calls, so a different testing approach was needed.
 
 
-### 2.2.1 Initial plan
+### 3.2.1 Initial plan
 
 The original plan of work was:
 
-@@ Shorten what follows; descibe not quote
+@@ Shorten what follows; describe not quote
 
 Proposal: (An exemplar of) Best practice for testing in DH software development
 
@@ -227,7 +233,7 @@ Proposal: (An exemplar of) Best practice for testing in DH software development
     - Documentation and a best practice report (public, online).
 
 
-### 2.2.2 What we actually did
+### 3.2.2 What we actually did
 
 @@ use similar structure to original plan
 
@@ -245,7 +251,7 @@ Revised goals:
 As a result, the outputs of this exercise will focus less on specific implementation of sustainability practices, and more on describing sustainability issues and possible mitigations, than was originally envisaged.
 
 
-### 2.2.3 Observations
+### 3.2.3 Observations
 
 #### Complexity of supporting software environment
 
@@ -286,11 +292,11 @@ The availability of occasional access to an experienced software developer was r
 For MELD, the funded developer was at 20% FTE (1 day/week), with the effort split between (a) software maintenance and building testing capabilities (i.e. direct technical work), (b) supporting other project developers (indirect technical work) and (c) project management, SSI3 introspection and and reporting activities.  One day/week is relatively easy to schedule and manage, but the above suggests that 10%/0.5 day/week might be sufficient for technical support aspects.
 
 
-# 3. Sustainability issues encountered
+# 4. Sustainability issues encountered
 
 This section aims to highlight key issues encountered.  Raw observations and notes are contained in a separate document:  [MELD sustainability issues observed](./MELD-sustainability-issues-observed.md).
 
-## 3.1 Working with a complex and dynamic software ecosystem
+## 4.1 Working with a complex and dynamic software ecosystem
 
 We ran into a number of compatibility problems while working with MELD on recent versions of NodeJS, React and Redux.  Attempting to update dependencies to later versions gave rise to failures that proved quite difficult to identify and remedy, and required changes to the MELD software.  Further, MELD itself is undergoing several changes in response to new application requirements, raising further library compatibility concerns.
 
@@ -304,7 +310,7 @@ Keeping application and support code up-to-date with a complex evolving environm
 
 - consider how to create a complete snapshot, including all supporting components, of a working version of an application.  For example, as a Docker image?  (Bear in mind that for a web based application, there remains a possible dependency on the browser used.)
 
-## 3.2 Inconsistent build and runtime environments
+## 4.2 Inconsistent build and runtime environments
 
 We found different developers were using different versions of the runtime environment and build tools.  This led to applications that worked in some environments and failed in others.
 
@@ -320,7 +326,7 @@ Clear identification of supporting build tools used was lacking.  The Javascript
 
 - maintain development/test environments separately from other aspects of the host system (e.g., using tools like Node's `nvm` or Python's `venv`).  Provide detailed instructions and/or automated script for setting up a new development/test environment, or resetting an existing one.
 
-## 3.3 Lack of automated testing and continuous integration
+## 4.3 Lack of automated testing and continuous integration
 
 Although MELD has a simple test application, there was no automated test suite of continuous integration set up.  (Continuous integration is used here to mean an environment that automatically installs the software into a clean environment, runs the tests and reports any failures, whenever any changes are made to the software.  This allows problems to be detected rapidly, hence easier to fix because the breaking changes made are still fresh in a developer's mind.)
 
@@ -342,7 +348,7 @@ For data-intensive applications, including many DH applications, consideration s
 
 See also the section "Data preparation" below.
 
-## 3.4 Application code version management issues
+## 4.4 Application code version management issues
 
 The MELD libraries are being used by different developers in different institutions, who also apply fixes and updates to the libraries themselves.  This has meant that different branches of the MELD code being used in different applications over extended periods of time, exacerbating the consistency issues noted previously.
 
@@ -355,7 +361,7 @@ There was some early lack of clarity about the code governance (e.g. the exact r
 - try to make use of available affordances to automate governance constraints; e.g. using GitHub reviewer requirements for merging a pull request.
 
 
-## 3.5 Application code complexity
+## 4.5 Application code complexity
 
 The MELD support libraries, and especially the underlying React/Redux framework, present a rich and flexible interface, which in turn forces a degree of complexity onto the application code that uses them.  This has meant that applications are initially difficult for new developers to understand.  We found that, in practice, it took a significant amount of hand-holding from an existing MELD application developer to bring a new developer up to speed using the MELD framework.
 
@@ -369,7 +375,7 @@ There's no silver bullet for solving this - it's a perennial software problem.  
 
 - don't let too much technical debt accumulate (for some value of "too much").
 
-## 3.6 Run time error detection and reporting
+## 4.6 Run time error detection and reporting
 
 Run time error detection  and reporting in the MELD libraries, and sometimes in the underlying React/Redux libraries, was very patchy.  This would result in applications failing for no apparent reason, or failing for indicated reasons that have no discernible connection with what the application is trying to do.  This can make problem diagnosis and rectification difficult and time-consuming.
 
@@ -383,7 +389,7 @@ Mitigations here are common software coding practices.
 
 - provide debug options to report inputs received, to help identify where any problem might be occurring.
 
-## 3.7 Data preparation
+## 4.7 Data preparation
 
 MELD applications, in common with many Digital Humanities applications, typically work with existing data, which may be created using other tools (e.g. music files), or extracted from existing public resources (e.g. Wikidata).  For an application to be useful, or testable, suitable input data must be available.
 
@@ -399,7 +405,7 @@ For creating a simple stripped-down application, we needed to create a new datas
 
 - provide pointers to file format and vocabulary term descriptions.
 
-## 3.8 Accumulated technical debt
+## 4.8 Accumulated technical debt
 
 This isn't really a separate issue, but more a consequence of the other factors reported above.
 
@@ -422,7 +428,7 @@ Again, no magic bullets here.  It's mostly common software engineering practice 
 - try to avoid duplicated logic (also known as DRY: "don't repeat yourself").
 
 
-# 4. Lessons in sustainability for DH
+# 5. Lessons in sustainability for DH
 
 Achieving long-lived utility for the software outputs of a digital humanities research activity (or any research activity?) is often a delicate balancing act between getting the work done, and putting in the extra effort to ensure longer term viability (i.e. so that the work done "stays done").
 
@@ -430,13 +436,13 @@ This balancing act affects resource allocation, conduct of the project, and tech
 
 The discussion that follows is not unique to DH software, but it is intended to focus on aspects that arise more commonly there.
 
-## 4.1 Resourcing
+## 5.1 Resourcing
 
 Considerations of resourcing will necessarily involve trade-offs between immediate requirements and longer term utility and sustainability.  Such considerations are not unique to DH software: in "The Mythical Man-Month" chapter "The Tar Pit", Frederick Brooks discusses near order-of-magnitude costs associated with the evolution of a "program" (solving an immediate problem) into a "programming systems product" (providing long-term utility, and supporting evolution to address new problems).
 
 More recently, such trade-offs are considered by "agile development" practices, which propose that it is futile to expend up-front effort to address future problems, but which also propose that evolution is a fundamental element of software development, and needs to be supported by development practices (such as continuous testing, refactoring, etc.)
 
-## 4.2 Technical activity planning
+## 5.2 Technical activity planning
 
 When planning (and budgeting) a development activity, some factors to consider are:
 
@@ -459,11 +465,13 @@ Testing us required in all stages of technical activity.  While manual testing m
 To be confident of being able to successfully install and use a software system, and automated build and deployment system is extremely valuable.  Many modern programing languages have relatively easy-to-use automatic build systems (e.g. NodeJS has `npm`, Python has `pip` and `setuptools`, Ruby has `gem`, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.
 
 
-## 4.3 Technical design choices
+## 5.3 Technical design choices
 
-Sustainability of a codebase is affected by software archirtecture, and myriad technical design choices.  There is extensive technical literature on this subject, which is not covered here.  Just a few points for consideration are offered.
+Sustainability of a codebase is affected by software architecture, and myriad technical design choices.  There is extensive technical literature on this subject, which is not covered here.  Just a few points for consideration are offered.
 
-Large monolithic applications are often harder to maintain, and hence harder to sustain.  Does an application need to be monolithic?  Sometimes, especially where non-technical users are involved, the answer may be "yes". The alternatives here would be to conceive an application as consisting of a number of smaller, independent pieces that are run separately, and pass information via files or data handling pipelines.  But this can place a greater burden of a technical user learning to use the application.  
+When considering creation of sustainable software, there is a risk of creating inflexible monoliths.  Most software systems tend to ossify over time, becoming harder to adapt and evolve as early design choices become more pervasive though the system implementation.
+
+Large monolithic applications are often harder to maintain, and hence harder to sustain.  Does an application need to be monolithic?  Sometimes, especially where non-technical users are involved, the answer may be "yes". The alternatives here would be to conceive an application as consisting of a number of smaller, independent pieces that are run separately, and pass information via files or data handling pipelines.  But this can place a greater burden on a non-technical user learning to use the application.  
 
 A monolith can sometimes be decomposed by separating data processing components from data presentation.  This can also facilitate testing, by creating explicit interfaces that can be used as test targets.
 
@@ -472,7 +480,7 @@ In choosing to use a complex dynamic supporting framework (such as React, or any
 Complex user interfaces require a lot of effort to build and maintain, and can be a source of sustainability problems.  Sometimes, sophisticated visualizations and flexible interactions are important for research software.  It may alternatively be the case that the important research value of the software can be achieved by simplified data presentation, or generating data in a form that can be consumed and presented by an off-the-shelf application.
 
 
-# 5. Recommendations for DH software sustainability
+# 6. Recommendations for DH software sustainability
 
 @@ Add text pointing out it;s not prescriptive @@
 
@@ -489,7 +497,7 @@ Complex user interfaces require a lot of effort to build and maintain, and can b
 The following commentary is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
 
 
-## 5.1 Recommendation 1: Technical architecture
+## 6.1 Recommendation 1: Technical architecture
 
 Can the research software be effective if conceived as a set of independent tools that are designed to work together, possibly sharing information via well defined interfaces (such as simple files or data pipelines)?  Smaller, independent programs are usually easier to write, test and maintain.  Consider separating data presentation from data processing and/or retrieval.  As long as the interfaces remain stable, changes to one part of an application suite should not require changes to another part.  The downside may be that multiple independent applications are harder for non-technical users to learn and use.
 
@@ -498,7 +506,7 @@ Avoid creating complex user interfaces, or limit the complexity of any that are 
 In choosing to use a supporting application support platform, consider whether the value provided by the platform outweighs the additional dependencies that are introduced, and that may require ongoing maintenance effort to keep up to date.  Note that such platforms can take significant effort to learn, which may lead to difficulties finding future developers to help with software maintenance.
 
 
-## 5.2 Recommendation 2: Design for testing
+## 6.2 Recommendation 2: Design for testing
 
 When designing and planning a system implementation, think about how it can be tested.  Think about intermediate results that can provide insight into how the software is working, and how they can be made visible for testing.
 
@@ -509,12 +517,12 @@ Consider budgeting (say) 20% development effort for implementing automatic tests
 Software engineering literature discusses the desirability of high levels of test coverage.  Yet even lower levels of test coverage can be very valuable, and with a test framework in place, additional tests are relatively easy to add as proiblems are uncovered.
 
 
-## 5.3 Recommendation 3: Continuous integration
+## 6.3 Recommendation 3: Continuous integration
 
 With automated testing in place, even if very cursory, and assuming that software building and deployment is automated, it should be relatively easy to set up a continuous integration system so that errors can be detected very when code changes are applied.
 
 
-## 5.4 Recommendation 4: Incremental development
+## 6.4 Recommendation 4: Incremental development
 
 Develop in small increments, with testing at each stage.  When a failure occurs after a small number of changes have been made, it is easier to pinpoint the cause of failure compared with when many changes have been made to add multiple new features.
 
@@ -525,7 +533,7 @@ When adding a new feature, consider first refactoring the code:  restructuring t
 Ideally, any set of code changes should be a sufficiently small advance on an existing known working system that they can be thrown away if they don't work.  (This isn't always easy to do in practice, but something to think about.)
 
 
-## 5.5 Recommendation 5: Dealing with technical debt
+## 6.5 Recommendation 5: Dealing with technical debt
 
 Don't allow too much technical debt to accumulate.
 
@@ -534,20 +542,20 @@ This begs a question: how much is too much?  A rule of thumb might be to elimina
 Treat elimination of technical debt separately from adding new functionality, and save changes so that any functional enhancements are made from a recoverable baseine.
 
 
-## 5.6 Recommendation 6: Keep dependencies up to date
+## 6.6 Recommendation 6: Keep dependencies up to date
 
 Don't put off updating dependencies.  As with incremental development, it's easier to troubleshoot any problems if relatively few things have changed.
 
 
-## 5.7 Recommendation 7: minimal application examples
+## 6.7 Recommendation 7: minimal application examples
 
 
-## 5.8 Summary of conclusions
+## 6.8 Summary of conclusions
 
 @@@ copy from top of document @@
 
 
-# 6. Further sustainability issues requiring other investigation through the use-case
+# 7. Further sustainability issues requiring other investigation through the use-case
 
 @@@ (why now? why these people? what cost if not funded?)
 
@@ -570,7 +578,7 @@ work @@ for MELD sustainability
 - Ethnographic study on DH research for wishlist?
 
 
-# 7. Acknowledgements
+# 8. Acknowledgements
 
 @@ (TROMPA, BiTH, Lohengrin, Delius, FASTm, Un locking musicology)
 
@@ -587,6 +595,8 @@ work @@ for MELD sustainability
 @@ accumulated tech debt from a series of small projects...
 
 @@ multiple projects with different priorities forcing different development branches
+
+@@ who is the audience?  SSI?  Who funds SSI? Also RSEs working in DH. And material to help justify doing the work properly (use of link for educating researchers). Funders? @@
 
 
 ## Governance
