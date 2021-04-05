@@ -1,12 +1,5 @@
 # Sustainability for Digital Humanities research software
 
-@@ When initial draft is done, circulate draft to DDeR to ask about definition of sustainability, and more
-
-@@ Add commentary that emphasizes and picks out personal observations.  Use italics?
-
-@@
-
-
 ## Table of contents
 
 - [Sustainability for Digital Humanities research software](#sustainability-for-digital-humanities-research-software)
@@ -19,7 +12,9 @@
   * [2. Characteristics of DH research software](#2-characteristics-of-dh-research-software)
 - [3. Case study: Music Encoding and Linked Data](#3-case-study--music-encoding-and-linked-data)
   * [3.1 MELD background](#31-meld-background)
-    + [3.1.1 Server and client code](#311-server-and-client-code)
+    + [3.1.1 MELD applications](#311-meld-applications)
+    + [3.1.2 Server and client code](#312-server-and-client-code)
+    + [3.1.3 React and Redux](#313-react-and-redux)
   * [3.2 Approach](#32-approach)
     + [3.2.1 Initial plan](#321-initial-plan)
     + [3.2.2 What we actually did](#322-what-we-actually-did)
@@ -63,6 +58,9 @@
 - [7. Further sustainability issues requiring other investigation through the use-case](#7-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
 - [8. Acknowledgements](#8-acknowledgements)
 
+<!--
+<a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>
+-->
 
 # Summary of conclusions
 
@@ -98,11 +96,11 @@ In this activity, through hands-on experience of looking at sustainability of th
 
 ## 1.1 About this report
 
-This report includes objectively observed phenomena, subjective personal impressions, andf widely accepted practices about the development and maintenance of a software system.
+This report includes objectively observed phenomena, subjective personal opinions, andf widely accepted practices about the development and maintenance of a software system.
 
-> Software sustainability arises at the interface between technical environment within which it is performed, and the personal involvement of software developers who create and sustain the software.  As a research software engineer, I feel that it can be useful to highlight subjective issues faced by a working developer.  Such subjective views are highlighted in this document through presentation in the style of this paragraph.
+> Software sustainability arises at the interface between technical environment within which it is performed, and the personal involvement of software developers who create and sustain the software.  As a research software engineer, I feel that it can be useful to highlight subjective issues faced by a working developer.  My personal subjective views are presented in the style of this paragraph.
 
-The main body of the report is structured thus:
+The main body of the report is structured as:
 
 - Discussion of the characteristics of Digital Humanities research software, and how they may affect sustainability of software outputs.
 
@@ -133,7 +131,6 @@ There is much discussion of software sustainability, but it's hard to find a con
 Interview Study With Research Software Engineers](https://arxiv.org/pdf/1903.06039.pdf).
 
 > Oddly, I couldn't find any discussion of this on the [SSI web site]( https://www.software.ac.uk).  
-
 For the purposes of this activity, "codebase" is taken to include data that may underpin research results.  It may well be that longevity of research data is more important than longevity of the code that creates or processes it.
 
 In theory, when a codebase and all its environment dependencies are frozen, the resulting system will keep running indefinitely.  In practice, there are many forces that work against this ideal: one of which is the need to apply a never-ending stream of security updates to any system that is accessible from the public Internet (or from a large private intranet).  Over time, the underlying system can change to the point that any software running on it also needs to be updated in order to keep running.
@@ -192,50 +189,88 @@ The MELD framework has a number of components, two of which are:
 
 2. [`meld-web-services`](https://github.com/oerc-music/meld-web-services): a set of web services to support MELD client applications.  Historically, these were custom code to support sessions and annotations, but much of this is being replaced by off-the-shelf [Linked Data Platform (LDP)](https://www.w3.org/TR/ldp/) servers (e.g. [GOLD](https://github.com/linkeddata/gold), and more recently using various deployments of [Solid](https://github.com/solid/specification/).
 
-### 3.1.1 Server and client code
+### 3.1.1 MELD applications
 
-@@ add discussion of server and client code
+To give a sense of its versatility as a framework for musical applications, here are some examples of applications that have been built using MELD:
 
+1. [Take it to the bridge](http://www.semanticaudio.ac.uk/demonstrators/26-take-it-to-the-bridge/)a platform for multi-performer communication during jam sessions.  This MELD application displays the currently played score segment, and allows musicians to signal jumps to different parts of the score.
+
+2. [Climb!](https://www.nottingham.ac.uk/research/groups/mixedrealitylab/works/climb.aspx)  is a non-linear composition written for Disklavier, in which a pianist undertakes a metaphorical journey up a mountain, playing musical codes that are hidden within the score to control their path and trigger musical and visual effects, including the piano engaging them in an unusual physical duet. 
+
+3. [SOFA Ontological Fragment Assembler (SOFA)](http://www.semanticaudio.ac.uk/demonstrators/34-sofa/) enables the combination of musical fragments – Digital Music Objects, or DMOs – into compositions, using semantic annotations to suggest compatible choices..  Also known as [Numbers into Notes remixer](https://github.com/oerc-music/nin-remixer-public)
+
+4. [Lohengrin TimeMachine Digital Companion](https://um.web.ox.ac.uk/lohengrin).  Exploring the Forbidden Question: the digital companion to a textual and video essay on motif use in Lohengrin.
+
+5. [Delius in performance](https://bl.linkedmusic.org/) uses MELD for publishing multimedia musicology articles as web applications in which musically-meaningful relationships are presented as links between text, audio, video, and musical score.
+
+For this SSI3 sustainability project, our attention has been focused on the [Lohengrin time machine study](https://github.com/oerc-music/ForbiddenQuestion) and [Delius in performance](https://github.com/oerc-music/delius-annotation) projects.
+
+See also:
+- http://www.semanticaudio.ac.uk/
+- https://www.qmul.ac.uk/media/news/2018/se/musics-changing-fast-fast-is-changing-music.html
+- https://github.com/oerc-music/ForbiddenQuestion
+- https://github.com/oerc-music/delius-annotation
+- https://dl.acm.org/doi/10.1145/3273024.3273038
+
+### 3.1.2 Server and client code
+
+Web applications typically have two main parts:
+
+- a ***web client***, in the form of a web browser (e.g. Microsoft Edge, Safari, Chrome, Firefox, etc.) which retrieves information from the web and presents it to a user, and
+
+- a ***web server*** that hosts web site data, and uses it to construct replies in response to requests from web clients.
+
+Client and server components typically exchange information using the HTTP (or HTTPS) protocol, with a client issuing HTTP requests, and a server replying to them with HTTP responses.  Sometimes, other protocols are used (e.g. WebSockets, RTP, ftp, and more), but interactions are usually initiated using HTTP(S).
+
+Traditional web applications were arranged with most of the application logic applied by the server, and with the browser used mainly for presentation and user interactions.
+
+Modern web applications often share the application logic between the server and client components, with client code (usually as Javascript programs) retrieved from a server as and when it is needed.
+
+The traditional and modern approaches each have advantages.  A key advantage of using client code for application logic is that it removes load from the server, freeing it up to respond to many more requests from multiple users using the same hardware.  This can come at the cost of increased application complexity, with code needing to support a range of different Javascript implementations in different browsers, and even between different versions of the same browser.
+
+The MELD framework pushes a lot of application logic to the client (browser), leaving open a possibility that the server side functions can be handled by off-the-shelf server software (e.g. [Solid](https://github.com/solid/specification/)).
+
+In previous work on [SOFA](http://www.semanticaudio.ac.uk/demonstrators/34-sofa/), we have also explored the use of middleware "agents" for MELD applications, that retrieve data from a server, apply some processing to it, and write new (additional) data back to a server.  But in the end, interaction with a user usually uses a web browser interface.
+
+### 3.1.3 React and Redux 
+
+The MELD client libraries are implemented in the Javascript programming language, and are designed to be used with the popular [React](https://reactjs.org/) and [Redux](https://redux.js.org/) browser application frameworks.
+
+React is a Javascript library for building user interfaces.
+
+Redux describes itself as a predictable state container for Javascript applications
+
+These powerful frameworks provide a lot of functionality that can be used by MELD applications, but also bring a fair degree of added complexity, which in turn presents challenges for sustainability of MELD applications.
 
 ## 3.2 Approach
 
 The original intent of this project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on [SOFA and MELD](https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md) as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing and dealing with several specific software sustainability issues.
 
-@@include brief summary of what SOFA is@@
-
-@@relevance to humanities audience: make description less technical (e.g. "data that is passed between servers and web clients".  Also reference to internal browser calls?  Need to introduce "browser application".  Also mention React here -- move up to prev section)
-
-@@who is the audience?  SSI?  Who funds SSI? Also RSEs working in DH. And material to help justify doing the work properly (use of link for educating researchers). Funders? @@
-
 On closer examination, the MELD functionality in the applications we surveyed for this project, [Lohengrin time machine study](https://github.com/oerc-music/ForbiddenQuestion) and [Delius annotation](https://github.com/oerc-music/delius-annotation), was mainly visible only to internal API calls, so a different testing approach was needed.
-
 
 ### 3.2.1 Initial plan
 
-The original plan of work was:
+The original plan of work was to build upon [command line tooling](https://github.com/oerc-music/meld-cli-tools) already created for testing middleware in the SOFA project.  This tooling was designed with testing in mind, providing a range of command options that could be used to create, access and test resources stored in an LDP or Solid server.  The intent was that for components that communicate via the LDP/Solid store, the command line tool could be used to set up test fixtures, and then interrogate the result of running a component.  Pass/fail results for individual tests are available via command exit status values.
 
-@@ Shorten what follows; describe not quote
+These commands could then be deployed in shell scripts (as we did for SOFA) to act as a basic framework for unit- and integration test suites, which could subsequently be used to confirm that the applications were behaving as intended, and also that the MELD components were behaving as expected by applications.
 
-Proposal: (An exemplar of) Best practice for testing in DH software development
+The plan envisaged focusing on a few MELD applications:
 
-- Realised as a testing framework for MELD.
-- Building upon command line MELD client developed in the later stages of FAST.
-- Extending this as a unit testing approach for MELD app development.
-- We have a small but varied ecosystem of music studies and their associated software the testing framework could be validated against:
-    - Lohengrin opera analysis;
-    - Delius live performance annotation;
-    - Historical musicology with mixed media digital archives (Text, audio, image, score from British Library, New York Philharmonic Archives);
-    - TROMPA Rehearsal companion.
-- Also as a reflective case study of software sustainability in DH projects.  While the MELD framework itself benefited from the substantial research efforts of FAST, the apps above have been created within the more limited resourcing of humanities projects.  This is an opportunity for SSI to reflect on effective software sustainability practice in such situations, which are typical for DH.
-- Outputs
-    - The software testing framework for MELD (public repo).
-    - Unit tests for (some/all of) the above studies/apps (public repo).
-    - Documentation and a best practice report (public, online).
+- [Lohengrin TimeMachine Digital Companion](https://um.web.ox.ac.uk/lohengrin).
+- [Delius in performance](https://bl.linkedmusic.org/)
+- TROMPA's [CLARA rehearsal companion](https://trompamusic.eu/index.php/instrumental-players)
+- Historical musicology with mixed media digital archives (Text, audio, image, score from British Library, New York Philharmonic Archives)
+
+The whole process would use MELD as a reflective case study of software sustainability in DH projects.  While the MELD framework itself benefited from the substantial research efforts of FAST, the apps above have been created within the more limited resourcing of humanities projects.  This is an opportunity for SSI to reflect on effective software sustainability practice in such situations, which are typical for DH.
+
+Intended outputs of this work were to be:
+
+- The software testing framework for MELD (public repo).
+- Unit tests for (some/all of) the above studies/apps (public repo).
+- Documentation and a best practice report (public, online).
 
 
 ### 3.2.2 What we actually did
-
-@@ use similar structure to original plan
 
 It was revealed early in the project that HTTP-level testing using a command line tool wasn't going to provide sufficient access to exercise key application logic for the Lohengrin and Delius applications.  To test the internal interfaces, we wrote testing code in the applications' implementation language (Javascript), using existing test frameworks.  This required a greater familiarity with the implementation of applications using MELD, and the React framework ecosystem on which the MELD client-side code is built.  In turn, this required us to more immediately address a number of sustainability issues in the MELD codebase.
 
@@ -248,7 +283,13 @@ Revised goals:
 - implementing some simple tests using existing Javascript test frameworks (Mocha and Jest were trialled, and settled on Jest as it integrates more easily with React).
 - a partial shift from testing as lead activity, to recording and documenting observed sustainability issues with the MELD libraries and applications.
 
-As a result, the outputs of this exercise will focus less on specific implementation of sustainability practices, and more on describing sustainability issues and possible mitigations, than was originally envisaged.
+As a result, the outputs of this exercise will focus less on specific implementation of sustainability practices, and more on describing sustainability issues and possible mitigations, than was originally envisaged:
+
+- The "Hello MELD" applications, which can be used as teaching as well as testing resources.
+- A software testing framework for MELD based on the "Hello MELD" apps, and existing Javascript testing frameworks.
+- Documentation and a best practice report (this report), and [further details](https://github.com/oerc-music/meld-testing-ssi3/tree/main/Notes) in Github.  
+
+(@@NOTE: repo is currently private: need to separate public materials from internal notes, and adjust access accoprdingly.)
 
 
 ### 3.2.3 Observations
@@ -482,20 +523,11 @@ Complex user interfaces require a lot of effort to build and maintain, and can b
 
 # 6. Recommendations for DH software sustainability
 
-@@ Add text pointing out it;s not prescriptive @@
-
-@@ Include discussion of role of "Hello world" type apps
-
 @@ Links back to lessons/observations
 
-@@ Presentation - all this to background of "sunscreen"?? :):):) @@
+@@ This basis for presentation - all this to background of "sunscreen"?? :):):) @@
 
-
-
-
-
-The following commentary is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
-
+The following commentary is not intended to be prescriptive or definitive.   It is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
 
 ## 6.1 Recommendation 1: Technical architecture
 
@@ -549,6 +581,12 @@ Don't put off updating dependencies.  As with incremental development, it's easi
 
 ## 6.7 Recommendation 7: minimal application examples
 
+The value of minimal applications for introducing computing concepts has been recognized since Kernighan and Ritchie presented "Hello world" in [The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language).  
+
+For any system that has aspirations to be community-sustained, such materials can be invaluable.  So include the simplest possible examples of how to use a piece of software, and make sure that they work when the software is installed as described.  Then build upon these to introduce more advanced concepts.  Minimal applications can also provide a useful platform for testing, as they help to keep important concepts isolated, or at least to ensure that common foundations are tested in isolation from more complex interactions that depend upon them.
+
+No application is too trivial to be worth presenting: even if it appears pointless, there may be tacit knowledge exposed that otherwise gets glossed over, or buried by other details.
+
 
 ## 6.8 Summary of conclusions
 
@@ -557,30 +595,28 @@ Don't put off updating dependencies.  As with incremental development, it's easi
 
 # 7. Further sustainability issues requiring other investigation through the use-case
 
-@@@ (why now? why these people? what cost if not funded?)
+The current short project has succeeded in exposing a number of sustainability issues with MELD, which this document has attempted to explain.  We have also described how many of these lessons are more widely applicable.
 
-@@ building on lessons of this project (role of ongoing RSE contribution...)
+Yet there are many questions and issues about MELD sustainability that have been raised, but which there has been no time to investigate.  Some of these questions and issues include:
 
-work @@ for MELD sustainability
+- Further development of MELD testing.  MELD is currently undergoing a version freeze, and this would be a great opportunity to "fix" the version functionality upon which applications depend in a test suite.  This would allow any changes to MELD that break this functionality to be detected quickly, and steps taken to ensure that dependent applications continue to work:  the sustainability advantages here are many-fold:  sustaining MELDitself, and also the diverse applications that depend upon it.
 
-@@ how to continue the exploration to obtain broader generalized results @@
+- Example test fixtures and "mocks:.  These are aspects of testing that allow tests to be run independently of a complex deployment setup.  This in turn makes the tests easier to run (hence more likely to be used), and also facilitates continuous integration
 
-- More work on MELD testing - produce more examples of React/Redux platform
+- Continuous Integration (CI) setup.  The benefits of CI have been discussed above, but the present project has not been able to explore setting up a CI environment.
 
-- Example test fixtures and mocks
+- Performance evaluation and tuning.  It has been noted that there are features of MELD whose performance is not as good as would be expected, but we have lacked tooling to isolate the inefficiencies.  A test suite is a great place to add in performance measurement options, and the results of this should greatly assist identification of performance bottlenecks.  Furthere, having performance instrumentation embodied in a test suite helps to evaluate any "improvements" made to the code - both to confirm that functionality is not impaired, and also to provide qualitative and repeatable information about the extent of any performance improvements achieved.
 
-- Continuous integration example
+- Solid-based application examples and tests.  The [Solid project](https://solidproject.org/), led by Tim Berners-Lee and other web luminaries, is a layer for web application services that separates data custody from application logic.  These affordances of Solid play well to the goals of many DH applications where data custody is distributed among many independent players, as information provided and maintained by diverse sources is combined for the needs of some particular research.  Efforts are under way for common themes, such as people, places, artifacts, historical eras, etc., to be served by public hubs, but the nature of DH data means that these can rarely be complete for the requirements of any particular line of research.
 
-- Performance evaluation and tuning  @@ especially, profile to help identify bottlenecks; e.g. graph traversal  (using MELD as case study for more general results)   Without the present project, we wouldn't have understood this requirement (answers why me Q)???
+    MELD is already being developed to use Solid servers for data storage - for both source data and intermediate results ("annotations").  But further exploration and testing is needed to better understand how Solid security models can best be used by DH research software.
 
-- Solid-based application examples?
-
-- Ethnographic study on DH research for wishlist?
+One lesson of the work reported here has been the value of a project having occasional access to a software engineer who has a good understanding of the goals and nature of the DH project, and experience with the kinds of issues faces by DH researchers.  Such occasional access can be very cost effective, yet is not always easy to arrange, and once in place can be difficult to maintain without some continuity of resource provision.    The MELD project is currently well-placed in this regard (@@@@ and continued support would exploit this, to the benefit of MELD and broader lessons for DH projects @@@@).
 
 
 # 8. Acknowledgements
 
-@@ (TROMPA, BiTH, Lohengrin, Delius, FASTm, Un locking musicology)
+@@ (TROMPA, BiTH, Lohengrin, Delius, FAST, Unlocking musicology)
 
 @@ (inc MELDfest participants)
 
@@ -590,14 +626,15 @@ work @@ for MELD sustainability
 
 # Additional notes, to be removed
 
-@@ The following points should be covered somewhere in the main document above.
+@@ When initial draft is done, circulate draft to DDeR to ask about definition of sustainability, and more
+
+The following points should be covered somewhere in the main document above.
 
 @@ accumulated tech debt from a series of small projects...
 
 @@ multiple projects with different priorities forcing different development branches
 
 @@ who is the audience?  SSI?  Who funds SSI? Also RSEs working in DH. And material to help justify doing the work properly (use of link for educating researchers). Funders? @@
-
 
 ## Governance
 
@@ -610,9 +647,6 @@ work @@ for MELD sustainability
         - I don't entirely understand the bit about "must also apply it to all maintained branches"
         - Plan to make minor process update to this - e.g. use GitHub review request.
     - [ ] Also, make ref to older OSS Watch governance recommendations?
-
-
-KP: try and situate the report against the Lohengrin/Delius app.  E.g., how would testing approach would work/apply to existing app.
 
 KP: in framing report - think about what would be useful for a project like TanC or BitH, and offer recommendations that work towards that.
 
