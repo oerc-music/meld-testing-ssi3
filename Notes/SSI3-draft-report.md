@@ -47,14 +47,14 @@
   * [5.2 Technical activity planning](#52-technical-activity-planning)
   * [5.3 Technical design choices](#53-technical-design-choices)
 - [6. Recommendations for DH software sustainability](#6-recommendations-for-dh-software-sustainability)
-  * [6.1 Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
-  * [6.2 Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
-  * [6.3 Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
-  * [6.4 Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
-  * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
-  * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
-  * [6.7 Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
-  * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8--give-some-thought-to-project-governance)
+  * [6.1 Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
+  * [6.2 Recommendation 2: Design for testing](#62-recommendation-2-design-for-testing)
+  * [6.3 Recommendation 3: Continuous integration](#63-recommendation-3-continuous-integration)
+  * [6.4 Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
+  * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
+  * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
+  * [6.7 Recommendation 7: minimal application examples](#67-recommendation-7-minimal-application-examples)
+  * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
   * [6.9 Summary of recommendations](#69-summary-of-recommendations)
 - [7. Further sustainability issues requiring other investigation through the use-case](#7-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
 - [8. Acknowledgements](#8-acknowledgements)
@@ -91,31 +91,31 @@
 
 ## Recommendations
 
-- [Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
+- [Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
 
     Keep it simple; separate concerns; avoid complex user interfaces if possible
 
-- [Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
+- [Recommendation 2: Design for testing](#62-recommendation-2-design-for-testing)
 
     Testing doesn't cost, it pays.
 
-- [Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
+- [Recommendation 3: Continuous integration](#63-recommendation-3-continuous-integration)
 
     Fail fast: find out quickly when something breaks
 
-- [Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
+- [Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
 
     Grow a system in small manageable pieces - it's surprising how quickly they accumulate.
 
-- [Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
+- [Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
 
     Slay ghosts in the code before they slay you.
 
-- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
+- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
 
     Don't get left behind when depending on a dynamic supporting ecosystem.
 
-- [Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
+- [Recommendation 7: minimal application examples](#67-recommendation-7-minimal-application-examples)
 
     No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
 
@@ -709,35 +709,35 @@ See also:
 
 ## 6.9 Summary of recommendations
 
-- [Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
+- [Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
 
     Keep it simple; separate concerns; avoid complex user interfaces if possible
 
-- [Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
+- [Recommendation 2: Design for testing](#62-recommendation-2-design-for-testing)
 
     Testing doesn't cost, it pays.
 
-- [Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
+- [Recommendation 3: Continuous integration](#63-recommendation-3-continuous-integration)
 
     Fail fast: find out quickly when something breaks
 
-- [Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
+- [Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
 
     Grow a system in small manageable pieces - it's surprising how quickly they accumulate.
 
-- [Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
+- [Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
 
     Slay ghosts in the code before they slay you.
 
-- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
+- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
 
     Don't get left behind when depending on a dynamic supporting ecosystem.
 
-- [Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
+- [Recommendation 7: minimal application examples](#67-recommendation-7-minimal-application-examples)
 
     No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
 
-- [Recommendation 8: Give some thought to project governance](#68-give-some-thought-to-project-governance)
+- [Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
 
     Establish norms for team interaction and quality expectations.
 
