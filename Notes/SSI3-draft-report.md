@@ -9,8 +9,8 @@
   * [1.1 About this report](#11-about-this-report)
   * [1.2 Abbreviations and technical terms used](#12-abbreviations-and-technical-terms-used)
   * [1.3 What is software sustainability?](#13-what-is-software-sustainability-)
-  * [2. Characteristics of DH research software](#2-characteristics-of-dh-research-software)
-- [3. Case study: Music Encoding and Linked Data](#3-case-study--music-encoding-and-linked-data)
+- [2. Characteristics of DH research software](#2-characteristics-of-dh-research-software)
+- [3. Case study: Music Encoding and Linked Data](#3-case-study-music-encoding-and-linked-data)
   * [3.1 MELD background](#31-meld-background)
     + [3.1.1 MELD applications](#311-meld-applications)
     + [3.1.2 Server and client code](#312-server-and-client-code)
@@ -53,7 +53,7 @@
   * [6.4 Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
   * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
   * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
-  * [6.7 Recommendation 7: minimal application examples](#67-recommendation-7-minimal-application-examples)
+  * [6.7 Recommendation 7: Minimal application examples](#67-recommendation-7-minimal-application-examples)
   * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
   * [6.9 Summary of recommendations](#69-summary-of-recommendations)
 - [7. Further sustainability issues requiring other investigation through the use-case](#7-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
@@ -80,7 +80,7 @@
 
    These problems underscore the value of automated tests.  Often, the hardest part of fixing a problem is finding it in the first place.
 
-- [Hello MELD series](#hello-meld-series)
+- [Hello MELD application series](#hello-meld-series)
 
     Simple applications are useful for both helping new developers to use a system, and also to support testing.
 
@@ -115,14 +115,13 @@
 
     Don't get left behind when depending on a dynamic supporting ecosystem.
 
-- [Recommendation 7: minimal application examples](#67-recommendation-7-minimal-application-examples)
+- [Recommendation 7: Minimal application examples](#67-recommendation-7-minimal-application-examples)
 
     No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
 
-- [Recommendation 8: Give some thought to project governance](#68-give-some-thought-to-project-governance)
+- [Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
 
     Establish norms for team interaction and quality expectations.
-
 
 
 # 1. Introduction
@@ -186,7 +185,7 @@ Other disruptive forces include hardware failures that necessitate re-installati
 For a longer active deployment life, an active process to keep all software components current is likely to be required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.  Upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
 
 
-## 2. Characteristics of DH research software
+# 2. Characteristics of DH research software
 
 There are some characteristics of DH research software that can make its sustainability a different proposition than for, say, commercial or scientific software.  This may be in the nature of the task the DH software tries to accomplish, or may be the environment in which it is created and used.
 
@@ -680,7 +679,7 @@ See also:
 - [Technical activity planning](#52-technical-activity-planning)
 
 
-## 6.7 Recommendation 7: minimal application examples
+## 6.7 Recommendation 7: Minimal application examples
 
 The value of minimal applications for introducing computing concepts has been recognized since Kernighan and Ritchie presented "Hello world" in [The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language).  
 
@@ -733,7 +732,7 @@ See also:
 
     Don't get left behind when depending on a dynamic supporting ecosystem.
 
-- [Recommendation 7: minimal application examples](#67-recommendation-7-minimal-application-examples)
+- [Recommendation 7: Minimal application examples](#67-recommendation-7-minimal-application-examples)
 
     No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
 
