@@ -2,9 +2,9 @@
 
 ## Table of contents
 
-- [Sustainability for Digital Humanities research software](#sustainability-for-digital-humanities-research-software)
-  * [Table of contents](#table-of-contents)
 - [Summary of conclusions](#summary-of-conclusions)
+  * [Observations](#observations)
+  * [Recommendations](#recommendations)
 - [1. Introduction](#1-introduction)
   * [1.1 About this report](#11-about-this-report)
   * [1.2 Abbreviations and technical terms used](#12-abbreviations-and-technical-terms-used)
@@ -54,7 +54,8 @@
   * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
   * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
   * [6.7 Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
-  * [6.8 Summary of conclusions](#68-summary-of-conclusions)
+  * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8--give-some-thought-to-project-governance)
+  * [6.9 Summary of recommendations](#69-summary-of-recommendations)
 - [7. Further sustainability issues requiring other investigation through the use-case](#7-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
 - [8. Acknowledgements](#8-acknowledgements)
 
@@ -62,25 +63,66 @@
 <a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>
 -->
 
+
 # Summary of conclusions
 
-@@ distil out key observations and recommendations, with references to more detailed discussion
+## Observations
 
-@@ add links to observations and discussion
+- [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
 
-@@ 5-7 point checklist for planning/start of project?
-@@@@notes?
-(Social)
-- governance?
-- access to technical experience?
-(development support environment)
-- code management support
-- language/tools/platform/framework choice - is they paying their way?
-- automatic setup for development/testing environment, isolated from other system components
-(architecture)
-- components?   Can complex elements be separated?
-- how to test?   Establish testing early on
-@@@@
+    A complex, dynamic supporting environment can bring great benefits to a project in terms of ready-to-use functionality, but may also come with a price to pay whenit comes to long-term sustainability.  Choose carefully!
+
+- [Browser vs non-browser code](#browser-vs-non-browser-code)
+
+    For web applications, there is a fundamental choice to make.  Browsers provide a rich environment for making responsive, user-facing interfaces, but (like other supporting software environments) using advanced capabilities can affect sustainability.
+
+- [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+
+   These problems underscore the value of automated tests.  Often, the hardest part of fixing a problem is finding it in the first place.
+
+- [Hello MELD series](#hello-meld-series)
+
+    Simple applications are useful for both helping new developers to use a system, and also to support testing.
+
+- [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
+
+    For projects that don't justify a full-time software developer, having occasional but ongoing access to software engineering expertise can be useful, both for the project itself, and also for capacity building.
+
+
+## Recommendations
+
+- [Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
+
+    Keep it simple; separate concerns; avoid complex user interfaces if possible
+
+- [Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
+
+    Testing doesn't cost, it pays.
+
+- [Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
+
+    Fail fast: find out quickly when something breaks
+
+- [Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
+
+    Grow a system in small manageable pieces - it's surprising how quickly they accumulate.
+
+- [Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
+
+    Slay ghosts in the code before they slay you.
+
+- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
+
+    Don't get left behind when depending on a dynamic supporting ecosystem.
+
+- [Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
+
+    No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
+
+- [Recommendation 8: Give some thought to project governance](#68-give-some-thought-to-project-governance)
+
+    Establish norms for team interaction and quality expectations.
+
 
 
 # 1. Introduction
@@ -92,6 +134,8 @@ Sustainability is a perennial problem for research software.  The funding of res
 These concerns are particularly acute with many Digital Humanities (DH) projects.  Funding for such projects is often very thin, and software is often not the most significant academic output.  Yet, increasingly, DH research depends on drawing information from multiple sources, often created by diverse projects, so considerations of sustainability become more important for continued progress of research.
 
 In this activity, through hands-on experience of looking at sustainability of the MELD framework, we aim to identify areas which give rise to sustainability problems, and steps towards sustainability that can be adopted even by projects operating with shoestring software development resources.
+
+The intended audience for this report includes: digital humanities researchers, research software engineers engaged with digital humanities projects, and digital humanities project funders.
 
 
 ## 1.1 About this report
@@ -387,7 +431,7 @@ The lack has resulted in uncertainty about the status of the software.  Attempts
 
 For data-intensive applications, including many DH applications, consideration should also be given to creation of text fixtures (e.g., datasets against which the tests are run), or "mocking" of the interfaces through which such data is accessed.  This aspect has not been explored as part of the project reported here.
 
-See also the section "Data preparation" below.
+See also the section [Data preparation](#47-data-preparation) below.
 
 ## 4.4 Application code version management issues
 
@@ -397,9 +441,13 @@ There was some early lack of clarity about the code governance (e.g. the exact r
 
 ### Suggested mitigations
 
-- establish a governance structure early in the project.  It doesn't need to be complex: one of it's main purposes is to let all developers know what is expected in order to update the main codebase.
+- use a code version management system, such as git.  This shouldn't need saying.
+
+- establish a governance structure early in the project.  It doesn't need to be complex: one of it's main purposes is to let all developers know what is expected in order to update the main codebase.  An appropriate level of requirements imposed by project governance should take account of project resourcing constraints.  But also remember that, in the long term, sensible quality requirements save more effort than they cost.
 
 - try to make use of available affordances to automate governance constraints; e.g. using GitHub reviewer requirements for merging a pull request.
+
+- don't make "kitchen-sink" updates to the code base.  Tackle changes in small chunks, and include a clear statement of purpose with committed changes.
 
 
 ## 4.5 Application code complexity
@@ -454,6 +502,11 @@ Technical debt refers here to software additions and patches that are used to ge
 
 When developing software under time-and-resource constraints, it is often expedient to take short-cuts to validate an approach, or to demonstrate a result.  Individually, these shortcuts are often not problematic, but if they are allowed to accumulate in a codebase the resulting software can quickly become harder to understand and update.  And faced with with such difficulty, a developer will often use additional shortcuts or workarounds to avoid having to deal with the difficult code.  In this way, the accumulation of technical debt can grow exponentially, and the speed of making changes and fixes will decay accordingly.
 
+Further, for MELD, technical debt was accrued over a number of smaller side projects (MELD applications), each with their own priorities for what MEWLD should provide, but for which long term maintenance of MELD itself was not a central concern (apart from the fact that they would ultimately depend on sustainability of MELD).   Such debt accumulates when each side-project makes its own separate enhancements to the MELD code base, resulting (among other things) in code management issues [noted previously](#44-application-code-version-management-issues).
+
+Some technical debt recovery was performed as part of this sustainability work, and it was noticed by other project members that there is value in paying down technical debt separately from immediate pressures of application development.
+
+
 ### Suggested mitigations
 
 Again, no magic bullets here.  It's mostly common software engineering practice and skills.
@@ -467,6 +520,9 @@ Again, no magic bullets here.  It's mostly common software engineering practice 
 - try to maintain separation of concerns between software components.
 
 - try to avoid duplicated logic (also known as DRY: "don't repeat yourself").
+
+- don't combine changes that address technical debt with changes that update functionality.  No existing test should fail as a result of refinements that pay down technical debt.
+
 
 
 # 5. Lessons in sustainability for DH
@@ -499,11 +555,11 @@ Code management probably needs little discussion, as it seems to be a given for 
 
 Technical debt arises when the overall structure of some software is misaligned with the functionality it is required to provide.  It accumulates through the application of quick (or not-so-quick) fixes to add new functionality, without adjusting the software structure to accommodate the changes.  Addressing technical debt requires a level of ongoing effort that does not, of itself, advance the capabilities of the software.  Not attending to technical debt typically results in software that becomes harder to maintain or modify with the result that new features become more difficult and more expensive to add.  But paying too much attention can result in wasted effort.
 
-Where technical debt arises (mainly) from changes to the software itself, decay may arise from changes to the external environment in which it is deployed and/or developed, including operating system, language compilers, runtime libraries, external libraries and utilities used, etc.  In  particular, software may decay even when it is not being changed;  security mitigations are a particular source of such changes.  Combating decay requires a degree of onging engineering effort to recompile and retest software with updated tools, libraries and operating environments, and to apply any software changes that may be needed to ensure its continued operation.
+Where technical debt arises (mainly) from changes to the software itself, decay may arise from changes to the external environment in which it is deployed and/or developed, including operating system, language compilers, runtime libraries, external libraries and utilities used, etc.  In  particular, software may decay even when it is not being changed;  security mitigations are a particular source of such changes.  Combating decay requires a degree of ongoing engineering effort to recompile and retest software with updated tools, libraries and operating environments, and to apply any software changes that may be needed to ensure its continued operation.
 
 Testing us required in all stages of technical activity.  While manual testing may be deemed sufficient when initially developing some software, automated testing is generally a cornerstone of activities to combat technical debt and decay.  There are many forms of automated testing discussed in software engineering literature, but for the purposes of discussion here it is proably safe to say that _any_ automated testing is better than none at all. 
 
-To be confident of being able to successfully install and use a software system, and automated build and deployment system is extremely valuable.  Many modern programing languages have relatively easy-to-use automatic build systems (e.g. NodeJS has `npm`, Python has `pip` and `setuptools`, Ruby has `gem`, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.
+To be confident of being able to successfully install and use a software system, and automated build and deployment system is extremely valuable.  Many modern programming languages have relatively easy-to-use automatic build systems (e.g. NodeJS has `npm`, Python has `pip` and `setuptools`, Ruby has `gem`, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.
 
 
 ## 5.3 Technical design choices
@@ -523,8 +579,6 @@ Complex user interfaces require a lot of effort to build and maintain, and can b
 
 # 6. Recommendations for DH software sustainability
 
-@@ Links back to lessons/observations
-
 @@ This basis for presentation - all this to background of "sunscreen"?? :):):) @@
 
 The following commentary is not intended to be prescriptive or definitive.   It is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
@@ -537,6 +591,15 @@ Avoid creating complex user interfaces, or limit the complexity of any that are 
 
 In choosing to use a supporting application support platform, consider whether the value provided by the platform outweighs the additional dependencies that are introduced, and that may require ongoing maintenance effort to keep up to date.  Note that such platforms can take significant effort to learn, which may lead to difficulties finding future developers to help with software maintenance.
 
+See also:
+
+- [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
+- [Browser vs non-browser code](#browser-vs-non-browser-code)
+- [Working with a complex and dynamic software ecosystem](#41-working-with-a-complex-and-dynamic-software-ecosystem)
+- [Application code complexity](#45-application-code-complexity)
+- [Accumulated technical debt](#48-accumulated-technical-debt)
+- [Technical design choices](#53-technical-design-choices)
+
 
 ## 6.2 Recommendation 2: Design for testing
 
@@ -548,10 +611,26 @@ Consider budgeting (say) 20% development effort for implementing automatic tests
 
 Software engineering literature discusses the desirability of high levels of test coverage.  Yet even lower levels of test coverage can be very valuable, and with a test framework in place, additional tests are relatively easy to add as proiblems are uncovered.
 
+See also:
+
+- [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+- [Inconsistent build and runtime environments](#42-inconsistent-build-and-runtime-environments)
+- [Lack of automated testing and continuous integration](#43-lack-of-automated-testing-and-continuous-integration)
+- [Run time error detection and reporting](#46-run-time-error-detection-and-reporting)
+- [Data preparation](#47-data-preparation)
+- [Technical activity planning](#52-technical-activity-planning)
+
 
 ## 6.3 Recommendation 3: Continuous integration
 
 With automated testing in place, even if very cursory, and assuming that software building and deployment is automated, it should be relatively easy to set up a continuous integration system so that errors can be detected very when code changes are applied.
+
+See also:
+
+- [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+- [Inconsistent build and runtime environments](#42-inconsistent-build-and-runtime-environments)
+- [Lack of automated testing and continuous integration](#43-lack-of-automated-testing-and-continuous-integration)
+- [Technical activity planning](#52-technical-activity-planning)
 
 
 ## 6.4 Recommendation 4: Incremental development
@@ -564,6 +643,14 @@ When adding a new feature, consider first refactoring the code:  restructuring t
 
 Ideally, any set of code changes should be a sufficiently small advance on an existing known working system that they can be thrown away if they don't work.  (This isn't always easy to do in practice, but something to think about.)
 
+See also:
+
+- [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+- [Lack of automated testing and continuous integration](#43-lack-of-automated-testing-and-continuous-integration)
+- [Application code version management issues](#44-application-code-version-management-issues)
+- [Accumulated technical debt](#48-accumulated-technical-debt)
+- [Technical activity planning](#52-technical-activity-planning)
+
 
 ## 6.5 Recommendation 5: Dealing with technical debt
 
@@ -571,12 +658,26 @@ Don't allow too much technical debt to accumulate.
 
 This begs a question: how much is too much?  A rule of thumb might be to eliminate technical debt when it becomes an impediment to adding a new feature.  It's usually better to eliminate problem code before changing it's functionality, rather than trying to do so after it has been further modified.
 
-Treat elimination of technical debt separately from adding new functionality, and save changes so that any functional enhancements are made from a recoverable baseine.
+Treat elimination of technical debt separately from adding new functionality, and save changes so that any functional enhancements are made from a recoverable baseline.
 
+See also:
+
+- [Accumulated technical debt](#48-accumulated-technical-debt)
+- [Technical activity planning](#52-technical-activity-planning)
 
 ## 6.6 Recommendation 6: Keep dependencies up to date
 
 Don't put off updating dependencies.  As with incremental development, it's easier to troubleshoot any problems if relatively few things have changed.
+
+See also:
+
+- [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
+- [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+- [Inconsistent build and runtime environments](#42-inconsistent-build-and-runtime-environments)
+- [Lack of automated testing and continuous integration](#43-lack-of-automated-testing-and-continuous-integration)
+- [Application code version management issues](#44-application-code-version-management-issues)
+- [Accumulated technical debt](#48-accumulated-technical-debt)
+- [Technical activity planning](#52-technical-activity-planning)
 
 
 ## 6.7 Recommendation 7: minimal application examples
@@ -587,10 +688,58 @@ For any system that has aspirations to be community-sustained, such materials ca
 
 No application is too trivial to be worth presenting: even if it appears pointless, there may be tacit knowledge exposed that otherwise gets glossed over, or buried by other details.
 
+See also:
 
-## 6.8 Summary of conclusions
+- [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
+- [Hello MELD series](#hello-meld-series)
+- [Application code complexity](#45-application-code-complexity)
+- [Data preparation](#47-data-preparation)
 
-@@@ copy from top of document @@
+
+## 6.8 Recommendation 8: Give some thought to project governance
+
+Project governance shouldn't be a drag - it helps project members to understand how they are expected to be working together.  It can also help to establish a basic level of quality (e.g. requirements for code review, tests, etc.) that is expected for any new code added.
+
+See also:
+
+- [Application code version management issues](#44-application-code-version-management-issues)
+- [Accumulated technical debt](#48-accumulated-technical-debt)
+- [Technical activity planning](#52-technical-activity-planning)
+
+
+## 6.9 Summary of recommendations
+
+- [Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
+
+    Keep it simple; separate concerns; avoid complex user interfaces if possible
+
+- [Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
+
+    Testing doesn't cost, it pays.
+
+- [Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
+
+    Fail fast: find out quickly when something breaks
+
+- [Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
+
+    Grow a system in small manageable pieces - it's surprising how quickly they accumulate.
+
+- [Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
+
+    Slay ghosts in the code before they slay you.
+
+- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
+
+    Don't get left behind when depending on a dynamic supporting ecosystem.
+
+- [Recommendation 7: minimal application examples](#67-recommendation-7--minimal-application-examples)
+
+    No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
+
+- [Recommendation 8: Give some thought to project governance](#68-give-some-thought-to-project-governance)
+
+    Establish norms for team interaction and quality expectations.
 
 
 # 7. Further sustainability issues requiring other investigation through the use-case
@@ -623,35 +772,5 @@ One lesson of the work reported here has been the value of a project having occa
 
 ----
 
-
 # Additional notes, to be removed
-
-@@ When initial draft is done, circulate draft to DDeR to ask about definition of sustainability, and more
-
-The following points should be covered somewhere in the main document above.
-
-@@ accumulated tech debt from a series of small projects...
-
-@@ multiple projects with different priorities forcing different development branches
-
-@@ who is the audience?  SSI?  Who funds SSI? Also RSEs working in DH. And material to help justify doing the work properly (use of link for educating researchers). Funders? @@
-
-## Governance
-
-- [ ] (from 2021-01-05): add reference to governance/update process to sustainability notes
-    - need to discuss in the context of DH research project constraints
-    - [x] Check out governance document from MELD.
-        - https://docs.google.com/document/d/1_ZBXb0QvDTauPmw1X_5w1vcHqtX6t7sm_BzbeZb6_uc/edit#heading=h.j3fekq3jzeiy
-        - where is the list of maintained apps and branches.
-            - should dependencies be noted?
-        - I don't entirely understand the bit about "must also apply it to all maintained branches"
-        - Plan to make minor process update to this - e.g. use GitHub review request.
-    - [ ] Also, make ref to older OSS Watch governance recommendations?
-
-KP: in framing report - think about what would be useful for a project like TanC or BitH, and offer recommendations that work towards that.
-
-KP: different testing approaches - what is effect on technical debt? @@@
-
-DL: noted the value of paying down tech debt away from pressures of immediate project (e.g. SSI3 work for MELD).
-
 
