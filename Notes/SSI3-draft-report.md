@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-- [Summary of conclusions](#summary-of-conclusions)
+- [Summary of observations and conclusions](#summary-of-observations-and-conclusions)
   * [Observations](#observations)
   * [Recommendations](#recommendations)
 - [1. Introduction](#1-introduction)
@@ -10,7 +10,7 @@
   * [1.2 Abbreviations and technical terms used](#12-abbreviations-and-technical-terms-used)
   * [1.3 What is software sustainability?](#13-what-is-software-sustainability-)
 - [2. Characteristics of DH research software](#2-characteristics-of-dh-research-software)
-- [3. Case study: Music Encoding and Linked Data](#3-case-study-music-encoding-and-linked-data)
+- [3. Case study: Music Encoding and Linked Data](#3-case-study--music-encoding-and-linked-data)
   * [3.1 MELD background](#31-meld-background)
     + [3.1.1 MELD applications](#311-meld-applications)
     + [3.1.2 Server and client code](#312-server-and-client-code)
@@ -21,8 +21,10 @@
     + [3.2.3 Observations](#323-observations)
       - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
       - [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+      - [Working with higher level abstractions](#working-with-higher-level-abstractions)
+      - [Callbacks and Promises](#callbacks-and-promises)
       - [Browser vs non-browser code](#browser-vs-non-browser-code)
-      - [Hello MELD series](#hello-meld-series)
+      - [Hello MELD application series](#hello-meld-application-series)
       - [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
 - [4. Sustainability issues encountered](#4-sustainability-issues-encountered)
   * [4.1 Working with a complex and dynamic software ecosystem](#41-working-with-a-complex-and-dynamic-software-ecosystem)
@@ -47,16 +49,15 @@
   * [5.2 Technical activity planning](#52-technical-activity-planning)
   * [5.3 Technical design choices](#53-technical-design-choices)
 - [6. Recommendations for DH software sustainability](#6-recommendations-for-dh-software-sustainability)
-  * [6.1 Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
-  * [6.2 Recommendation 2: Design for testing](#62-recommendation-2-design-for-testing)
-  * [6.3 Recommendation 3: Continuous integration](#63-recommendation-3-continuous-integration)
-  * [6.4 Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
-  * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
-  * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
-  * [6.7 Recommendation 7: Minimal application examples](#67-recommendation-7-minimal-application-examples)
-  * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
-  * [6.9 Summary of recommendations](#69-summary-of-recommendations)
-- [7. Further sustainability issues requiring other investigation through the use-case](#7-further-sustainability-issues-requiring-other-investigation-through-the-use-case)
+  * [6.1 Recommendation 1: Technical architecture](#61-recommendation-1--technical-architecture)
+  * [6.2 Recommendation 2: Design for testing](#62-recommendation-2--design-for-testing)
+  * [6.3 Recommendation 3: Continuous integration](#63-recommendation-3--continuous-integration)
+  * [6.4 Recommendation 4: Incremental development](#64-recommendation-4--incremental-development)
+  * [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5--dealing-with-technical-debt)
+  * [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6--keep-dependencies-up-to-date)
+  * [6.7 Recommendation 7: Minimal application examples](#67-recommendation-7--minimal-application-examples)
+  * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8--give-some-thought-to-project-governance)
+- [7. Proposed further investigations](#7-proposed-further-investigations)
 - [8. Acknowledgements](#8-acknowledgements)
 
 <!--
@@ -64,15 +65,25 @@
 -->
 
 
-# Summary of conclusions
+# Summary of observations and conclusions
 
-Each observation or recommendation summary item heading is linked to further discussion in this document.
+This section contains a précis of key observations and recommendations concerning sustainability arising from our work with Music Encoding and Linked Data (MELD) software, with references to more detailed description and discussion.
 
 ## Observations
+
+Each observation heading is linked to further discussion in this document.
 
 - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
 
     A complex, dynamic supporting environment can bring great benefits to a project in terms of ready-to-use functionality, but may also come with a price to pay when it comes to long-term sustainability.  Choose carefully!
+
+- [Working with higher level abstractions](#working-with-higher-level-abstractions)
+
+    Undocumented abstractions can increase rather than reduce developers' workload.  
+
+- [Callbacks and Promises](#callbacks-and-promises)
+
+    Asynchronous working ("Don't call me, I'll call you."), and local _vs_ global simplification.  Judicious use of abstractions (like Promises) can simplify a codebase, but also introduce new impediments to learning it.  Choose wisely and. where possible, use existing design patterns.
 
 - [Browser vs non-browser code](#browser-vs-non-browser-code)
 
@@ -82,7 +93,7 @@ Each observation or recommendation summary item heading is linked to further dis
 
    These problems underscore the value of automated tests.  Often, the hardest part of fixing a problem is finding it in the first place.
 
-- [Hello MELD application series](#hello-meld-series)
+- [Hello MELD application series](#hello-meld-application-series)
 
     Simple sample applications are useful for both helping new developers to use a system, and also to support testing.
 
@@ -92,6 +103,8 @@ Each observation or recommendation summary item heading is linked to further dis
 
 
 ## Recommendations
+
+Each recommendation summary heading is linked to further discussion in this document.
 
 - [Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
 
@@ -219,14 +232,14 @@ Because of the value in DH of capturing context and combining a wide range of da
 
 The foregoing points to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate.  Yet it is often the case that the real value in both scientific and humanities software-based research project is in the data.  The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.
 
-Following a trail blazed by the bioinformatics community, humanities researchers have started looking to linked data and knowledge graph technologies to create sustainable interoperable data (@@refs: linked pasts, linked art, EMLO, etc).  But even when using standard data models and formats, divergent or inconsistent use of vocabularies (ontologies) can create barriers to re-use.  And maintenance (updating and correction) of substantial datasets can require significant resource.
+Following a trail blazed by the bioinformatics community, humanities researchers have started looking to linked data and knowledge graph technologies to create sustainable interoperable data (e.g., [Linked pasts network](https://github.com/LinkedPasts/lp-network), [Linked art](https://linked.art/), [Mapping manuscript Migrations](https://mappingmanuscriptmigrations.org/), etc).  But even when using standard data models and formats, divergent or inconsistent use of vocabularies (ontologies) can create barriers to re-use.  And maintenance (updating and correction) of substantial datasets can require significant resource.
 
 
 # 3. Case study: Music Encoding and Linked Data
 
 ## 3.1 MELD background
 
-Music notation expresses performance instructions in a way commonly understood by musicians, but is limited to encoding static, a priori knowledge.  Music Encoding and Linked Data (MELD) [@@ref https://ora.ox.ac.uk/objects/uuid:945287f6-5dd3-4424-940c-b919b8ad2768] is a basis for communicating static and dynamic information between musicians, musicologists and others.  MELD is essentially a framework for distributed real-time annotation of digitally encoded music notation (including, but not limited to, musical scores).  MELD users and software agents create annotations of semantically distinguishable music concepts and relationships. These are associated with musical structure specified by the Music Encoding Initiative schema (MEI).  The use of standard Linked Data [@@RDF] and Web Annotations [@@] allows incorporation of further knowledge from non-musical sources.
+Music notation expresses performance instructions in a way commonly understood by musicians, but is limited to encoding static, a priori knowledge.  Music Encoding and Linked Data (MELD) [@@ref new website@@ https://ora.ox.ac.uk/objects/uuid:945287f6-5dd3-4424-940c-b919b8ad2768] is a basis for communicating static and dynamic information between musicians, musicologists and others.  MELD is essentially a framework for distributed real-time annotation of digitally encoded music notation (including, but not limited to, musical scores).  MELD users and software agents create annotations of semantically distinguishable music concepts and relationships. These are associated with musical structure specified by the Music Encoding Initiative schema (MEI).  The use of standard Linked Data [RDF](https://www.w3.org/TR/rdf11-concepts/) and [Web Annotations](https://www.w3.org/TR/annotation-model/) allows incorporation of further knowledge from non-musical sources.
 
 The MELD framework isn't entirely typical of the DH software characterization outlined above.  It was conceived from early in its lifetime as a framework that could be used in support of a range of music research applications.  The initial development was conducted and funded under the aegis of a large multi-centre multi-year engineering project, which was only later re-targeted for use in DH projects.  Yet it does still suffer from some of the environmental characteristics described:  collaboration with other researchers would give rise to requirements that had to be addressed very rapidly without time to consider sustainability issues.  And while the MELD framework itself benefited from the substantial efforts of a large research project, the specific applications under review have been created within the more limited resourcing of humanities projects.
 
@@ -336,7 +349,7 @@ As a result, the outputs of this exercise will focus less on specific implementa
 - A software testing framework for MELD based on the "Hello MELD" apps, and existing Javascript testing frameworks.
 - Documentation and a best practice report (this report), and [further details](https://github.com/oerc-music/meld-testing-ssi3/tree/main/Notes) in Github.  
 
-(@@NOTE: repo is currently private: need to separate public materials from internal notes, and adjust access accoprdingly.)
+(@@NOTE: repo is currently private: need to separate public materials from internal notes, and adjust access accordingly.)
 
 
 ### 3.2.3 Observations
@@ -361,7 +374,23 @@ Retro-fitting tests to existing applications has proved to be challenging, for r
 
 Something that the React/Redux framework makes possible is creating higher level abstractions that hide some of the gnarly details of how the software plumbing works.  This is a good thing, but the value of this approach can be difficult to realize if the abstractions used are not adequately described and documented.  Without supporting documentation, developers can be left needing to dig down through multiple layers of code abstraction to gain an understanding of how the abstractions are supposed to work.  (For example, when working on some MELD code, we spent a fair amount of time chasing callbacks through several layers of code to get a handle on how a moderately simple application was supposed to work.)
 
-Further, if new abstractions are introduced, this increases the importance of testing to confirm that the implementations do properly present the higher level capabilities that they are intended to provide.  When there are bugs in implementations of higher level abstractions, the effort required to isolate and fix them is much greater, especially when they are encountered at a later date when the original developer may no longer be involved with the project.
+Further, if new abstractions are introduced, this increases the importance of testing to confirm that the implementations do properly present the higher level capabilities that they are intended to provide.  When there are bugs in implementations of higher level abstractions, the effort required to isolate and fix them is much greater, especially when they are encountered at a later date when the original developer may no longer be involved with the project.  Test cases can provide an executable and automatically testable specification of how an abstraction is expected to behave.
+
+#### Callbacks and Promises
+
+This is a narrow technical point, but it may point to broader issues concerning system architecture choices concerning local vs global simplicity.  The broader issue here is one of local vs global simplification.  A key contributor to sustainable software is keeping it easy to understand (for new developers), which among other things means keeping its structure as simple as possible (but no simpler).  This can be a delicate balancing act, and inappropriate choices either way can lead to greater code complexity, and attendant sustainability difficulties.
+
+In traditional programming, when using a result that becomes available at some time after it is requested (such as reading data from an external source), it is common for the calling program to simply wait for the result to be available.  This is synchronous operation.  But in modern web software it is often not possible or maybe undesirable to do this, and the results must be handled asynchronously (i.e. some time later).  An approach that is often used is to have the invoking software provide a function (a "callback") that is called when the requested operation has completed.
+
+The problem with callbacks is that both the caller, the invoked function, and all intermediate functions need to incorporate the callback into their interface, which can leads to added complications in code paths that are unrelated to the operation being invoked.  In this way, callbacks can add arbitrary complexity that permeates a codebase:  changing one function may also require changes to a lot of unrelated code.  Thus, while conceptually quite simple, the ramifications of using callbacks are very extensive.  As a piece of software becomes more complex, managing and synchronizing with callbacks becomes more difficult.
+
+An alternative to callbacks is to use Promises, which are widely used in Javascript.  A [Promise (or Future)](https://en.wikipedia.org/wiki/Futures_and_promises) is a construct that is used to manage synchronization of , 
+
+Compared with callbacks, Promises are conceptually more difficult to understand in isolation.  But disciplined use can facilitate creation of easier-to-understand global structures in non-trivial software systems, by hiding the asynchronous aspects of operations from intervening code.
+
+This use of callbacks vs Promises illustrates a broader issue of local _vs_ global simplification.  Compared with callbacks, Promises introduce a new layer of abstraction that may make some code harder to understand in isolation, yet often make the overall global structure of the code easier to follow.  Many programming abstractions come with similar pros and cons, and it is not always easy to tell if using one will make the overall application more or less sustainable.
+
+Where such abstractions are introduced, it is probably better, where possible, to use ones that are already widely known and understood (like Promises).  There are a number of books containing catalogues of software design patterns that might help mto make such choices.  One of the better known of these is [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) by Gamma, Helm, Johnson and Vlissides, sometimes also known as the "Gang of Four".
 
 #### Browser vs non-browser code
 
@@ -373,7 +402,7 @@ The original intent to test the HTTP interface was dependent on a significant am
 
 Setting up even a very simple test environment for testing browser-based application code turned out to be challenging.  Theoretically, the testing framework would paper over any differences from the browser environment.  In practice, there were areas where differences would persist, and complex workarounds were adopted to avoid provoking these.
 
-#### Hello MELD series
+#### Hello MELD application series
 
 The "Hello MELD" applications were extremely helpful, both for learning the framework when bringing a new developer on board, as it allowed the various parts of a complex set of interfaces to be mastered separately, and creating code that was easier to test .  Also, the "Hello MELD" series of applications, which performed increasingly complex operations using MELD, provided fallback options when failures were encountered, allowing code-induced and environment-induced problems to be identified and separated.
 
@@ -384,6 +413,13 @@ It was important that the first of these "Hello MELD" applications was so simple
 The availability of occasional access to an experienced software developer was reported to be very valuable for project researchers who were primarily humanists, but engaged in software development.  While it can represent a significant cost to a project to employ a full-time developer, having part-time availability potentially offers many of the benefits of a full-time developer, and potentially facilitates training and technical capacity building for digital humanities projects.
 
 For MELD, the funded developer was at 20% FTE (1 day/week), with the effort split between (a) software maintenance and building testing capabilities (i.e. direct technical work), (b) supporting other project developers (indirect technical work) and (c) project management, SSI3 introspection and and reporting activities.  One day/week is relatively easy to schedule and manage, but the above suggests that 10%/0.5 day/week might be sufficient for technical support aspects.
+
+For this MELD sustainability work, we scheduled a week of remote [pair programming](https://en.wikipedia.org/wiki/Pair_programming#Remote_pair_programming) work as a way to build technical capacity for the [Beethoven in the House project](https://www.dfg.de/en/research_funding/announcements_proposals/2020/info_wissenschaft_20_01/index.html) using the MELD framework.  We found that Zoom screen sharing was a very effective technique for this (other video conference systems might work as well or better; we found the affordances provided by Zoom seemed about right for this work).  There is a [retrospective review](https://github.com/oerc-music/meld-hello-meld/blob/main/hello-meld-5/20210430-retrospective-review.md) of this activity with more details.
+
+More broadly, for supporting _Beethoven in the House_, the pattern we have followed has been a series of short online sessions building and understanding simple early incarnations of "Hello MELD", followed by the longer sprint to build a more complex application. This pattern seems to have been very effective, and reinforced value of simple early "Hello MELD" apps.  These focused development sessions did prove to be an effective way of making technical progress and transferring knowledge - asn important aspect of these sessions was actually doing the work, to see all the details worked out.
+
+An area we noticed that might particularly benefit from a little technical expertise is in early review of software architecture choices.  We observed some areas where code maintenance was complicated by some initial choices of software structure that resulted in repetition of logic that an alternative structure would allow to appear just once.  (Such repetition makes it more likely that subsequent software changes will introduce inconsistencies and non-obvious problems).  Such architecture review could occur at the start of software development, but it be more effective if performed when a very early prototype has been created, and the method of implementation has been clarified and tested.  (In the observed example, some 6 different types of "annotation" has been implemented, each with different data model and user interaction requirements.  If just one or two annotation types had been implemented at the point of review, it would have been easier to suggest a software structure that would facilitate adding new annotation types with minimal changes to existing code.)
+
 
 
 # 4. Sustainability issues encountered
@@ -471,7 +507,9 @@ There's no silver bullet for solving this - it's a perennial software problem.  
 
 - try to conceive an application as independent modules with separate concerns.  An example of this approach is Unix command line tools that can be used alone, or combined in various ways.   It's not always easy or possible for web applications, but we had some success with SOFA (an earlier MELD application) using Solid (LDP) for data storage, and chainable command line tools for various features.
 
-- don't let too much technical debt accumulate (for some value of "too much").
+- use abstractions judiciously.  Sometimes, a well chosen abstraction (or encapsulation of some common pattern of operation) can lead to simpler code.  But abstractions bring their own additional layer of knowledge required to understand, so should be selected with care.  (See also [Working with higher level abstractions](#working-with-higher-level-abstractions) and [Callbacks and Promises](#callbacks-and-promises).)
+
+- don't let too much technical debt accumulate (for some value of "too much").  (See also: [4.8 Accumulated technical debt](#48-accumulated-technical-debt).)
 
 ## 4.6 Run time error detection and reporting
 
@@ -588,8 +626,6 @@ Complex user interfaces require a lot of effort to build and maintain, and can b
 
 # 6. Recommendations for DH software sustainability
 
-@@ This basis for presentation - all this to background of "sunscreen"?? :):):) @@
-
 The following commentary is not intended to be prescriptive or definitive.   It is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
 
 ## 6.1 Recommendation 1: Technical architecture
@@ -603,6 +639,8 @@ In choosing to use a supporting application support platform, consider whether t
 See also:
 
 - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
+- [Working with higher level abstractions](#working-with-higher-level-abstractions)
+- [Callbacks and Promises](#callbacks-and-promises).)
 - [Browser vs non-browser code](#browser-vs-non-browser-code)
 - [Working with a complex and dynamic software ecosystem](#41-working-with-a-complex-and-dynamic-software-ecosystem)
 - [Application code complexity](#45-application-code-complexity)
@@ -700,7 +738,7 @@ No application is too trivial to be worth presenting: even if it appears pointle
 See also:
 
 - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
-- [Hello MELD series](#hello-meld-series)
+- [Hello MELD series](#hello-meld-application-series)
 - [Application code complexity](#45-application-code-complexity)
 - [Data preparation](#47-data-preparation)
 
@@ -716,42 +754,9 @@ See also:
 - [Technical activity planning](#52-technical-activity-planning)
 
 
-## 6.9 Summary of recommendations
+# 7. Proposed further investigations
 
-- [Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
-
-    Keep it simple; separate concerns; avoid complex user interfaces if possible
-
-- [Recommendation 2: Design for testing](#62-recommendation-2-design-for-testing)
-
-    Testing doesn't cost, it pays.
-
-- [Recommendation 3: Continuous integration](#63-recommendation-3-continuous-integration)
-
-    Fail fast: find out quickly when something breaks
-
-- [Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
-
-    Grow a system in small manageable pieces - it's surprising how quickly they accumulate.
-
-- [Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
-
-    Slay ghosts in the code before they slay you.
-
-- [Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
-
-    Don't get left behind when depending on a dynamic supporting ecosystem.
-
-- [Recommendation 7: Minimal application examples](#67-recommendation-7-minimal-application-examples)
-
-    No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.
-
-- [Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
-
-    Establish norms for team interaction and quality expectations.
-
-
-# 7. Further sustainability issues requiring other investigation through the use-case
+In this section, we suggest a number of sustainability issues that could usefully be investigated through the MELD use-case.
 
 The current short project has succeeded in exposing a number of sustainability issues with MELD, which this document has attempted to explain.  We have also described how many of these lessons are more widely applicable.
 
@@ -769,7 +774,9 @@ Yet there are many questions and issues about MELD sustainability that have been
 
     MELD is already being developed to use Solid servers for data storage - for both source data and intermediate results ("annotations").  But further exploration and testing is needed to better understand how Solid security models can best be used by DH research software.
 
-One lesson of the work reported here has been the value of a project having occasional access to a software engineer who has a good understanding of the goals and nature of the DH project, and experience with the kinds of issues faces by DH researchers.  Such occasional access can be very cost effective, yet is not always easy to arrange, and once in place can be difficult to maintain without some continuity of resource provision.    The MELD project is currently well-placed in this regard (@@@@ and continued support would exploit this, to the benefit of MELD and broader lessons for DH projects @@@@).
+One lesson of the work reported here has been the value of a project having occasional access to a software engineer who has a good understanding of the goals and nature of the DH project, and experience with the kinds of issues faces by DH researchers.  Such occasional access can be very cost effective, yet is not always easy to arrange, and once in place can be difficult to maintain without some continuity of resource provision.    The MELD project is currently well-placed in this regard.
+
+- Documentation of abstractions used.  One of the problems we observed was the use of application-specific abstractions that were not adequately described.  An exercise to identify and document the various abstractions introduced by MELD to simplify creation of music and musicology applications, and how they may be composed, would be useful in its own right for MLD developers, and may lead to identification of design patterns that are more widely applicable in DH applications.
 
 
 # 8. Acknowledgements
@@ -778,8 +785,11 @@ One lesson of the work reported here has been the value of a project having occa
 
 @@ (inc MELDfest participants)
 
+<!--
 
 ----
 
 # Additional notes, to be removed
+
+-->
 
