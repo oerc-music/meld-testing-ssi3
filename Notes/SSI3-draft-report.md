@@ -762,9 +762,9 @@ The current short project has succeeded in exposing a number of sustainability i
 
 Yet there are many questions and issues about MELD sustainability that have been raised, but which there has been no time to investigate.  Some of these questions and issues include:
 
-- Further development of MELD testing.  MELD is currently undergoing a version freeze, and this would be a great opportunity to "fix" the version functionality upon which applications depend in a test suite.  This would allow any changes to MELD that break this functionality to be detected quickly, and steps taken to ensure that dependent applications continue to work:  the sustainability advantages here are many-fold:  sustaining MELDitself, and also the diverse applications that depend upon it.
+- Further development of MELD testing.  MELD is currently undergoing a version freeze, and this would be a great opportunity to "fix" the version functionality upon which applications depend in a test suite.  This would allow any changes to MELD that break this functionality to be detected quickly, and steps taken to ensure that dependent applications continue to work:  the sustainability advantages here are many-fold:  sustaining MELD itself, and also the diverse applications that depend upon it.
 
-- Example test fixtures and "mocks:.  These are aspects of testing that allow tests to be run independently of a complex deployment setup.  This in turn makes the tests easier to run (hence more likely to be used), and also facilitates continuous integration
+- Example test fixtures and "mocks".  These are aspects of testing that allow tests to be run independently of a complex deployment setup.  This in turn makes the tests easier to run (hence more likely to be used), and also facilitates continuous integration
 
 - Continuous Integration (CI) setup.  The benefits of CI have been discussed above, but the present project has not been able to explore setting up a CI environment.
 
@@ -774,9 +774,9 @@ Yet there are many questions and issues about MELD sustainability that have been
 
     MELD is already being developed to use Solid servers for data storage - for both source data and intermediate results ("annotations").  But further exploration and testing is needed to better understand how Solid security models can best be used by DH research software.
 
-One lesson of the work reported here has been the value of a project having occasional access to a software engineer who has a good understanding of the goals and nature of the DH project, and experience with the kinds of issues faces by DH researchers.  Such occasional access can be very cost effective, yet is not always easy to arrange, and once in place can be difficult to maintain without some continuity of resource provision.    The MELD project is currently well-placed in this regard.
-
 - Documentation of abstractions used.  One of the problems we observed was the use of application-specific abstractions that were not adequately described.  An exercise to identify and document the various abstractions introduced by MELD to simplify creation of music and musicology applications, and how they may be composed, would be useful in its own right for MLD developers, and may lead to identification of design patterns that are more widely applicable in DH applications.
+
+One lesson of the work reported here has been the value of a project having occasional access to a software engineer who has a good understanding of the goals and nature of the DH project, and experience with the kinds of issues faces by DH researchers.  Such occasional access can be very cost effective, yet is not always easy to arrange, and once in place can be difficult to maintain without some continuity of resource provision.    The MELD project is currently well-placed in this regard.
 
 
 # 8. Acknowledgements
@@ -790,6 +790,18 @@ One lesson of the work reported here has been the value of a project having occa
 ----
 
 # Additional notes, to be removed
+
+Remaining steps:
+
+1. Wait for new MELD website to be published
+
+2. Add acknowledgemenbts using web site as source 
+
+3. Make SSI report site public (but not advertised) (check contents)
+
+4. Circulate to MELDfest attendees for comment
+
+To be done by local meeting 25 May so we can make choices for final (effective) month of project - e.g., SSI3 continuation.
 
 -->
 
