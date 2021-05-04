@@ -66,11 +66,13 @@
 
 # Summary of conclusions
 
+Each observation or recommendation summary item heading is linked to further discussion in this document.
+
 ## Observations
 
 - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
 
-    A complex, dynamic supporting environment can bring great benefits to a project in terms of ready-to-use functionality, but may also come with a price to pay whenit comes to long-term sustainability.  Choose carefully!
+    A complex, dynamic supporting environment can bring great benefits to a project in terms of ready-to-use functionality, but may also come with a price to pay when it comes to long-term sustainability.  Choose carefully!
 
 - [Browser vs non-browser code](#browser-vs-non-browser-code)
 
@@ -82,11 +84,11 @@
 
 - [Hello MELD application series](#hello-meld-series)
 
-    Simple applications are useful for both helping new developers to use a system, and also to support testing.
+    Simple sample applications are useful for both helping new developers to use a system, and also to support testing.
 
 - [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
 
-    For projects that don't justify a full-time software developer, having occasional but ongoing access to software engineering expertise can be useful, both for the project itself, and also for capacity building.
+    For projects that don't justify a full-time software developer, having occasional but ongoing access to software engineering expertise can be useful, both for the project itself, and also for capacity building within the project.
 
 
 ## Recommendations
@@ -162,7 +164,7 @@ The main body of the report is structured as:
 
 - SSI - Software Sustainability Institute: see https://www.software.ac.uk/about
 
-- SSI3 - EPSRC-funded phase 3 activity of SSI: see https://gtr.ukri.org/projects?ref=EP%2FS021779%2F1
+- SSI3 - EPSRC-funded phase 3 activity of SSI: see [The UK Software Sustainability Institute: Phase 3](https://gtr.ukri.org/projects?ref=EP%2FS021779%2F1)
 
 
 
@@ -183,6 +185,8 @@ Other disruptive forces include hardware failures that necessitate re-installati
 > My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.  
 
 For a longer active deployment life, an active process to keep all software components current is likely to be required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.  Upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
+
+See also: [Why software is like a puppy](https://www.software.ac.uk/blog/2019-04-26-why-software-puppy), which contains this quote attributed to Carole Goble: “Tell your funders and PI’s that software is like a puppy. Puppies aren’t free, you got to feed them, they will get old, and they will die. Funders don’t understand software – but they know about puppies.”
 
 
 # 2. Characteristics of DH research software
@@ -352,6 +356,12 @@ These are problems that automated tests, and especially continuous integration, 
 Effective testing is a cornerstone of software sustainability.
 
 Retro-fitting tests to existing applications has proved to be challenging, for reasons that range from setting up a test environment that sufficiently mimics the application environment, to accessing internal interfaces that expose application logic to be tested.
+
+#### Working with higher level abstractions
+
+Something that the React/Redux framework makes possible is creating higher level abstractions that hide some of the gnarly details of how the software plumbing works.  This is a good thing, but the value of this approach can be difficult to realize if the abstractions used are not adequately described and documented.  Without supporting documentation, developers can be left needing to dig down through multiple layers of code abstraction to gain an understanding of how the abstractions are supposed to work.  (For example, when working on some MELD code, we spent a fair amount of time chasing callbacks through several layers of code to get a handle on how a moderately simple application was supposed to work.)
+
+Further, if new abstractions are introduced, this increases the importance of testing to confirm that the implementations do properly present the higher level capabilities that they are intended to provide.  When there are bugs in implementations of higher level abstractions, the effort required to isolate and fix them is much greater, especially when they are encountered at a later date when the original developer may no longer be involved with the project.
 
 #### Browser vs non-browser code
 
