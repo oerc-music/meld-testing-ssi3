@@ -349,8 +349,6 @@ As a result, the outputs of this exercise will focus less on specific implementa
 - A software testing framework for MELD based on the "Hello MELD" apps, and existing Javascript testing frameworks.
 - Documentation and a best practice report (this report), and [further details](https://github.com/oerc-music/meld-testing-ssi3/tree/main/Notes) in Github.  
 
-(@@NOTE: repo is currently private: need to separate public materials from internal notes, and adjust access accordingly.)
-
 
 ### 3.2.3 Observations
 
