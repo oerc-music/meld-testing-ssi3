@@ -35,18 +35,20 @@ Also in the initial plan was to focus on the HTTP interface between MELD applica
 
 ### 2021: January
 
-- [ ] Flesh out further "Hello MELD" apps, with testing
+- [x] Flesh out further "Hello MELD" apps, with testing
 - [ ] Organize test suite for meld-clients-core, based initially on the "Hello MELD" tests
 - [ ] Review text fixture setup for MELD publication (e.g. Solid and/or mocks?)
-- [ ] Updates to SSI3 report
+- [x] Updates to SSI3 report
+
+Due to issues with test framework, attention has been switched to "Hello MELD" and ensuring the issues are captured in the sustainability report.
 
 
 ### 2021: February
 
-- [ ] Review Lohengrin MELD app
-- [ ] Review Delius MELD app
-- [ ] mini MELDfest: present "Hello MELD and initial testing framework"
-- [ ] Updates to SSI3 report
+- [x] Review Lohengrin MELD app
+- [x] Review Delius MELD app
+- [x] mini MELDfest: present "Hello MELD and initial testing framework"
+- [x] Updates to SSI3 report
 
 
 ### 2021: March
@@ -54,22 +56,22 @@ Also in the initial plan was to focus on the HTTP interface between MELD applica
 - [ ] Investigate performance/bottleneck monitoring as part of tests
 - [ ] Flesh out test plan for graph traversal
 - [ ] Expand graph traversal tests per plan
-- [ ] Updates to SSI3 report
+- [x] Updates to SSI3 report
 
 
 ### 2021: April
 
 - [ ] With tests in place, look at graph traversal refactoring to improve performance
-- [ ] Review sustainability lessons to date
-- [ ] Articulate possible follow-on work
-- [ ] Draft initial SSI3 report with suggestions for further developments
+- [x] Review sustainability lessons to date
+- [x] Articulate possible follow-on work
+- [x] Draft initial SSI3 report with suggestions for further developments
 
 
 ### 2021: May
 
-- [ ] Circulate sustainability report to SSI team
+- [x] Circulate sustainability report to SSI team
 - [ ] Solicit feedback on sustainability report
-- [ ] Stabilize refactored graph traversal code
+- [x] Stabilize refactored graph traversal code (MELD 2.0)
 - [ ] Investigate CI options for MELD core
 
 

@@ -239,7 +239,7 @@ Following a trail blazed by the bioinformatics community, humanities researchers
 
 ## 3.1 MELD background
 
-Music notation expresses performance instructions in a way commonly understood by musicians, but is limited to encoding static, a priori knowledge.  Music Encoding and Linked Data (MELD) [@@ref new website@@ https://ora.ox.ac.uk/objects/uuid:945287f6-5dd3-4424-940c-b919b8ad2768] is a basis for communicating static and dynamic information between musicians, musicologists and others.  MELD is essentially a framework for distributed real-time annotation of digitally encoded music notation (including, but not limited to, musical scores).  MELD users and software agents create annotations of semantically distinguishable music concepts and relationships. These are associated with musical structure specified by the Music Encoding Initiative schema (MEI).  The use of standard Linked Data [RDF](https://www.w3.org/TR/rdf11-concepts/) and [Web Annotations](https://www.w3.org/TR/annotation-model/) allows incorporation of further knowledge from non-musical sources.
+Music notation expresses performance instructions in a way commonly understood by musicians, but is limited to encoding static, a priori knowledge.  [Music Encoding and Linked Data (MELD)]()https://meld.web.ox.ac.uk/) is a basis for communicating static and dynamic information between musicians, musicologists and others.  MELD is essentially a framework for distributed real-time annotation of digitally encoded music notation (including, but not limited to, musical scores).  MELD users and software agents create annotations of semantically distinguishable music concepts and relationships. These are associated with musical structure specified by the Music Encoding Initiative schema (MEI).  The use of standard Linked Data [RDF](https://www.w3.org/TR/rdf11-concepts/) and [Web Annotations](https://www.w3.org/TR/annotation-model/) allows incorporation of further knowledge from non-musical sources.
 
 The MELD framework isn't entirely typical of the DH software characterization outlined above.  It was conceived from early in its lifetime as a framework that could be used in support of a range of music research applications.  The initial development was conducted and funded under the aegis of a large multi-centre multi-year engineering project, which was only later re-targeted for use in DH projects.  Yet it does still suffer from some of the environmental characteristics described:  collaboration with other researchers would give rise to requirements that had to be addressed very rapidly without time to consider sustainability issues.  And while the MELD framework itself benefited from the substantial efforts of a large research project, the specific applications under review have been created within the more limited resourcing of humanities projects.
 
@@ -547,7 +547,7 @@ Technical debt refers here to software additions and patches that are used to ge
 
 When developing software under time-and-resource constraints, it is often expedient to take short-cuts to validate an approach, or to demonstrate a result.  Individually, these shortcuts are often not problematic, but if they are allowed to accumulate in a codebase the resulting software can quickly become harder to understand and update.  And faced with with such difficulty, a developer will often use additional shortcuts or workarounds to avoid having to deal with the difficult code.  In this way, the accumulation of technical debt can grow exponentially, and the speed of making changes and fixes will decay accordingly.
 
-Further, for MELD, technical debt was accrued over a number of smaller side projects (MELD applications), each with their own priorities for what MEWLD should provide, but for which long term maintenance of MELD itself was not a central concern (apart from the fact that they would ultimately depend on sustainability of MELD).   Such debt accumulates when each side-project makes its own separate enhancements to the MELD code base, resulting (among other things) in code management issues [noted previously](#44-application-code-version-management-issues).
+Further, for MELD, technical debt was accrued over a number of smaller side projects (MELD applications), each with their own priorities for what MELD should provide, but for which long term maintenance of MELD itself was not a central concern (apart from the fact that they would ultimately depend on sustainability of MELD).   Such debt accumulates when each side-project makes its own separate enhancements to the MELD code base, resulting (among other things) in code management issues [noted previously](#44-application-code-version-management-issues).
 
 Some technical debt recovery was performed as part of this sustainability work, and it was noticed by other project members that there is value in paying down technical debt separately from immediate pressures of application development.
 
@@ -779,9 +779,20 @@ One lesson of the work reported here has been the value of a project having occa
 
 # 8. Acknowledgements
 
-@@ (TROMPA, BiTH, Lohengrin, Delius, FAST, Unlocking musicology)
+This work was funded by the [Software Sustainability Institute (SSI)](https://www.software.ac.uk/).
 
-@@ (inc MELDfest participants)
+It was performed with collaboration and feedback from the following MELD-related projects:
+
+* [MELD framework](https://meld.web.ox.ac.uk/), part of the EPSRC-funded [FAST project](http://www.semanticaudio.ac.uk/).
+* [Unlocking Musicology](https://um.web.ox.ac.uk/)
+* [Companion for Long-term Analyses of Rehearsal Attempts (CLARA)](https://iwk.mdw.ac.at/trompa-clara/).
+* [Digital Delius](https://meld.web.ox.ac.uk/apps#collapse2913841)
+
+Thanks to participants of the online [MELD mini-fest](https://docs.google.com/document/d/1TWl-lT7NI-GSIcXsQ3VyaWPNa2DEOh81Q-Jop7YJye0/edit#) meeting on 8 February 2021 for comments and feedback on this work: Kevin Page, David Lewis, David Weigl, Mark Saccomano, Laurent Pugin, Stefan Münnich, David John Baker, Cynthia Liem.
+
+<!--
+@@ (CLARA=, BiTH, Lohengrin=, Delius=, FAST=, Unlocking musicology=)
+-->
 
 <!--
 
@@ -791,13 +802,13 @@ One lesson of the work reported here has been the value of a project having occa
 
 Remaining steps:
 
-1. Wait for new MELD website to be published
+1. [x] Wait for new MELD website to be published
 
-2. Add acknowledgemenbts using web site as source 
+2. [x] Add acknowledgements using web site as source 
 
-3. Make SSI report site public (but not advertised) (check contents)
+3. [x] Make SSI report site public (but not advertised) (check contents)
 
-4. Circulate to MELDfest attendees for comment
+4. [ ] Circulate to MELDfest attendees for comment
 
 To be done by local meeting 25 May so we can make choices for final (effective) month of project - e.g., SSI3 continuation.
 
