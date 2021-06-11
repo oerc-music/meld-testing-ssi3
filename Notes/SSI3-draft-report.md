@@ -26,6 +26,7 @@
       - [Browser vs non-browser code](#browser-vs-non-browser-code)
       - [Hello MELD application series](#hello-meld-application-series)
       - [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
+      - [Distributed collaborative working](#distributed-collaborative-working)
 - [4. Sustainability issues encountered](#4-sustainability-issues-encountered)
   * [4.1 Working with a complex and dynamic software ecosystem](#41-working-with-a-complex-and-dynamic-software-ecosystem)
     + [Suggested mitigations](#suggested-mitigations)
@@ -59,6 +60,7 @@
   * [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8--give-some-thought-to-project-governance)
 - [7. Proposed further investigations](#7-proposed-further-investigations)
 - [8. Acknowledgements](#8-acknowledgements)
+- [Additional notes, to be removed](#additional-notes--to-be-removed)
 
 <!--
 <a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>
@@ -100,6 +102,10 @@ Each observation heading is linked to further discussion in this document.
 - [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
 
     For projects that don't justify a full-time software developer, having occasional but ongoing access to software engineering expertise can be useful, both for the project itself, and also for capacity building within the project.
+
+- [Distributed collaborative working](#distributed-collaborative-working)
+
+    Remote collaboration on software development is hard, especially when there are no established anchor points.  Good communication tools can help, but are not a panacea.
 
 
 ## Recommendations
@@ -180,7 +186,6 @@ The main body of the report is structured as:
 - SSI3 - EPSRC-funded phase 3 activity of SSI: see [The UK Software Sustainability Institute: Phase 3](https://gtr.ukri.org/projects?ref=EP%2FS021779%2F1)
 
 
-
 ## 1.3 What is software sustainability?
 
 There is much discussion of software sustainability, but it's hard to find a consensus definition of what it means.  It has been described thus: "Software sustainability covers a broad range of concepts, related to both environmental sustainability, and the longevity of a codebase." [1].
@@ -197,7 +202,7 @@ Other disruptive forces include hardware failures that necessitate re-installati
 
 > My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.  
 
-For a longer active deployment life, an active process to keep all software components current is likely to be required.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.  Upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
+For a longer active deployment life, an active process to keep all software components current is likely needed.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.  Upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.
 
 See also: [Why software is like a puppy](https://www.software.ac.uk/blog/2019-04-26-why-software-puppy), which contains this quote attributed to Carole Goble: “Tell your funders and PI’s that software is like a puppy. Puppies aren’t free, you got to feed them, they will get old, and they will die. Funders don’t understand software – but they know about puppies.”
 
@@ -221,8 +226,10 @@ Environment:
 - Unclear initial software requirements - the role of software in DH may be to facilitate exploration of data with a view to forming and evaluating scholarly conclusions.  Such software may be written _ad hoc_ by researchers without any software engineering training. 
 - Difficulty of obtaining funding for software maintenance that is not directly linked to new research; yet one of the reasons for sustaining software is to allow researchers without software development skills to benefit from existing developments.
 - DH scholars and software engineers have diverse perspectives, all of which contribute to achieving useful results.  The requirements for long-lived research software need to address both scholarly needs and engineering constraints.
+- Research collaborations are commonly spread over multiple institutions, often in different countries.
 - Software development is a skill in high demand, and it is common for software developers to leave for better-funded work.  This can result in loss of knowledge that is needed to work on the software.  And software maintenance can be tedious, uninteresting work;  many developers would rather work on new software in which they have a greater sense of ownership.  Loss of developers can be mitigated by attention to good engineering practices, but may needs effort that is not costed in a research proposal.
 - Scholars, who may themselves be able to write small programs for a specific purpose, sometimes fail to recognize that "You just can't do things for no money", especially when it comes to writing software to serve multiple users over an extended period of time.  The effects of a lack of engineering resources may then be perceived as lack of competence.
+- The [Verovio design principles](https://book.verovio.org/introduction/history.html#design-principles) note that "digital humanities projects [...] have slow development cycles in comparison with the development of the technology itself".
 
 > Of course, not all DH software is like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.
 
@@ -245,7 +252,7 @@ The MELD framework isn't entirely typical of the DH software characterization ou
 
 The MELD framework has a number of components, two of which are:
 
-1. [`meld-clients-core`](https://github.com/oerc-music/meld-clients-core): support code for MELD client (browser) applications based on the Javascript React framework.  This is a powerful, popular and widely used framework,m created by Facebook, for implementing Web browser applications.  But with great power comes considerable complexity, and becoming conversant with React can take some considerable effort even for someone already familiar with Javascript.  Further, React makes heavy use of modern Javascript capabilities and patterns that are a considerable departure from traditional programming models.
+1. [`meld-clients-core`](https://github.com/oerc-music/meld-clients-core): support code for MELD client (browser) applications based on the Javascript React framework.  This is a powerful, popular and widely used framework, created by Facebook, for implementing Web browser applications.  But with great power comes considerable complexity, and becoming conversant with React can take some considerable effort even for someone already familiar with Javascript.  Further, React makes heavy use of modern Javascript capabilities and patterns that are a considerable departure from traditional programming models.
 
 2. [`meld-web-services`](https://github.com/oerc-music/meld-web-services): a set of web services to support MELD client applications.  Historically, these were custom code to support sessions and annotations, but much of this is being replaced by off-the-shelf [Linked Data Platform (LDP)](https://www.w3.org/TR/ldp/) servers (e.g. [GOLD](https://github.com/linkeddata/gold), and more recently using various deployments of [Solid](https://github.com/solid/specification/).
 
@@ -286,7 +293,7 @@ Traditional web applications were arranged with most of the application logic ap
 
 Modern web applications often share the application logic between the server and client components, with client code (usually as Javascript programs) retrieved from a server as and when it is needed.
 
-The traditional and modern approaches each have advantages.  A key advantage of using client code for application logic is that it removes load from the server, freeing it up to respond to many more requests from multiple users using the same hardware.  This can come at the cost of increased application complexity, with code needing to support a range of different Javascript implementations in different browsers, and even between different versions of the same browser.
+The traditional and modern approaches each have advantages.  A key advantage of using client code for application logic is that it removes load from the server, freeing it up to respond to many more requests from multiple users using the same service.  This can come at the cost of increased application complexity, with code needing to support a range of different Javascript implementations in different browsers, and even between different versions of the same browser.
 
 The MELD framework pushes a lot of application logic to the client (browser), leaving open a possibility that the server side functions can be handled by off-the-shelf server software (e.g. [Solid](https://github.com/solid/specification/)).
 
@@ -298,15 +305,15 @@ The MELD client libraries are implemented in the Javascript programming language
 
 React is a Javascript library for building user interfaces.
 
-Redux describes itself as a predictable state container for Javascript applications
+Redux describes itself as a predictable state container for Javascript applications.
 
 These powerful frameworks provide a lot of functionality that can be used by MELD applications, but also bring a fair degree of added complexity, which in turn presents challenges for sustainability of MELD applications.
 
 ## 3.2 Approach
 
-The original intent of this project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on [SOFA and MELD](https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md) as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing and dealing with several specific software sustainability issues.
+The original intent of this sustainability project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on [SOFA and MELD](https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md) as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing and dealing with several specific software sustainability issues.
 
-On closer examination, the MELD functionality in the applications we surveyed for this project, [Lohengrin time machine study](https://github.com/oerc-music/ForbiddenQuestion) and [Delius annotation](https://github.com/oerc-music/delius-annotation), was mainly visible only to internal API calls, so a different testing approach was needed.
+We found that much of the MELD functionality in the applications we surveyed for this project, [Lohengrin time machine study](https://github.com/oerc-music/ForbiddenQuestion) and [Delius annotation](https://github.com/oerc-music/delius-annotation), was visible only to internal API calls, so a different testing approach was needed.
 
 ### 3.2.1 Initial plan
 
@@ -314,14 +321,14 @@ The original plan of work was to build upon [command line tooling](https://githu
 
 These commands could then be deployed in shell scripts (as we did for SOFA) to act as a basic framework for unit- and integration test suites, which could subsequently be used to confirm that the applications were behaving as intended, and also that the MELD components were behaving as expected by applications.
 
-The plan envisaged focusing on a few MELD applications:
+We envisaged focusing on a few MELD applications:
 
 - [Lohengrin TimeMachine Digital Companion](https://um.web.ox.ac.uk/lohengrin).
 - [Delius in performance](https://bl.linkedmusic.org/)
 - TROMPA's [CLARA rehearsal companion](https://trompamusic.eu/index.php/instrumental-players)
 - Historical musicology with mixed media digital archives (Text, audio, image, score from British Library, New York Philharmonic Archives)
 
-The whole process would use MELD as a reflective case study of software sustainability in DH projects.  While the MELD framework itself benefited from the substantial research efforts of FAST, the apps above have been created within the more limited resourcing of humanities projects.  This is an opportunity for SSI to reflect on effective software sustainability practice in such situations, which are typical for DH.
+Our study would use MELD as a reflective case study of software sustainability in DH projects.  While the MELD framework itself benefited from the substantial research efforts of FAST, the apps above have been created within the more limited resourcing of humanities projects.  This is an opportunity for SSI to reflect on effective software sustainability practice in such situations, which are typical for DH.
 
 Intended outputs of this work were to be:
 
@@ -360,9 +367,9 @@ But React is a complex, dynamic environment with many supporting tools.  This gi
 
 #### Undetected problems in MELD code
 
-There were a number of areas where the MELD support code did not behave in ways that were expected.  This would cause problems with existing applications, which might still work only by virtue of unrecorded changes made to the runtime environment, but which would fail when installed in a new environment.   When encountered, these failures are often hard to track down and fix.
+There were a number of areas where the MELD support code did not behave as expected.  This would cause problems with existing applications, which might still work only by virtue of unrecorded changes made to the runtime environment, but which would fail when installed in a new environment.   When encountered, these failures are often hard to track down and fix.
 
-These are problems that automated tests, and especially continuous integration, are intended to catch.  The "Hello MELD" applications proved helpful when it came to isolating and fixing such failures.
+These are problems that automated tests, and especially continuous integration, are intended to catch.  The "Hello MELD" applications proved helpful when it came to isolating such failures, though repairs have proved harder to effect.
 
 Effective testing is a cornerstone of software sustainability.
 
@@ -376,13 +383,13 @@ Further, if new abstractions are introduced, this increases the importance of te
 
 #### Callbacks and Promises
 
-This is a narrow technical point, but it may point to broader issues concerning system architecture choices concerning local vs global simplicity.  The broader issue here is one of local vs global simplification.  A key contributor to sustainable software is keeping it easy to understand (for new developers), which among other things means keeping its structure as simple as possible (but no simpler).  This can be a delicate balancing act, and inappropriate choices either way can lead to greater code complexity, and attendant sustainability difficulties.
+This is a narrow technical point, but it may point to broader issues concerning system architecture choices concerning local vs global simplification.  A key contributor to sustainable software is keeping it easy to understand (for new developers), which among other things means keeping its structure as simple as possible (but no simpler).  This can be a delicate balancing act, and inappropriate choices either way can lead to greater code complexity, and attendant sustainability difficulties.
 
-In traditional programming, when using a result that becomes available at some time after it is requested (such as reading data from an external source), it is common for the calling program to simply wait for the result to be available.  This is synchronous operation.  But in modern web software it is often not possible or maybe undesirable to do this, and the results must be handled asynchronously (i.e. some time later).  An approach that is often used is to have the invoking software provide a function (a "callback") that is called when the requested operation has completed.
+In traditional programming, when using a result that becomes available at some time after it is requested (such as reading data from an external source), it is common for the calling program to simply wait for the result to be available.  This is synchronous operation.  But in modern web software it is often not desirable or possible to do this, and the results must be handled asynchronously (i.e. some time later).  An approach that is often used is to have the invoking software provide a function (a "callback") that is called when the requested operation has completed.
 
 The problem with callbacks is that both the caller, the invoked function, and all intermediate functions need to incorporate the callback into their interface, which can leads to added complications in code paths that are unrelated to the operation being invoked.  In this way, callbacks can add arbitrary complexity that permeates a codebase:  changing one function may also require changes to a lot of unrelated code.  Thus, while conceptually quite simple, the ramifications of using callbacks are very extensive.  As a piece of software becomes more complex, managing and synchronizing asynchronous operations with callbacks becomes more difficult.
 
-An alternative to callbacks is to use Promises, which are widely used in Javascript.  A [Promise (or Future)](https://en.wikipedia.org/wiki/Futures_and_promises) is a new abstraction that is used to manage synchronization of asynchronous operations.  Compared with callbacks, Promises are conceptually more difficult to understand.  But disciplined use of them can facilitate creation of easier-to-understand global structures in non-trivial software systems, by hiding the asynchronous aspects of operations from intervening code.
+An alternative to callbacks is to use Promises, which are widely used in Javascript.  A [Promise (or Future)](https://en.wikipedia.org/wiki/Futures_and_promises) is a new abstraction that is used to manage synchronization of asynchronous operations.  Compared with callbacks, Promises are conceptually more difficult to understand.  But disciplined use of Promises can facilitate creation of easier-to-understand global structures in non-trivial software systems, by hiding the asynchronous aspects of operations from intervening code.
 
 This use of callbacks vs Promises illustrates a broader issue of local _vs_ global simplification.  Compared with callbacks, Promises introduce a new layer of abstraction that may make some code harder to understand in isolation, yet often make the overall global structure of the code easier to follow.  Many programming abstractions come with similar pros and cons, and it is not always easy to tell if using one will make the overall application more or less sustainable.
 
@@ -408,19 +415,27 @@ It was important that the first of these "Hello MELD" applications was so simple
 
 The availability of occasional access to an experienced software developer was reported to be very valuable for project researchers who were primarily humanists, but engaged in software development.  While it can represent a significant cost to a project to employ a full-time developer, having part-time availability potentially offers many of the benefits of a full-time developer, and potentially facilitates training and technical capacity building for digital humanities projects.
 
-For MELD, the funded developer was at 20% FTE (1 day/week), with the effort split between (a) software maintenance and building testing capabilities (i.e. direct technical work), (b) supporting other project developers (indirect technical work) and (c) project management, SSI3 introspection and and reporting activities.  One day/week is relatively easy to schedule and manage, but the above suggests that 10%/0.5 day/week might be sufficient for technical support aspects.
-
-For this MELD sustainability work, we scheduled a week of remote [pair programming](https://en.wikipedia.org/wiki/Pair_programming#Remote_pair_programming) work as a way to build technical capacity for the [Beethoven in the House project](https://www.dfg.de/en/research_funding/announcements_proposals/2020/info_wissenschaft_20_01/index.html) using the MELD framework.  We found that Zoom screen sharing was a very effective technique for this (other video conference systems might work as well or better; we found the affordances provided by Zoom seemed about right for this work).  There is a [retrospective review](https://github.com/oerc-music/meld-hello-meld/blob/main/hello-meld-5/20210430-retrospective-review.md) of this activity with more details.
-
-More broadly, for supporting _Beethoven in the House_, the pattern we have followed has been a series of short online sessions building and understanding simple early incarnations of "Hello MELD", followed by the longer sprint to build a more complex application. This pattern seems to have been very effective, and reinforced value of simple early "Hello MELD" apps.  These focused development sessions did prove to be an effective way of making technical progress and transferring knowledge - asn important aspect of these sessions was actually doing the work, to see all the details worked out.
+For MELD, the funded developer was at 20% FTE (1 day/week) for the duration of our study, with the effort split between (a) software maintenance and building testing capabilities (i.e. direct technical work), (b) supporting other project developers (indirect technical work) and (c) project management, SSI3 introspection and and reporting activities.  One day/week is relatively easy to schedule and manage, but the above suggests that 10%/0.5 day/week might be sufficient for technical support aspects.
 
 An area we noticed that might particularly benefit from a little technical expertise is in early review of software architecture choices.  We observed some areas where code maintenance was complicated by some initial choices of software structure that resulted in repetition of logic that an alternative structure would allow to appear just once.  (Such repetition makes it more likely that subsequent software changes will introduce inconsistencies and non-obvious problems).  Such architecture review could occur at the start of software development, but it be more effective if performed when a very early prototype has been created, and the method of implementation has been clarified and tested.  (In the observed example, some 6 different types of "annotation" has been implemented, each with different data model and user interaction requirements.  If just one or two annotation types had been implemented at the point of review, it would have been easier to suggest a software structure that would facilitate adding new annotation types with minimal changes to existing code.)
 
+#### Distributed collaborative working
+
+Work on MELD software involved researchers from multiple institutions from UK, Germany, Austria, (@@@ and more?).  Software development by a widely dispersed team is challenged by the disparate goals of different groups and conflicting demands on their time, complicating the process of scheduling meetings to work through issues.  On the positive side, 2020 (the year of the Covid-19 pandemic) has seen a rise of tools to facilitate remote working, notably much improved videoconferencing systems.  Yet we have also seen that effective participation in remote meetings is much harder work, and more draining, than face-to-face meeting.  The MELD team has long used Slack instant messaging as a medium for ad-hoc coordination of activities and discussion of technical issues.  This is not new, and continued to be an important channel for communication.
+
+For the MELD sustainability work, we scheduled a week of remote [pair programming](https://en.wikipedia.org/wiki/Pair_programming#Remote_pair_programming) work as a way to build MELD technical capacity for the [Beethoven in the House project](https://www.dfg.de/en/research_funding/announcements_proposals/2020/info_wissenschaft_20_01/index.html).  We found that Zoom screen sharing was an effective technique for this (other video conference systems might work as well or better; we found the affordances provided by Zoom seemed about right for this work).  There is a [retrospective review](https://github.com/oerc-music/meld-hello-meld/blob/main/hello-meld-5/20210430-retrospective-review.md) of this activity with more details.
+
+More broadly, for supporting _Beethoven in the House_, the pattern we have followed has been a series of short online development sessions building and understanding simple early incarnations of "Hello MELD", followed by the longer sprint to build a more complex application. This pattern seems to have been very effective, and reinforced value of simple early "Hello MELD" apps.  These focused development sessions did prove to be an effective way of making technical progress and transferring knowledge - an important aspect of these sessions was actually doing the work, to see all the details worked out.  Yet these online pair programming sessions are hard work, and we found it most effective to have frequent shorter online sessions (an hour or so) with longer breaks between for participants to work separately and consolidate their knowledge.  This observation was offered by Mark Saccomanom, who participated in this process:
+
+> I think any project needs to make judicious use of teleconferencing software, and be realistic about expectations.  I am finding meetings larger than 2 or 3 people to actually be counterproductive.  Chat in Slack, though, has been great since we began!  It is easier to take in information and you can always scroll back and refer to it when needed.
+
+It was also noticeable that a the problems of dealing with code instability, noted elsewhere, are exacerbated by the challenges of remote working.  With limited contact time, it is easier to discuss an issue with reference points (e.g., a stable codebase and working tests) as a baseline.  These can help to focus attention on where problems have been introduced.  The "Hello MELD" series provided useful anchor points for our work, albeit somewhat hampered by failure to create a meaningful test suite.
 
 
 # 4. Sustainability issues encountered
 
 This section aims to highlight key issues encountered.  Raw observations and notes are contained in a separate document:  [MELD sustainability issues observed](./MELD-sustainability-issues-observed.md).
+
 
 ## 4.1 Working with a complex and dynamic software ecosystem
 
@@ -430,11 +445,14 @@ Keeping application and support code up-to-date with a complex evolving environm
 
 ### Suggested mitigations
 
-- before adopting a complex support platform, consider whether the value provided (in terms of easy-to-use features) justifies the additional complexity and maintenance requirements.  (The consensus for MELD is that the features offered by tghe React/Redux platform did enable results that otherwise would probably not have been achieved.)
+- before adopting a complex support platform, consider whether the value provided (in terms of easy-to-use features) justifies the additional complexity and maintenance requirements.  (The consensus for MELD is that the features offered by the React/Redux platform did enable results that otherwise would probably not have been achieved.)
 
 - when adopting a complex support platform, consider a strategy or practice to ensure that the underlying dependencies can be safely updated. Ideally, this will involve having some form of automated testing and continuous integration in place.  Try to keep dependencies up-to-date as you go, rather than relying on infrequent updates of multiple dependencies.
 
+- in selecting dependencies, consider whether they are actively maintained.  A problem we encountered was with dependencies that were not maintained, and as a result were not updated to use newer versions of the underlying React platform, leading to attempting to use multiple incompatible versions.  The exhortation to keep dependencies up-to-date applies also to indirect dependencies, which depends on other developers.
+
 - consider how to create a complete snapshot, including all supporting components, of a working version of an application.  For example, as a Docker image?  (Bear in mind that for a web based application, there remains a possible dependency on the browser used.)
+
 
 ## 4.2 Inconsistent build and runtime environments
 
@@ -788,13 +806,8 @@ It was performed with collaboration and feedback from the following MELD-related
 
 Thanks to participants of the online [MELD mini-fest](https://docs.google.com/document/d/1TWl-lT7NI-GSIcXsQ3VyaWPNa2DEOh81Q-Jop7YJye0/edit#) meeting on 8 February 2021 for comments and feedback on this work: Kevin Page, David Lewis, David Weigl, Mark Saccomano, Laurent Pugin, Stefan Münnich, David John Baker, Cynthia Liem.
 
-<!--
-@@ (CLARA=, BiTH, Lohengrin=, Delius=, FAST=, Unlocking musicology=)
--->
 
 <!--
-
-----
 
 # Additional notes, to be removed
 
@@ -806,7 +819,7 @@ Remaining steps:
 
 3. [x] Make SSI report site public (but not advertised) (check contents)
 
-4. [ ] Circulate to MELDfest attendees for comment
+4. [x] Circulate to MELDfest attendees for comment
 
 To be done by local meeting 25 May so we can make choices for final (effective) month of project - e.g., SSI3 continuation.
 

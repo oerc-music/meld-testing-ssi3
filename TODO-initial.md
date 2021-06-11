@@ -261,4 +261,15 @@ hello-meld-4 - with interactions
 @@@ARC app 
 
 
+...
+
+Actions from 2021-06-11 MELD futures meeting:
+
+
+- [ ] ACTION: GK send link to failing test to Alastair.  (hello-meld-2)
+
+- [x] NOTE to GK for report:  in choosing software dependencies, look at recency of updates/active support of package(s) used.
+
+
+
 
