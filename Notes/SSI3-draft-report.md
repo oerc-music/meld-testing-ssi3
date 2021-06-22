@@ -1,5 +1,7 @@
 # Sustainability for Digital Humanities research software
 
+<!-- On branch revision-20210611 -->
+
 ## Table of contents
 
 - [Summary of observations and conclusions](#summary-of-observations-and-conclusions)
@@ -428,6 +430,8 @@ For the MELD sustainability work, we scheduled a week of remote [pair programmin
 More broadly, for supporting _Beethoven in the House_, the pattern we have followed has been a series of short online development sessions building and understanding simple early incarnations of "Hello MELD", followed by the longer sprint to build a more complex application. This pattern seems to have been very effective, and reinforced value of simple early "Hello MELD" apps.  These focused development sessions did prove to be an effective way of making technical progress and transferring knowledge - an important aspect of these sessions was actually doing the work, to see all the details worked out.  Yet these online pair programming sessions are hard work, and we found it most effective to have frequent shorter online sessions (an hour or so) with longer breaks between for participants to work separately and consolidate their knowledge.  This observation was offered by Mark Saccomano, who participated in this process:
 
 > I think any project needs to make judicious use of teleconferencing software, and be realistic about expectations.  I am finding meetings larger than 2 or 3 people to actually be counterproductive.  Chat in Slack, though, has been great since we began!  It is easier to take in information and you can always scroll back and refer to it when needed.
+
+Yet, talking to other project participants, it was noted that Slack (or similar) should not be seen as a replacement for other project planning and reporting documents.  Rather it should be seen as an alternative to a physical office presence, yet with recognition that Slack conversations are not a substitute for planning and scheduling activities.
 
 It was also noticeable that a the problems of dealing with code instability, noted elsewhere, are exacerbated by the challenges of remote working.  With limited contact time, it is easier to discuss an issue with reference points (e.g., a stable codebase and working tests) as a baseline.  These can help to focus attention on where problems have been introduced.  The "Hello MELD" series provided useful anchor points for our work, albeit somewhat hampered by failure to create a meaningful test suite.
 
