@@ -235,11 +235,15 @@ Environment:
 
 > Of course, not all DH software is like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.
 
-A particular consequence of the environment in which DH software is created is that it may be not possible or unrealistic to fully employ software engineering best practices.  Some functionality may be required quickly to support a particular scholarly output, with no immediate requirement or additional resource to ensure sustainability of the software.
+A particular consequence of the environment in which DH software is created is that it may be not possible or unrealistic to fully employ software engineering best practices.  Some functionality may be required quickly to support a particular scholarly output, with no immediate requirement or additional resource to ensure sustainability of the software.  Yet even in these circumstances, some regard for software engineering best practices may be rapidly repaid in time saved in debugging and enhancing a software tool, especially if it is to have any life outside the project for which it was created.
+
+Smaller research software projects in all disciplines (and many DH research projects are small) are usually quite different from the commercial software development environments in which many software engineering practices have evolved, in that they do not have a permanent staff that is using an established set of tools and development environments.  Research software developers may spend a small part of their overall time doing software development, or may be switching between projects using different development tools.  Many software engineering best practices implicitly assume there is an established development environment, with a range of advanced supporting tools to mitigate many of the problems that are noted later in this report, and employing developers who are familiar with using these tools.  The overhead of establishing and managing some of these tools may well prove to be too much for a small research project.   While this report suggests a number of areas where additional tools may help, it does not assume a large, homogeneous, maintained software development environment that is used by all developers;  it focuses more on recommendations that may be applicable to a fragmented and heterogeneous development environment.
 
 Because of the value in DH of capturing context and combining a wide range of data sources, it might be argued that sustainability is even more important for DH software than it is for, say, scientific software.  Once a computed scientific result has been established, there may be limited value in revisiting it later.  But humanities research tends (by its nature?) to gain value through the accumulation of understanding and perspectives over time, and as such, access to and integration with previously accumulated data can greatly increase the value accrued by investing in software sustainability, or at least sustainable access to generated data.
 
-The foregoing points to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate.  Yet it is often the case that the real value in both scientific and humanities software-based research project is in the data.  The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.
+The foregoing points to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate - and such is the focus of this report.  Yet it is often the case that the real value in both scientific and humanities software-based research project is in the data. The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.
+
+With regard to data sustainability, for which many issues mirror those around software sustainability, data management has been a live topic in the academic community for some time.  There are many projects dealing with research data management, and related issues of replicability and reproducibility of research results (e.g. see resources from [DCC](https://www.dcc.ac.uk/about), [JISC](https://rdmtoolkit.jisc.ac.uk/), [OCLC](https://www.oclc.org/research/areas/research-collections/rdm.html), etc.).  Research Data Management and Research Software Sustainability are entwined issues, as data may be unusable without the right software, and vice versa.
 
 Following a trail blazed by the bioinformatics community, humanities researchers have started looking to linked data and knowledge graph technologies to create sustainable interoperable data (e.g., [Linked pasts network](https://github.com/LinkedPasts/lp-network), [Linked art](https://linked.art/), [Mapping manuscript Migrations](https://mappingmanuscriptmigrations.org/), etc).  But even when using standard data models and formats, divergent or inconsistent use of vocabularies (ontologies) can create barriers to re-use.  And maintenance (updating and correction) of substantial datasets can require significant resource.
 
@@ -266,7 +270,7 @@ To give a sense of its versatility as a framework for musical applications, here
 
 2. [Climb!](https://www.nottingham.ac.uk/research/groups/mixedrealitylab/works/climb.aspx)  is a non-linear composition written for Disklavier, in which a pianist undertakes a metaphorical journey up a mountain, playing musical codes that are hidden within the score to control their path and trigger musical and visual effects, including the piano engaging them in an unusual physical duet. 
 
-3. [SOFA Ontological Fragment Assembler (SOFA)](http://www.semanticaudio.ac.uk/demonstrators/34-sofa/) enables the combination of musical fragments – Digital Music Objects, or DMOs – into compositions, using semantic annotations to suggest compatible choices..  Also known as [Numbers into Notes remixer](https://github.com/oerc-music/nin-remixer-public)
+3. [SOFA Ontological Fragment Assembler (SOFA)](http://www.semanticaudio.ac.uk/demonstrators/34-sofa/) enables the combination of musical fragments – Digital Music Objects, or DMOs – into compositions, using semantic annotations to suggest compatible choices.  Also known as [Numbers into Notes remixer](https://github.com/oerc-music/nin-remixer-public).
 
 4. [Lohengrin TimeMachine Digital Companion](https://um.web.ox.ac.uk/lohengrin).  Exploring the Forbidden Question: the digital companion to a textual and video essay on motif use in Lohengrin.
 
@@ -293,9 +297,9 @@ Client and server components typically exchange information using the HTTP (or H
 
 Traditional web applications were arranged with most of the application logic applied by the server, and with the browser used mainly for presentation and user interactions.
 
-Modern web applications often share the application logic between the server and client components, with client code (usually as Javascript programs) retrieved from a server as and when it is needed.
+Modern web applications often share the application logic between the server and client components: some data processing may occur on the server before it is sent to the client, and further processing may be performed by code that runs in the browser client.  The client-side code (usually as Javascript programs) is sent from the server to the client as and when it is needed.  Client-side Javascript frameworks (such as React) make it possible to write applications that execute entirely in the browser, and just use the Web as a way of distributing them, along with the data they use, to the client for execution.  Many of the MELD applications we have considered are of this kind.
 
-The traditional and modern approaches each have advantages.  A key advantage of using client code for application logic is that it removes load from the server, freeing it up to respond to many more requests from multiple users using the same service.  This can come at the cost of increased application complexity, with code needing to support a range of different Javascript implementations in different browsers, and even between different versions of the same browser.
+The traditional and modern approaches each have advantages.  A key advantage of using client code for application logic is that it removes load from the server, freeing it up to respond to many more requests from multiple users using the same service.  Irt also allows the user interface to become more responsive, rather than a simple rendering of data that is sent by the server.  This can come at the cost of increased application complexity, with code needing to support a range of different Javascript implementations in different browsers, and even between different versions of the same browser.
 
 The MELD framework pushes a lot of application logic to the client (browser), leaving open a possibility that the server side functions can be handled by off-the-shelf server software (e.g. [Solid](https://github.com/solid/specification/)).
 
@@ -409,7 +413,7 @@ Setting up even a very simple test environment for testing browser-based applica
 
 #### Hello MELD application series
 
-The "Hello MELD" applications were extremely helpful, both for learning the framework when bringing a new developer on board, as it allowed the various parts of a complex set of interfaces to be mastered separately, and creating code that was easier to test .  Also, the "Hello MELD" series of applications, which performed increasingly complex operations using MELD, provided fallback options when failures were encountered, allowing code-induced and environment-induced problems to be identified and separated.
+The "Hello MELD" applications were extremely helpful, both for learning the framework when bringing a new developer on board, as it allowed the various parts of a complex set of interfaces to be mastered separately, and creating code that was easier to test.  Also, the "Hello MELD" series of applications, which performed increasingly complex operations using MELD, provided fallback options when failures were encountered, allowing code-induced and environment-induced problems to be identified and separated.
 
 It was important that the first of these "Hello MELD" applications was so simple that one might easily think that there was nothing to go wrong.  In practice, things did go wrong, and even a trivially simple application served the important function of proving that a minimum set of runtime requirements had been set up correctly.  Having a trivial application provided a useful platform for exploring testing tools and frameworks without getting bogged down in application code minutiae, and allowed easy experimentation with application design options (using established MELD patterns) that would facilitate testing. 
 
@@ -423,7 +427,7 @@ An area we noticed that might particularly benefit from a little technical exper
 
 #### Distributed collaborative working
 
-Work on MELD software involves researchers from multiple institutions in UK, Germany, Austria, (@@@ and more?).  Software development by a widely dispersed team is challenged by disparate goals of different groups and conflicting demands on their time, complicating the process of scheduling meetings to work through issues.  On the positive side, 2020 (the year of the Covid-19 pandemic) has seen a rise of tools to facilitate remote working, notably much improved videoconferencing systems.  Yet we have also seen that effective participation in remote meetings is much harder work, and more draining, than face-to-face meeting.  The MELD team has long used Slack instant messaging as a medium for ad-hoc coordination of activities and discussion of technical issues.  This is not new, and continued to be an important channel for communication.
+Work on MELD software involves researchers from multiple institutions in UK, Germany, Austria, Spain, and more.  Software development by a widely dispersed team is challenged by disparate goals of different groups and conflicting demands on their time, complicating the process of scheduling meetings to work through issues.  On the positive side, 2020 (the year of the Covid-19 pandemic) has seen a rise of tools to facilitate remote working, notably much improved videoconferencing systems.  Yet we have also seen that effective participation in remote meetings is much harder work, and more draining, than face-to-face meeting.  The MELD team has long used Slack instant messaging as a medium for ad-hoc coordination of activities and discussion of technical issues.  This is not new, and continued to be an important channel for communication.
 
 For the MELD sustainability work, we scheduled a week of remote [pair programming](https://en.wikipedia.org/wiki/Pair_programming#Remote_pair_programming) work as a way to build MELD technical capacity for the [Beethoven in the House project](https://www.dfg.de/en/research_funding/announcements_proposals/2020/info_wissenschaft_20_01/index.html).  We found that Zoom screen sharing was an effective technique for this (other video conference systems might work as well or better; we found the affordances provided by Zoom seemed about right for this work).  There is a [retrospective review](https://github.com/oerc-music/meld-hello-meld/blob/main/hello-meld-5/20210430-retrospective-review.md) of this activity with more details.
 
@@ -431,7 +435,7 @@ More broadly, for supporting _Beethoven in the House_, the pattern we have follo
 
 > I think any project needs to make judicious use of teleconferencing software, and be realistic about expectations.  I am finding meetings larger than 2 or 3 people to actually be counterproductive.  Chat in Slack, though, has been great since we began!  It is easier to take in information and you can always scroll back and refer to it when needed.
 
-Yet, talking to other project participants, it was noted that Slack (or similar) should not be seen as a replacement for other project planning and reporting documents.  Rather it should be seen as an alternative to a physical office presence, yet with recognition that Slack conversations are not a substitute for planning and scheduling activities.
+Yet, talking to other project participants, it was noted that Slack (or similar) should not be seen as a replacement for other project planning and reporting documents.  Rather it should be seen as an alternative to a physical office presence, with recognition that Slack conversations are not a substitute for planning and scheduling activities.
 
 It was also noticeable that a the problems of dealing with code instability, noted elsewhere, are exacerbated by the challenges of remote working.  With limited contact time, it is easier to discuss an issue with reference points (e.g., a stable codebase and working tests) as a baseline.  These can help to focus attention on where problems have been introduced.  The "Hello MELD" series provided useful anchor points for our work, albeit somewhat hampered by failure to create a meaningful test suite.
 
@@ -455,6 +459,8 @@ Keeping application and support code up-to-date with a complex evolving environm
 
 - in selecting dependencies, consider whether they are actively maintained.  We encountered some problems with dependencies that were not maintained, and as a result were not updated to use newer versions of the underlying React platform, leading to multiple incompatible versions.  The exhortation to keep dependencies up-to-date applies also to indirect dependencies (which depends on other developers).
 
+- consider also that the code you create may become a dependency for some other "downstream" application.  Sustainability of any such downstream application can be improved if your code always has a release that is up-to-date with respect to changes in its own dependencies.  This allows any downstream application to use the latest versions of dependencies, mitigating one aspect of the so-called "dependency hell" problem where multiple (and potentially incompatible) versions of the same dependency are included.  (Note that this primarily facilitates new application developments, and does not necessarily force older applications to be upgraded to use newer versions of the dependencies.)
+
 - consider how to create a complete snapshot, including all supporting components, of a working version of an application.  For example, as a Docker image?  (Bear in mind that for a web based application, there remains a possible dependency on the browser used.)
 
 
@@ -468,11 +474,12 @@ Clear identification of supporting build tools used was lacking.  The Javascript
 
 ### Suggested mitigations
 
-- create automated scripts to create clean runtime and development environments from scratch.  Such scripts also serve usefully as documentation.
+- create automated scripts to create clean runtime and development environments from scratch.  Such scripts also serve usefully as documentation.  Creating a Docker container for an application is one way to achieve this, and may also provide a pre-built ready-to-go environment that others can use.
 
 - establish a continuous integration environment:  this forces the environment to be rebuilt from scratch (or from established and documented resources) whenever the software is updated.
 
 - maintain development/test environments separately from other aspects of the host system (e.g., using tools like Node's `nvm` or Python's `venv`).  Provide detailed instructions and/or automated script for setting up a new development/test environment, or resetting an existing one.
+
 
 ## 4.3 Lack of automated testing and continuous integration
 
@@ -484,7 +491,7 @@ The lack has resulted in uncertainty about the status of the software.  Attempts
 
 - establish an automated testing regime at the outset of a project, or very early in its lifetime.  Much of the value of automated testing can be realized even by very lightweight tests - 90%+ test coverage is great of you can afford it, but even very minimal coverage can provide valuable proof of life, and can be quick to implement.  In practice, once a testing regime is in place, I find it tends to collect coverage-improving tests over time  with very little additional effort.  Expect automated testing to pay back any initial investment of effort within a few weeks of development activity.
 
-- if it can be done quickly and easily, set up continuous integration early in the project.  A prerequisite for this is some form of automated testing, even if it only to ensure that system can be built and installed.  In practice, I've have found that having easy-to-run tests can be almost as valuable (but may be less effective for picking up installation and environment setup problems).
+- if it can be done quickly and easily, set up continuous integration early in the project.  A prerequisite for this is some form of automated testing, even if it only to ensure that system can be built and installed.  In practice, I've have found that having easy-to-run tests can be almost as valuable (but may be less effective for picking up installation and environment setup problems).  It should be very little effort to set up continuous integration that does no more than install the dependencies and build the package, which can help to catch a lot of problems, and provides a place where further tests can be added as the project evolves.
 
 - consider testability when designing code: ensure that important features are easy to invoke and access for testing.
 
@@ -542,6 +549,8 @@ Mitigations here are common software coding practices.
 - code defensively!  Don't assume that certain inputs can't happen:  check them and generate a report (or crash with a stack dump) if they aren't satisfied.
 
 - provide debug options to report inputs received, to help identify where any problem might be occurring.
+
+- consider using an application monitoring tool such as [Sentry](https://sentry.io/welcome/), which allows an application to submit a diagnostic report when an error is encountered while running somewhere else - these reports can be useful for locating hard-to-replicate errors, or when users are not equipped or motivated to provide bug reports.  (There is some discussion of front-end application monitoring and alternatives to Sentry on this [Geekflare page](https://geekflare.com/frontend-web-monitoring/).)
 
 ## 4.7 Data preparation
 
@@ -616,7 +625,7 @@ When planning (and budgeting) a development activity, some factors to consider a
 
 This is not an exhaustive list, but reflects some key concerns that have been raised by  our work with MELD.
 
-Code management probably needs little discussion, as it seems to be a given for just about any software project.  The existence of a shared repository of source code, which includes a history of all changes made, is very common practice and, among other things, helps to safeguard all the efforts that go into creating some piece of code.  Some popular code management tools are `git`, GitHub and SourceForge.  There are plenty of challenges associated with code management and version control, but these have not proved to be a major issue with MELD, so their existence will simply be assumed.
+Code management probably needs little discussion, as it seems to be a given for just about any software project.  The existence of a shared repository of source code, which includes a history of all changes made, is very common practice and, among other things, helps to safeguard all the efforts that go into creating some piece of code.  A popular code management tool is `git`, which is supported by services such as GitHub and SourceForge.  There are plenty of challenges associated with code management and version control, but these have not proved to be a major issue with MELD, so their existence will simply be assumed.
 
 Technical debt arises when the overall structure of some software is misaligned with the functionality it is required to provide.  It accumulates through the application of quick (or not-so-quick) fixes to add new functionality, without adjusting the software structure to accommodate the changes.  Addressing technical debt requires a level of ongoing effort that does not, of itself, advance the capabilities of the software.  Not attending to technical debt typically results in software that becomes harder to maintain or modify with the result that new features become more difficult and more expensive to add.  But paying too much attention can result in wasted effort.
 
@@ -624,7 +633,7 @@ Where technical debt arises (mainly) from changes to the software itself, decay 
 
 Testing us required in all stages of technical activity.  While manual testing may be deemed sufficient when initially developing some software, automated testing is generally a cornerstone of activities to combat technical debt and decay.  There are many forms of automated testing discussed in software engineering literature, but for the purposes of discussion here it is proably safe to say that _any_ automated testing is better than none at all. 
 
-To be confident of being able to successfully install and use a software system, and automated build and deployment system is extremely valuable.  Many modern programming languages have relatively easy-to-use automatic build systems (e.g. NodeJS has `npm`, Python has `pip` and `setuptools`, Ruby has `gem`, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.
+To be confident of being able to successfully install and use a software system, an automated build and deployment system is extremely valuable.  Many modern programming languages have relatively easy-to-use automatic build systems (e.g. NodeJS has `npm`, Python has `pip` and `setuptools`, Ruby has `gem`, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.
 
 
 ## 5.3 Technical design choices
@@ -644,7 +653,7 @@ Complex user interfaces require a lot of effort to build and maintain, and can b
 
 # 6. Recommendations for DH software sustainability
 
-The following commentary is not intended to be prescriptive or definitive.   It is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make it's own trade-offs, but consideration of some common themes will likely help to improve outcomes.
+The following commentary is not intended to be prescriptive or definitive.   It is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make its own trade-offs, but consideration of some common themes will likely help to improve outcomes.
 
 ## 6.1 Recommendation 1: Technical architecture
 
@@ -653,6 +662,8 @@ Can the research software be effective if conceived as a set of independent tool
 Avoid creating complex user interfaces, or limit the complexity of any that are needed.  Implementing a sophisticated user interface can require development effort disproportionate to the value provided, and subsequent maintenance effort is similarly magnified.
 
 In choosing to use a supporting application support platform, consider whether the value provided by the platform outweighs the additional dependencies that are introduced, and that may require ongoing maintenance effort to keep up to date.  Note that such platforms can take significant effort to learn, which may lead to difficulties finding future developers to help with software maintenance.
+
+When writing or modifying code for execution in a Javascript environment, consider using [Typescript](https://www.typescriptlang.org/). Typescript is an enhanced form Javascript, which allows some checks for code correctness to be performed to catch some errors before the code is executed, and providing diagnostic information that makes it easier to pinpoint and correct such errors.  A valid Javascript program remains valid and performs the same function when processed as Typescript;  this means that code changes that support the checking can be applied incrementally, without requiring a "flag day" change to the entire application codebase.  To use Typescript, ensure that the tool chain used can support automatic processing of Typescript code.
 
 See also:
 
@@ -664,6 +675,7 @@ See also:
 - [Application code complexity](#45-application-code-complexity)
 - [Accumulated technical debt](#48-accumulated-technical-debt)
 - [Technical design choices](#53-technical-design-choices)
+- [Incremental development](#64-recommendation-4--incremental-development)
 
 
 ## 6.2 Recommendation 2: Design for testing
@@ -672,9 +684,9 @@ When designing and planning a system implementation, think about how it can be t
 
 As the software is developed, implement some tests, however minimal.  These will serve to confirm that the software is (to some degree) testable, and also a simple "I'm alive" kind of test is extremely valuable.  Later, as problems are encountered, additional tests can be added to explore and diagnose the problem, and help to avoid future regression.
 
-Consider budgeting (say) 20% development effort for implementing automatic tests.  This number is arbitrary, without supporting evidence, so a different number might be chosen.  But consider this:  if a piece of software is developed over a week, does spending one day of that week writing some basic tests significantly undermine what can be achieved?  Even if that effort is not recouped within the week of initial development, I estimate from personal experience that the time would be recouped over a further 2-3 weeks of continued development.   Such tests can serve several purposes:  thinking more clearly about how the software should work; confidence that the code is (at least partially) working as expected; examples for new developers to learn about the software; executable specification of how the software is intended to work.  The effort saved in manual testing, documentation and learning can quickly outweigh the effort of writing the tests in the first place.
+Consider budgeting (say) 20% development effort for implementing automatic tests.  This number is arbitrary, without supporting evidence, so a different number might be chosen.  But consider this:  if a piece of software is developed over a week, does spending one day of that week writing some basic tests significantly undermine what can be achieved?  Even if that effort is not recouped within the week of initial development, I estimate from personal experience that the time would be recouped over a further 2-3 weeks of continued development.   Such tests can serve several purposes:  thinking more clearly about how the software should work; confidence that the code is (at least partially) working as expected; examples for new developers to learn about the software; executable specification of how the software is intended to work.  The effort saved in manual testing, documentation and learning can quickly outweigh the effort of writing the tests in the first place.  Sometimes, writing tests first can even speed up the process of writing the code, in part by forcing clarity about what it is that the code needs to do.
 
-Software engineering literature discusses the desirability of high levels of test coverage.  Yet even lower levels of test coverage can be very valuable, and with a test framework in place, additional tests are relatively easy to add as proiblems are uncovered.
+Software engineering literature discusses the desirability of high levels of test coverage.  Yet even lower levels of test coverage can be very valuable, and with a test framework in place, additional tests are relatively easy to add as problems are uncovered.
 
 See also:
 
