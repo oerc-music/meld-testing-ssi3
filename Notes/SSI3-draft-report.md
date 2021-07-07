@@ -2,8 +2,81 @@
 
 <!-- On branch revision-20210611 -->
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Graham Klyne, Oxford e-Research Centre, University of Oxford_
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _7 July 2021_
+
+An exploration of sustainability issues in digital humanities research software using the Music Encoding and Linked Data (MELD) framework and applications as an exemplar.
+
+Prepared for the Software Sustainability Institute, [SSI phase 3 ](https://software.ac.uk/tags/ssi-phase-3).
+
 ## Table of contents
 
+<!-- MarkdownTOC autolink="true" markdown_preview="github" -->
+
+- [Summary of observations and conclusions](#summary-of-observations-and-conclusions)
+    - [Observations](#observations)
+    - [Recommendations](#recommendations)
+- [1. Introduction](#1-introduction)
+    - [1.1 About this report](#11-about-this-report)
+    - [1.2 Abbreviations and technical terms used](#12-abbreviations-and-technical-terms-used)
+    - [1.3 What is software sustainability?](#13-what-is-software-sustainability)
+- [2. Characteristics of DH research software](#2-characteristics-of-dh-research-software)
+- [3. Case study: Music Encoding and Linked Data](#3-case-study-music-encoding-and-linked-data)
+    - [3.1 MELD background](#31-meld-background)
+        - [3.1.1 MELD applications](#311-meld-applications)
+        - [3.1.2 Server and client code](#312-server-and-client-code)
+        - [3.1.3 React and Redux](#313-react-and-redux)
+    - [3.2 Approach](#32-approach)
+        - [3.2.1 Initial plan](#321-initial-plan)
+        - [3.2.2 What we actually did](#322-what-we-actually-did)
+        - [3.2.3 Observations](#323-observations)
+            - [Complexity of supporting software environment](#complexity-of-supporting-software-environment)
+            - [Undetected problems in MELD code](#undetected-problems-in-meld-code)
+            - [Working with higher level abstractions](#working-with-higher-level-abstractions)
+            - [Callbacks and Promises](#callbacks-and-promises)
+            - [Browser vs non-browser code](#browser-vs-non-browser-code)
+            - [Hello MELD application series](#hello-meld-application-series)
+            - [Value of part-time technical expertise](#value-of-part-time-technical-expertise)
+            - [Distributed collaborative working](#distributed-collaborative-working)
+- [4. Sustainability issues encountered](#4-sustainability-issues-encountered)
+    - [4.1 Working with a complex and dynamic software ecosystem](#41-working-with-a-complex-and-dynamic-software-ecosystem)
+        - [Suggested mitigations](#suggested-mitigations)
+    - [4.2 Inconsistent build and runtime environments](#42-inconsistent-build-and-runtime-environments)
+        - [Suggested mitigations](#suggested-mitigations-1)
+    - [4.3 Lack of automated testing and continuous integration](#43-lack-of-automated-testing-and-continuous-integration)
+        - [Suggested mitigations](#suggested-mitigations-2)
+        - [Test fixtures and mocking](#test-fixtures-and-mocking)
+    - [4.4 Application code version management issues](#44-application-code-version-management-issues)
+        - [Suggested mitigations](#suggested-mitigations-3)
+    - [4.5 Application code complexity](#45-application-code-complexity)
+        - [Suggested mitigations](#suggested-mitigations-4)
+    - [4.6 Run time error detection and reporting](#46-run-time-error-detection-and-reporting)
+        - [Suggested mitigations](#suggested-mitigations-5)
+    - [4.7 Data preparation](#47-data-preparation)
+        - [Suggested mitigations](#suggested-mitigations-6)
+    - [4.8 Accumulated technical debt](#48-accumulated-technical-debt)
+        - [Suggested mitigations](#suggested-mitigations-7)
+- [5. Lessons in sustainability for DH](#5-lessons-in-sustainability-for-dh)
+    - [5.1 Resourcing](#51-resourcing)
+    - [5.2 Technical activity planning](#52-technical-activity-planning)
+    - [5.3 Technical design choices](#53-technical-design-choices)
+- [6. Recommendations for DH software sustainability](#6-recommendations-for-dh-software-sustainability)
+    - [6.1 Recommendation 1: Technical architecture](#61-recommendation-1-technical-architecture)
+    - [6.2 Recommendation 2: Design for testing](#62-recommendation-2-design-for-testing)
+    - [6.3 Recommendation 3: Continuous integration](#63-recommendation-3-continuous-integration)
+    - [6.4 Recommendation 4: Incremental development](#64-recommendation-4-incremental-development)
+    - [6.5 Recommendation 5: Dealing with technical debt](#65-recommendation-5-dealing-with-technical-debt)
+    - [6.6 Recommendation 6: Keep dependencies up to date](#66-recommendation-6-keep-dependencies-up-to-date)
+    - [6.7 Recommendation 7: Minimal application examples](#67-recommendation-7-minimal-application-examples)
+    - [6.8 Recommendation 8: Give some thought to project governance](#68-recommendation-8-give-some-thought-to-project-governance)
+- [7. Proposed further investigations](#7-proposed-further-investigations)
+- [8. Acknowledgements](#8-acknowledgements)
+
+<!-- /MarkdownTOC -->
+
+
+<!--
 - [Summary of observations and conclusions](#summary-of-observations-and-conclusions)
   * [Observations](#observations)
   * [Recommendations](#recommendations)
@@ -63,6 +136,7 @@
 - [7. Proposed further investigations](#7-proposed-further-investigations)
 - [8. Acknowledgements](#8-acknowledgements)
 - [Additional notes, to be removed](#additional-notes--to-be-removed)
+-->
 
 <!--
 <a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>
@@ -811,7 +885,7 @@ One lesson of the work reported here has been the value of a project having occa
 
 # 8. Acknowledgements
 
-This work was funded by the [Software Sustainability Institute (SSI)](https://www.software.ac.uk/).
+This work was funded by the [Software Sustainability Institute (SSI)](https://www.software.ac.uk/), [SSI phase 3 ](https://software.ac.uk/tags/ssi-phase-3).
 
 It was performed with collaboration and feedback from the following MELD-related projects:
 
