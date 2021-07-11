@@ -5,6 +5,6 @@
 %.pdf : %.md
 	pandoc -f gfm -o $@ $<
 
-clean: 
-	rm *.pdf
+%.html : %.md
+	pandoc -f gfm --css SSI3-MELD-report.css --standalone -o $@ $<
 
