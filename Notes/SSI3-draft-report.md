@@ -1,3 +1,13 @@
+---
+_title:  'Sustainability for Digital Humanities research software'
+_author:
+- Graham Klyne
+_abstract: |
+    An exploration of sustainability issues in digital humanities research software using the Music Encoding and Linked Data (MELD) framework and applications as an exemplar.
+keywords: [SSI, digital humanities, sustainability]
+linkcolor: blue
+...
+
 # Sustainability for Digital Humanities research software
 
 <!-- On branch revision-20210611 -->
