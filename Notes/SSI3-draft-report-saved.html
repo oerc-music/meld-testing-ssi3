@@ -1,0 +1,2783 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+
+</style><title>SSI3-draft-report</title></head><body><article class="markdown-body"><h1>
+<a id="sustainability-for-digital-humanities-research-software" class="anchor" href="#sustainability-for-digital-humanities-research-software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sustainability for Digital Humanities research software</h1>
+
+<p>       <em>Graham Klyne, Oxford e-Research Centre, University of Oxford</em></p>
+<p>       <em>7 July 2021</em></p>
+<p>An exploration of sustainability issues in digital humanities research software using the Music Encoding and Linked Data (MELD) framework and applications as an exemplar.</p>
+<p>Prepared for the Software Sustainability Institute, <a href="https://software.ac.uk/tags/ssi-phase-3" rel="nofollow">SSI phase 3 </a>.</p>
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of contents</h2>
+
+<ul>
+<li>
+<a href="#summary-of-observations-and-conclusions">Summary of observations and conclusions</a>
+<ul>
+<li><a href="#observations">Observations</a></li>
+<li><a href="#recommendations">Recommendations</a></li>
+</ul>
+</li>
+<li>
+<a href="#1-introduction">1. Introduction</a>
+<ul>
+<li><a href="#11-about-this-report">1.1 About this report</a></li>
+<li><a href="#12-abbreviations-and-technical-terms-used">1.2 Abbreviations and technical terms used</a></li>
+<li><a href="#13-what-is-software-sustainability">1.3 What is software sustainability?</a></li>
+</ul>
+</li>
+<li><a href="#2-characteristics-of-dh-research-software">2. Characteristics of DH research software</a></li>
+<li>
+<a href="#3-case-study-music-encoding-and-linked-data">3. Case study: Music Encoding and Linked Data</a>
+<ul>
+<li>
+<a href="#31-meld-background">3.1 MELD background</a>
+<ul>
+<li><a href="#311-meld-applications">3.1.1 MELD applications</a></li>
+<li><a href="#312-server-and-client-code">3.1.2 Server and client code</a></li>
+<li><a href="#313-react-and-redux">3.1.3 React and Redux</a></li>
+</ul>
+</li>
+<li>
+<a href="#32-approach">3.2 Approach</a>
+<ul>
+<li><a href="#321-initial-plan">3.2.1 Initial plan</a></li>
+<li><a href="#322-what-we-actually-did">3.2.2 What we actually did</a></li>
+<li>
+<a href="#323-observations">3.2.3 Observations</a>
+<ul>
+<li><a href="#complexity-of-supporting-software-environment">Complexity of supporting software environment</a></li>
+<li><a href="#undetected-problems-in-meld-code">Undetected problems in MELD code</a></li>
+<li><a href="#working-with-higher-level-abstractions">Working with higher level abstractions</a></li>
+<li><a href="#callbacks-and-promises">Callbacks and Promises</a></li>
+<li><a href="#browser-vs-non-browser-code">Browser vs non-browser code</a></li>
+<li><a href="#hello-meld-application-series">Hello MELD application series</a></li>
+<li><a href="#value-of-part-time-technical-expertise">Value of part-time technical expertise</a></li>
+<li><a href="#distributed-collaborative-working">Distributed collaborative working</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#4-sustainability-issues-encountered">4. Sustainability issues encountered</a>
+<ul>
+<li>
+<a href="#41-working-with-a-complex-and-dynamic-software-ecosystem">4.1 Working with a complex and dynamic software ecosystem</a>
+<ul>
+<li><a href="#suggested-mitigations">Suggested mitigations</a></li>
+</ul>
+</li>
+<li>
+<a href="#42-inconsistent-build-and-runtime-environments">4.2 Inconsistent build and runtime environments</a>
+<ul>
+<li><a href="#suggested-mitigations-1">Suggested mitigations</a></li>
+</ul>
+</li>
+<li>
+<a href="#43-lack-of-automated-testing-and-continuous-integration">4.3 Lack of automated testing and continuous integration</a>
+<ul>
+<li><a href="#suggested-mitigations-2">Suggested mitigations</a></li>
+<li><a href="#test-fixtures-and-mocking">Test fixtures and mocking</a></li>
+</ul>
+</li>
+<li>
+<a href="#44-application-code-version-management-issues">4.4 Application code version management issues</a>
+<ul>
+<li><a href="#suggested-mitigations-3">Suggested mitigations</a></li>
+</ul>
+</li>
+<li>
+<a href="#45-application-code-complexity">4.5 Application code complexity</a>
+<ul>
+<li><a href="#suggested-mitigations-4">Suggested mitigations</a></li>
+</ul>
+</li>
+<li>
+<a href="#46-run-time-error-detection-and-reporting">4.6 Run time error detection and reporting</a>
+<ul>
+<li><a href="#suggested-mitigations-5">Suggested mitigations</a></li>
+</ul>
+</li>
+<li>
+<a href="#47-data-preparation">4.7 Data preparation</a>
+<ul>
+<li><a href="#suggested-mitigations-6">Suggested mitigations</a></li>
+</ul>
+</li>
+<li>
+<a href="#48-accumulated-technical-debt">4.8 Accumulated technical debt</a>
+<ul>
+<li><a href="#suggested-mitigations-7">Suggested mitigations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#5-lessons-in-sustainability-for-dh">5. Lessons in sustainability for DH</a>
+<ul>
+<li><a href="#51-resourcing">5.1 Resourcing</a></li>
+<li><a href="#52-technical-activity-planning">5.2 Technical activity planning</a></li>
+<li><a href="#53-technical-design-choices">5.3 Technical design choices</a></li>
+</ul>
+</li>
+<li>
+<a href="#6-recommendations-for-dh-software-sustainability">6. Recommendations for DH software sustainability</a>
+<ul>
+<li><a href="#61-recommendation-1-technical-architecture">6.1 Recommendation 1: Technical architecture</a></li>
+<li><a href="#62-recommendation-2-design-for-testing">6.2 Recommendation 2: Design for testing</a></li>
+<li><a href="#63-recommendation-3-continuous-integration">6.3 Recommendation 3: Continuous integration</a></li>
+<li><a href="#64-recommendation-4-incremental-development">6.4 Recommendation 4: Incremental development</a></li>
+<li><a href="#65-recommendation-5-dealing-with-technical-debt">6.5 Recommendation 5: Dealing with technical debt</a></li>
+<li><a href="#66-recommendation-6-keep-dependencies-up-to-date">6.6 Recommendation 6: Keep dependencies up to date</a></li>
+<li><a href="#67-recommendation-7-minimal-application-examples">6.7 Recommendation 7: Minimal application examples</a></li>
+<li><a href="#68-recommendation-8-give-some-thought-to-project-governance">6.8 Recommendation 8: Give some thought to project governance</a></li>
+</ul>
+</li>
+<li><a href="#7-proposed-further-investigations">7. Proposed further investigations</a></li>
+<li><a href="#8-acknowledgements">8. Acknowledgements</a></li>
+</ul>
+
+
+
+<h1>
+<a id="summary-of-observations-and-conclusions" class="anchor" href="#summary-of-observations-and-conclusions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Summary of observations and conclusions</h1>
+<p>This section contains a précis of key observations and recommendations concerning sustainability arising from our work with Music Encoding and Linked Data (MELD) software, with references to more detailed description and discussion.</p>
+<h2>
+<a id="observations" class="anchor" href="#observations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Observations</h2>
+<p>Each observation heading is linked to further discussion in this document.</p>
+<ul>
+<li>
+<p><a href="#complexity-of-supporting-software-environment">Complexity of supporting software environment</a></p>
+<p>A complex, dynamic supporting environment can bring great benefits to a project in terms of ready-to-use functionality, but may also come with a price to pay when it comes to long-term sustainability.  Choose carefully!</p>
+</li>
+<li>
+<p><a href="#working-with-higher-level-abstractions">Working with higher level abstractions</a></p>
+<p>Undocumented abstractions can increase rather than reduce developers' workload.</p>
+</li>
+<li>
+<p><a href="#callbacks-and-promises">Callbacks and Promises</a></p>
+<p>Asynchronous working ("Don't call me, I'll call you."), and local <em>vs</em> global simplification.  Judicious use of abstractions (like Promises) can simplify a codebase, but also introduce new impediments to learning it.  Choose wisely and, where possible, use existing design patterns.</p>
+</li>
+<li>
+<p><a href="#browser-vs-non-browser-code">Browser vs non-browser code</a></p>
+<p>For web applications, there is a fundamental choice to make.  Browsers provide a rich environment for making responsive, user-facing interfaces, but (like other supporting software environments) using advanced capabilities can affect sustainability.</p>
+</li>
+<li>
+<p><a href="#undetected-problems-in-meld-code">Undetected problems in MELD code</a></p>
+<p>These problems underscore the value of automated tests.  Often, the hardest part of fixing a problem is finding it in the first place.</p>
+</li>
+<li>
+<p><a href="#hello-meld-application-series">Hello MELD application series</a></p>
+<p>Simple sample applications are useful for both helping new developers to use a system, and also to support testing.</p>
+</li>
+<li>
+<p><a href="#value-of-part-time-technical-expertise">Value of part-time technical expertise</a></p>
+<p>For projects that don't justify a full-time software developer, having occasional but ongoing access to software engineering expertise can be useful, both for the project itself, and also for capacity building within the project.</p>
+</li>
+<li>
+<p><a href="#distributed-collaborative-working">Distributed collaborative working</a></p>
+<p>Remote collaboration on software development is hard, especially when there are no established anchor points that everyone can build from.  Good communication tools can help, but are not a panacea.</p>
+</li>
+</ul>
+<h2>
+<a id="recommendations" class="anchor" href="#recommendations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommendations</h2>
+<p>Each recommendation summary heading is linked to further discussion in this document.</p>
+<ul>
+<li>
+<p><a href="#61-recommendation-1-technical-architecture">Recommendation 1: Technical architecture</a></p>
+<p>Keep it simple; separate concerns; avoid complex user interfaces if possible</p>
+</li>
+<li>
+<p><a href="#62-recommendation-2-design-for-testing">Recommendation 2: Design for testing</a></p>
+<p>Testing doesn't cost, it pays.</p>
+</li>
+<li>
+<p><a href="#63-recommendation-3-continuous-integration">Recommendation 3: Continuous integration</a></p>
+<p>Fail fast: find out quickly when something breaks</p>
+</li>
+<li>
+<p><a href="#64-recommendation-4-incremental-development">Recommendation 4: Incremental development</a></p>
+<p>Grow a system in small manageable pieces - it's surprising how quickly they accumulate.</p>
+</li>
+<li>
+<p><a href="#65-recommendation-5-dealing-with-technical-debt">Recommendation 5: Dealing with technical debt</a></p>
+<p>Slay ghosts in the code before they slay you.</p>
+</li>
+<li>
+<p><a href="#66-recommendation-6-keep-dependencies-up-to-date">Recommendation 6: Keep dependencies up to date</a></p>
+<p>Don't get left behind when depending on a dynamic supporting ecosystem.</p>
+</li>
+<li>
+<p><a href="#67-recommendation-7-minimal-application-examples">Recommendation 7: Minimal application examples</a></p>
+<p>No application is too simple to convey a useful lesson - simple lesson's are often the hardest to learn.</p>
+</li>
+<li>
+<p><a href="#68-recommendation-8-give-some-thought-to-project-governance">Recommendation 8: Give some thought to project governance</a></p>
+<p>Establish norms for team interaction and quality expectations.</p>
+</li>
+</ul>
+<h1>
+<a id="1-introduction" class="anchor" href="#1-introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Introduction</h1>
+<p>The SSI3 "Software Sustainability for Digital Humanities" activity explores software sustainability, with a focus on testing, using the MELD framework as an exemplar.  We aim to provide and document concrete sustainability benefits for the Music Encoding and Linked Data (MELD) project, and suggest how other Digital Humanities (DH) projects might realize similar benefits.</p>
+<p>Sustainability is a perennial problem for research software.  The funding of research projects means that there is often little or no resource available beyond the lifetime of a project to keep the software outputs running and available.   When such outputs continue to be available, it is often by virtue of enthusiasm and dedication of individual researchers, rather than a wider framework in which sustainability is expected and facilitated.</p>
+<p>These concerns are particularly acute with many Digital Humanities (DH) projects.  Funding for such projects is often very thin, and software is often not the most significant academic output.  Yet, increasingly, DH research depends on drawing information from multiple sources, often created by diverse projects, so considerations of sustainability become more important for continued progress of research.</p>
+<p>In this activity, through hands-on experience of looking at sustainability of the MELD framework, we aim to identify areas which give rise to sustainability problems, and steps towards sustainability that can be adopted even by projects operating with shoestring software development resources.</p>
+<p>The intended audience for this report includes: digital humanities researchers, research software engineers engaged with digital humanities projects, and digital humanities project funders.</p>
+<h2>
+<a id="11-about-this-report" class="anchor" href="#11-about-this-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1 About this report</h2>
+<p>This report includes observed phenomena, subjective personal opinions, and widely accepted practices about the development and maintenance of a software system.</p>
+<blockquote>
+<p>Software sustainability arises at the interface between technical environment within which it is performed, and the personal involvement of software developers who create and sustain the software.  As a research software engineer, I feel that it can be useful to highlight subjective issues faced by a working developer.  My personal subjective views are presented in the style of this paragraph.</p>
+</blockquote>
+<p>The main body of the report is structured as:</p>
+<ul>
+<li>
+<p>Discussion of the characteristics of Digital Humanities research software, and how they may affect sustainability of software outputs.</p>
+</li>
+<li>
+<p>Case study observations arising from attempts to test Music Encoding and Linked Data software.  Some of the issues encountered required some revision of the original plan, and as such provide useful insights into the effect of  sustainability issues on software development and maintenance.  Some possible mitigations that are specific to the case study are suggested.</p>
+</li>
+<li>
+<p>A discussion of the lessons arising from our case study, and how they may apply more widely to other DH research.</p>
+</li>
+<li>
+<p>A distillation of recommendations and considerations for software sustainability, particularly in the context of Digital Humanities research.</p>
+</li>
+</ul>
+<h2>
+<a id="12-abbreviations-and-technical-terms-used" class="anchor" href="#12-abbreviations-and-technical-terms-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2 Abbreviations and technical terms used</h2>
+<ul>
+<li>
+<p>DH - Digital Humanities (research)</p>
+</li>
+<li>
+<p>MELD - Music Encoding and Linked Data: project and software framework</p>
+</li>
+<li>
+<p>SSI - Software Sustainability Institute: see <a href="https://www.software.ac.uk/about" rel="nofollow">https://www.software.ac.uk/about</a></p>
+</li>
+<li>
+<p>SSI3 - EPSRC-funded phase 3 activity of SSI: see <a href="https://gtr.ukri.org/projects?ref=EP%2FS021779%2F1" rel="nofollow">The UK Software Sustainability Institute: Phase 3</a></p>
+</li>
+</ul>
+<h2>
+<a id="13-what-is-software-sustainability" class="anchor" href="#13-what-is-software-sustainability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3 What is software sustainability?</h2>
+<p>There is much discussion of software sustainability, but it's hard to find a consensus definition of what it means.  It has been described thus: "Software sustainability covers a broad range of concepts, related to both environmental sustainability, and the longevity of a codebase." [1].</p>
+<p>[1] <a href="https://arxiv.org/pdf/1903.06039.pdf" rel="nofollow">What Makes Research Software Sustainable? An
+Interview Study With Research Software Engineers</a>.</p>
+<blockquote>
+<p>Oddly, I couldn't find any discussion of this on the <a href="https://www.software.ac.uk" rel="nofollow">SSI web site</a>.<br>
+For the purposes of this activity, "codebase" is taken to include data that may underpin research results.  It may well be that longevity of research data is more important than longevity of the code that creates or processes it.</p>
+</blockquote>
+<p>In theory, when a codebase and all its environment dependencies are frozen, the resulting system will keep running indefinitely.  In practice, there are many forces that work against this ideal: one of which is the need to apply a never-ending stream of security updates to any system that is accessible from the public Internet (or from a large private intranet).  Over time, the underlying system can change to the point that any software running on it also needs to be updated in order to keep running.</p>
+<p>Other disruptive forces include hardware failures that necessitate re-installation of the entire system.  Even if a complete copy of all the installed software is available, it is possible that there are underlying changes in any replacement hardware that require the operating system to be upgraded, which in turn may be incompatible with the application software.  Similar problems can arise when running on virtualized and/or cloud software.</p>
+<blockquote>
+<p>My experience is that a software system can be kept running for up to 5-10 years without being updated, and sometimes less.</p>
+</blockquote>
+<p>For a longer active deployment life, an active process to keep all software components current is likely needed.  In general, it is easier to upgrade in several small increments rather than wait for a forced upgrade and then have to deal with multiple incompatibilities that may interact in subtle ways.  Upgrading is much easier when there is an extensive test suite in place.  A test suite can help to pinpoint any failures that occur as a result of an upgrade, which is often the biggest problem faced when trying to fix them.</p>
+<p>See also: <a href="https://www.software.ac.uk/blog/2019-04-26-why-software-puppy" rel="nofollow">Why software is like a puppy</a>, which contains this quote attributed to Carole Goble: “Tell your funders and PI’s that software is like a puppy. Puppies aren’t free, you got to feed them, they will get old, and they will die. Funders don’t understand software – but they know about puppies.”</p>
+<h1>
+<a id="2-characteristics-of-dh-research-software" class="anchor" href="#2-characteristics-of-dh-research-software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Characteristics of DH research software</h1>
+<p>There are some characteristics of DH research software that can make its sustainability a different proposition than for, say, commercial or scientific software.  This may be in the nature of the task the DH software tries to accomplish, or may be the environment in which it is created and used.</p>
+<p>Tasks:</p>
+<ul>
+<li>Digital humanities research is often data intensive (as opposed to computation intensive).</li>
+<li>Humanities research typically draws upon and combines diverse data sources.</li>
+<li>Digital humanities research data are often heterogeneous, describing a variety of subjects with variable degrees of detail.</li>
+<li>Valid primary data, such as historical accounts, may also be contradictory.</li>
+<li>Data to be presented or processed may be non-definitive, needing context and human interpretation in order to understand what they convey.</li>
+<li>Data are not primarily a scholarly end in themselves, but used to support analyses by human researchers.</li>
+</ul>
+<p>Environment:</p>
+<ul>
+<li>Shoestring funding.  Also, short-term funding (e.g. months rather than years).</li>
+<li>Unclear initial software requirements - the role of software in DH may be to facilitate exploration of data with a view to forming and evaluating scholarly conclusions.  Such software may be written <em>ad hoc</em> by researchers without any software engineering training.</li>
+<li>Difficulty of obtaining funding for software maintenance that is not directly linked to new research; yet one of the reasons for sustaining software is to allow researchers without software development skills to benefit from existing developments.</li>
+<li>DH scholars and software engineers have diverse perspectives, all of which contribute to achieving useful results.  The requirements for long-lived research software need to address both scholarly needs and engineering constraints.</li>
+<li>Research collaborations are commonly spread over multiple institutions, often in different countries.</li>
+<li>Software development is a skill in high demand, and it is common for software developers to leave for better-funded work.  This can result in loss of knowledge that is needed to work on the software.  And software maintenance can be tedious, uninteresting work;  many developers would rather work on new software in which they have a greater sense of ownership.  Loss of developers can be mitigated by attention to good engineering practices, but may need technical effort that is not costed in a research proposal.</li>
+<li>Scholars, who may themselves be able to write small programs for a specific purpose, sometimes fail to recognize that "You just can't do things for no money", especially when it comes to writing software to serve multiple users over an extended period of time.  The effects of a lack of engineering resources may then be perceived as lack of competence.</li>
+<li>The <a href="https://book.verovio.org/introduction/history.html#design-principles" rel="nofollow">Verovio design principles</a> note that "digital humanities projects [...] have slow development cycles in comparison with the development of the technology itself".</li>
+</ul>
+<blockquote>
+<p>Of course, not all DH software is like this, and some scientific software shares some of these characteristics, but on balance it is my experience that these characteristics are more typical of DH software.</p>
+</blockquote>
+<p>A particular consequence of the environment in which DH software is created is that it may be unrealistic to fully employ software engineering best practices.  Some functionality may be required quickly to support a particular scholarly output, with no immediate requirement or additional resource to ensure sustainability of the software.  Yet even in these circumstances, some regard for software engineering best practices may be rapidly repaid in time saved in debugging and enhancing a software tool, especially if it is to have any life outside the project for which it was created.</p>
+<p>Smaller research software projects in all disciplines (and many DH research projects are small) are usually quite different from the commercial software development environments in which many software engineering practices have evolved, in that they do not have a permanent staff that is using an established set of tools and development environment.  Researchers may spend a small part of their overall time doing software development, or research software engineers may be switching between projects that require different developer tools.  Many software engineering practices implicitly assume there is an established development environment, with a range of advanced supporting tools to mitigate many of the problems that are noted later in this report, and that developers are all familiar with these tools.  The overhead of establishing and managing some of these tools may well prove to be too much for a small research project.   While this report suggests a number of areas where additional tools may help, it does not assume a large, homogeneous, maintained software development environment that is used by all developers;  it focuses more on recommendations that may be applicable to a fragmented and heterogeneous development environment.</p>
+<p>Because of the value in DH of capturing context and combining a wide range of data sources, it might be argued that sustainability is even more important for DH software than it is for, say, scientific software.  Once a computed scientific result has been established, there may be limited value in revisiting it later.  But humanities research tends (by its nature?) to gain value through the accumulation of understanding and perspectives over time, and as such, access to and integration with previously accumulated data can greatly increase the value accrued by investing in software sustainability, or at least sustainable access to generated data.</p>
+<p>The foregoing points to a related sustainability issue:  software vs data.  Sustainability is often focused on software programs, and less on the data they manipulate - and such is the focus of this report.  Yet it is often the case that the real value in both scientific and humanities software-based research is in the data. The scientific community (notably life sciences, astrophysics) have responded by creating a number of domain-specific data repositories to facilitate data sharing.  There are similar initiatives for humanities, but diversity and heterogeneity of subjects and data mean that central repositories with broad utility are challenging to create.  With regard to data sustainability, for which many issues mirror those around software sustainability, data management has been a live topic in the academic community for some time.  There are many projects dealing with research data management, and related issues of replicability and reproducibility of research results (e.g. see resources from <a href="https://www.dcc.ac.uk/about" rel="nofollow">DCC</a>, <a href="https://rdmtoolkit.jisc.ac.uk/" rel="nofollow">JISC</a>, <a href="https://www.oclc.org/research/areas/research-collections/rdm.html" rel="nofollow">OCLC</a>, etc.).  Research Data Management and Research Software Sustainability are entwined issues, as data may be unusable without the right software, and vice versa.</p>
+<p>Following a trail blazed by the bioinformatics community, humanities researchers have started looking to linked data and knowledge graph technologies to create sustainable interoperable data (e.g., <a href="https://github.com/LinkedPasts/lp-network">Linked pasts network</a>, <a href="https://linked.art/" rel="nofollow">Linked art</a>, <a href="https://mappingmanuscriptmigrations.org/" rel="nofollow">Mapping manuscript Migrations</a>, etc).  But even when using standard data models and formats, divergent or inconsistent use of vocabularies (ontologies) can create barriers to re-use.  And maintenance (updating and correction) of substantial datasets can require significant resource.</p>
+<h1>
+<a id="3-case-study-music-encoding-and-linked-data" class="anchor" href="#3-case-study-music-encoding-and-linked-data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Case study: Music Encoding and Linked Data</h1>
+<h2>
+<a id="31-meld-background" class="anchor" href="#31-meld-background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1 MELD background</h2>
+<p>Music notation expresses performance instructions in a way commonly understood by musicians, but is limited to encoding static, a priori knowledge.  <a href="">Music Encoding and Linked Data (MELD)</a><a href="https://meld.web.ox.ac.uk/" rel="nofollow">https://meld.web.ox.ac.uk/</a>) is a basis for communicating static and dynamic information between musicians, musicologists and others.  MELD is essentially a framework for distributed real-time annotation of digitally encoded music notation (including, but not limited to, musical scores).  MELD users and software agents create annotations of semantically distinguishable music concepts and relationships. These are associated with musical structure specified by the <a href="https://music-encoding.org/" rel="nofollow">Music Encoding Initiative (MEI)</a> schema.  The use of standard Linked Data <a href="https://www.w3.org/TR/rdf11-concepts/" rel="nofollow">RDF</a> and <a href="https://www.w3.org/TR/annotation-model/" rel="nofollow">Web Annotations</a> allows incorporation of further knowledge from non-musical sources.</p>
+<p>The MELD framework isn't entirely typical of the DH software characterization outlined above.  It was conceived from early in its lifetime as a framework that could be used in support of a range of music research applications.  The initial development was conducted and funded under the aegis of a large multi-centre multi-year engineering project, which was only later re-targeted for use in DH projects.  Yet it does still suffer from some of the environmental characteristics described:  collaboration with other researchers would give rise to requirements that had to be addressed very rapidly without time to consider sustainability issues.  And while the MELD framework itself benefited from the substantial efforts of a large research project, the specific applications under review have been created within the more limited resourcing of humanities projects.</p>
+<p>The MELD framework has a number of components, two of which are:</p>
+<ol>
+<li>
+<p><a href="https://github.com/oerc-music/meld-clients-core"><code>meld-clients-core</code></a>: support code for MELD client (browser) applications based on the Javascript React framework.  This is a powerful, popular and widely used framework, created by Facebook, for implementing Web browser applications.  But with great power comes considerable complexity, and becoming conversant with React can take considerable effort, even for someone already familiar with Javascript.  Further, React makes heavy use of modern Javascript capabilities and patterns that are a considerable departure from traditional programming models.</p>
+</li>
+<li>
+<p><a href="https://github.com/oerc-music/meld-web-services"><code>meld-web-services</code></a>: a set of web services to support MELD client applications.  Historically, these were custom code to support sessions and annotations, but much of this is being replaced by off-the-shelf <a href="https://www.w3.org/TR/ldp/" rel="nofollow">Linked Data Platform (LDP)</a> servers (e.g. <a href="https://github.com/linkeddata/gold">GOLD</a>, and more recently using various deployments of <a href="https://github.com/solid/specification/">Solid</a>.</p>
+</li>
+</ol>
+<h3>
+<a id="311-meld-applications" class="anchor" href="#311-meld-applications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1.1 MELD applications</h3>
+<p>To give a sense of its versatility as a framework for musical applications, here are some examples of applications that have been built using MELD:</p>
+<ol>
+<li>
+<p><a href="http://www.semanticaudio.ac.uk/demonstrators/26-take-it-to-the-bridge/" rel="nofollow">Take it to the bridge</a> a platform for multi-performer communication during jam sessions.  This MELD application displays the currently played score segment, and allows musicians to signal jumps to different parts of the score.</p>
+</li>
+<li>
+<p><a href="https://www.nottingham.ac.uk/research/groups/mixedrealitylab/works/climb.aspx" rel="nofollow">Climb!</a>  is a non-linear composition written for Disklavier, in which a pianist undertakes a metaphorical journey up a mountain, playing musical codes that are hidden within the score to control their path and trigger musical and visual effects, including the pianist and instrument playing together in an unusual duet.</p>
+</li>
+<li>
+<p><a href="http://www.semanticaudio.ac.uk/demonstrators/34-sofa/" rel="nofollow">SOFA Ontological Fragment Assembler (SOFA)</a> enables the combination of musical fragments – Digital Music Objects, or DMOs – into compositions, using semantic annotations to suggest compatible choices.  Also known as <a href="https://github.com/oerc-music/nin-remixer-public">Numbers into Notes remixer</a>.</p>
+</li>
+<li>
+<p><a href="https://um.web.ox.ac.uk/lohengrin" rel="nofollow">Lohengrin TimeMachine Digital Companion</a>.  Exploring the Forbidden Question: the digital companion to a textual and video essay on motif use in Lohengrin.</p>
+</li>
+<li>
+<p><a href="https://bl.linkedmusic.org/" rel="nofollow">Delius in performance</a> uses MELD for publishing multimedia musicology articles as web applications in which musically-meaningful relationships are presented as links between text, audio, video, and musical score.</p>
+</li>
+</ol>
+<p>For this SSI3 sustainability project, our attention has been focused on the <a href="https://github.com/oerc-music/ForbiddenQuestion">Lohengrin time machine study</a> and <a href="https://github.com/oerc-music/delius-annotation">Delius in performance</a> projects.</p>
+<p>See also:</p>
+<ul>
+<li><a href="http://www.semanticaudio.ac.uk/" rel="nofollow">http://www.semanticaudio.ac.uk/</a></li>
+<li><a href="https://www.qmul.ac.uk/media/news/2018/se/musics-changing-fast-fast-is-changing-music.html" rel="nofollow">https://www.qmul.ac.uk/media/news/2018/se/musics-changing-fast-fast-is-changing-music.html</a></li>
+<li><a href="https://github.com/oerc-music/ForbiddenQuestion">https://github.com/oerc-music/ForbiddenQuestion</a></li>
+<li><a href="https://github.com/oerc-music/delius-annotation">https://github.com/oerc-music/delius-annotation</a></li>
+<li><a href="https://dl.acm.org/doi/10.1145/3273024.3273038" rel="nofollow">https://dl.acm.org/doi/10.1145/3273024.3273038</a></li>
+</ul>
+<h3>
+<a id="312-server-and-client-code" class="anchor" href="#312-server-and-client-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1.2 Server and client code</h3>
+<p>Web applications typically have two main parts:</p>
+<ul>
+<li>
+<p>a <em><strong>web client</strong></em>, in the form of a web browser (e.g. Microsoft Edge, Safari, Chrome, Firefox, etc.) which retrieves information from the web and presents it to a user, and</p>
+</li>
+<li>
+<p>a <em><strong>web server</strong></em> that hosts web site data, and uses it to construct replies in response to requests from web clients.</p>
+</li>
+</ul>
+<p>Client and server components typically exchange information using the HTTP (or HTTPS) protocol, with a client issuing HTTP requests, and a server replying to them with HTTP responses.  Sometimes, other protocols are used (e.g. WebSockets, RTP, ftp, and more), but interactions are usually initiated using HTTP(S).</p>
+<p>Traditional web applications were arranged with most of the application logic applied by the server, and with the browser used mainly for presentation and user interactions.</p>
+<p>Modern web applications often share the application logic between the server and client components: some data processing may occur on the server before it is sent to the client, and further processing may be performed by code that runs in the browser client.  The client-side code (usually Javascript) is sent from the server to the client as and when it is needed.  Client-side Javascript frameworks (such as React) make it possible to write applications that execute entirely in the browser, and just use the Web as a way of distributing them, along with the data they use, to the client for execution.  Many of the MELD applications we have considered are of this kind.</p>
+<p>The traditional and modern approaches each have advantages.  A key advantage of using client code for application logic is that it removes load from the server, freeing it up to respond to many more requests from multiple users using the same service.  It also allows the user interface to become more responsive, rather than a simple rendering of data that is sent by the server.  This can come at the cost of increased application complexity, with code needing to support a range of different Javascript implementations in different browsers, and even between different versions of the same browser.</p>
+<p>The MELD framework pushes a lot of application logic to the client (browser), leaving open a possibility that the server side functions can be handled by off-the-shelf server software (e.g. <a href="https://github.com/solid/specification/">Solid</a>).</p>
+<p>In previous work on <a href="http://www.semanticaudio.ac.uk/demonstrators/34-sofa/" rel="nofollow">SOFA</a>, we have also explored the use of middleware "agents" for MELD applications, that retrieve data from a server, apply some processing to it, and write new (additional) data back to a server.  But in the end, interaction with a user usually uses a web browser interface.</p>
+<h3>
+<a id="313-react-and-redux" class="anchor" href="#313-react-and-redux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1.3 React and Redux</h3>
+<p>The MELD client libraries are implemented in the Javascript programming language, and are designed to be used with the popular <a href="https://reactjs.org/" rel="nofollow">React</a> and <a href="https://redux.js.org/" rel="nofollow">Redux</a> browser application frameworks.</p>
+<p>React is a Javascript library for building user interfaces.</p>
+<p>Redux describes itself as a predictable state container for Javascript applications.</p>
+<p>These powerful frameworks provide a lot of functionality that can be used by MELD applications, but also bring a fair degree of added complexity, which in turn presents challenges for sustainability of MELD applications.</p>
+<h2>
+<a id="32-approach" class="anchor" href="#32-approach" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2 Approach</h2>
+<p>The original intent of this sustainability project was to focus on testing the web (HTTP) interfaces between project-specific and generic back-end storage components, using existing work on <a href="https://github.com/oerc-music/nin-remixer-public/blob/master/notes/SOFA-architecture-notes.md">SOFA and MELD</a> as a starting point.  But, delving into the software, we found that much of the essential logic to be tested was exposed through API calls within browser applications.  This required a rethink of the approach, which has led to us facing and dealing with several specific software sustainability issues.</p>
+<p>We found that much of the MELD functionality in the applications we surveyed for this project, <a href="https://github.com/oerc-music/ForbiddenQuestion">Lohengrin time machine study</a> and <a href="https://github.com/oerc-music/delius-annotation">Delius annotation</a>, was visible only to internal API calls, so a different testing approach was needed.</p>
+<h3>
+<a id="321-initial-plan" class="anchor" href="#321-initial-plan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2.1 Initial plan</h3>
+<p>The original plan of work was to build upon <a href="https://github.com/oerc-music/meld-cli-tools">command line tooling</a> already created for testing middleware in the SOFA project.  This tooling was designed with testing in mind, providing a range of command options that could be used to create, access and test resources stored in an LDP or Solid server.  The intent was that for components that communicate via the LDP/Solid store, the command line tool could be used to set up test fixtures, and then interrogate the result of running a component.  Pass/fail results for individual tests are available via command exit status values.</p>
+<p>These commands could then be deployed in shell scripts (as we did for SOFA) to act as a basic framework for unit- and integration test suites, which could subsequently be used to confirm that the applications were behaving as intended, and also that the MELD components were behaving as expected by applications.</p>
+<p>We envisaged focusing on a few MELD applications:</p>
+<ul>
+<li>
+<a href="https://um.web.ox.ac.uk/lohengrin" rel="nofollow">Lohengrin TimeMachine Digital Companion</a>.</li>
+<li><a href="https://bl.linkedmusic.org/" rel="nofollow">Delius in performance</a></li>
+<li>TROMPA's <a href="https://trompamusic.eu/index.php/instrumental-players" rel="nofollow">CLARA rehearsal companion</a>
+</li>
+<li>Historical musicology with mixed media digital archives (Text, audio, image, score from British Library, New York Philharmonic Archives)</li>
+</ul>
+<p>Our study would use MELD as a reflective case study of software sustainability in DH projects.  While the MELD framework itself benefited from the substantial research efforts of FAST, the apps above have been created within the more limited resourcing of humanities projects.  This is an opportunity for SSI to reflect on effective software sustainability practice in such situations, which are typical for DH.</p>
+<p>Intended outputs of this work were to be:</p>
+<ul>
+<li>The software testing framework for MELD (public repo).</li>
+<li>Unit tests for (some/all of) the above studies/apps (public repo).</li>
+<li>Documentation and a best practice report (public, online).</li>
+</ul>
+<h3>
+<a id="322-what-we-actually-did" class="anchor" href="#322-what-we-actually-did" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2.2 What we actually did</h3>
+<p>It was revealed early in the project that HTTP-level testing using a command line tool wasn't going to provide sufficient access to exercise key application logic for the Lohengrin and Delius applications.  To test the internal interfaces, we wrote testing code in the applications' implementation language (Javascript), using existing test frameworks.  This required a greater familiarity with the implementation of applications using MELD, and the React framework ecosystem on which the MELD client-side code is built.  In turn, this required us to more immediately address a number of sustainability issues in the MELD codebase.</p>
+<p>The main consequences of this revised approach was a deviation from the original plan, with the creation of a series of simple "Hello MELD" applications, designed with testability in mind.  Implementing these applications has yielded several lessons in creating sustainable MELD applications, and also some re-evaluation of the attainable goals of this short project.</p>
+<p>Revised goals:</p>
+<ul>
+<li>dropped (for now) the goal of testing at the HTTP interface</li>
+<li>implemented a series of simple "Hello MELD" applications, designed with testability in mind, and used for both learning and testing</li>
+<li>implementing some simple tests using existing Javascript test frameworks (Mocha and Jest were trialled, and settled on Jest as it integrates more easily with React).</li>
+<li>a partial shift from testing as lead activity, to recording and documenting observed sustainability issues with the MELD libraries and applications.</li>
+</ul>
+<p>As a result, the outputs of this exercise will focus less on specific implementation of sustainability practices, and more on describing sustainability issues and possible mitigations, than was originally envisaged:</p>
+<ul>
+<li>The "Hello MELD" applications, which can be used as teaching as well as testing resources.</li>
+<li>A software testing framework for MELD based on the "Hello MELD" apps, and existing Javascript testing frameworks.</li>
+<li>Documentation and a best practice report (this report), and <a href="https://github.com/oerc-music/meld-testing-ssi3/tree/main/Notes">further details</a> in Github.</li>
+</ul>
+<h3>
+<a id="323-observations" class="anchor" href="#323-observations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2.3 Observations</h3>
+<h4>
+<a id="complexity-of-supporting-software-environment" class="anchor" href="#complexity-of-supporting-software-environment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Complexity of supporting software environment</h4>
+<p>The MELD client support code is implemented using NodeJS, React and Redux.  This environment offers a rich set of features, which have allowed complex functionality to be incorporated into MELD with relatively little initial software development effort.</p>
+<p>But React is a complex, dynamic environment with many supporting tools.  This gives rise to a complex web of dependencies, some of which may be frequently changing.  This can give rise to incompatibilities and failures when the MELD software itself, and any supporting tools used, are not kept up-to-date with the latest React/Redux library modules.  Many of the updates to underlying software are to address security vulnerabilities, so are important to incorporate into a public-facing web application.</p>
+<h4>
+<a id="undetected-problems-in-meld-code" class="anchor" href="#undetected-problems-in-meld-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Undetected problems in MELD code</h4>
+<p>There were a number of areas where the MELD support code did not behave as expected.  This would cause problems with existing applications, which might still work only by virtue of unrecorded changes made to the runtime environment, but which would fail when installed in a new environment.   When encountered, these failures are often hard to track down and fix.</p>
+<p>These are problems that automated tests, and especially continuous integration, are intended to catch.  The "Hello MELD" applications proved helpful when it came to isolating such failures, though repairs have proved harder to effect.</p>
+<p>Effective testing is a cornerstone of software sustainability.</p>
+<p>Retro-fitting tests to existing applications has proved to be challenging, for reasons that range from setting up a test environment that sufficiently mimics the application environment, to accessing internal interfaces that expose application logic to be tested.</p>
+<h4>
+<a id="working-with-higher-level-abstractions" class="anchor" href="#working-with-higher-level-abstractions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Working with higher level abstractions</h4>
+<p>Something that the React/Redux framework makes possible is creating higher level abstractions that hide some of the gnarly details of how the software plumbing works.  This is a good thing, but the value of this approach can be difficult to realize if the abstractions used are not adequately described and documented.  Without supporting documentation, developers can be left needing to dig down through multiple layers of code abstraction to gain an understanding of how the abstractions are supposed to work.  (For example, when working on some MELD code, we spent a fair amount of time chasing callbacks through several layers of code to get a handle on how a moderately simple application was supposed to work.)</p>
+<p>Further, if new abstractions are introduced, this increases the importance of testing to confirm that the implementations do properly present the higher level capabilities that they are intended to provide.  When there are bugs in implementations of higher level abstractions, the effort required to isolate and fix them is much greater, especially when they are encountered at a later date when the original developer may no longer be involved with the project.  Test cases can provide an executable and automatically testable specification of how an abstraction is expected to behave.</p>
+<h4>
+<a id="callbacks-and-promises" class="anchor" href="#callbacks-and-promises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Callbacks and Promises</h4>
+<p>This is a narrow technical issue, but also illustrates issues of broader system architecture choices concerning local vs global simplification.  A key contributor to sustainable software is keeping it easy to understand (for new developers), which among other things means keeping its structure as simple as possible (but no simpler).  This can be a delicate balancing act, and inappropriate choices either way can lead to greater code complexity, and attendant sustainability difficulties.</p>
+<p>In traditional programming, when using a result that becomes available at some time after it is requested (such as reading data from an external source), it is common for the calling program to simply wait for the result to be available.  This is synchronous operation.  But in modern web software it is often not desirable or possible to do this, and the results must be handled asynchronously (i.e. some time later, without pausing the application at the point of a request).  An approach that is often used is to have the invoking software provide a function (a "callback") that is called when the requested operation has completed.</p>
+<p>The problem with callbacks is that both the caller, the invoked function, and all intermediate functions need to incorporate the callback into their interface, which can leads to added complications in code paths that are unrelated to the operation being invoked.  In this way, callbacks can add arbitrary complexity that permeates a codebase:  changing one function may also require changes to a lot of unrelated code.  Thus, while conceptually quite simple, the ramifications of using callbacks are very extensive.  As a piece of software becomes more complex, managing and synchronizing asynchronous operations with callbacks becomes more difficult.</p>
+<p>An alternative to callbacks is to use Promises, which are widely used in Javascript.  A <a href="https://en.wikipedia.org/wiki/Futures_and_promises" rel="nofollow">Promise (or Future)</a> is a new abstraction that is used to manage synchronization of asynchronous operations.  Compared with callbacks, Promises are conceptually more difficult to understand.  But disciplined use of Promises can facilitate creation of easier-to-understand global structures in non-trivial software systems, by hiding the asynchronous aspects of operations from intervening code.</p>
+<p>This use of callbacks vs Promises illustrates a broader issue of local <em>vs</em> global simplification.  Compared with callbacks, Promises introduce a new layer of abstraction that may make some code harder to understand in isolation, yet often make the overall global structure of the code easier to follow.  Many programming abstractions come with similar pros and cons, and it is not always easy to tell if using one will make the overall application more or less sustainable.</p>
+<p>Where such abstractions are introduced, it is probably better, where possible, to use ones that are already widely known and understood (like Promises).  There are a number of books containing catalogues of software design patterns that might help mto make such choices.  One of the better known of these is <a href="https://en.wikipedia.org/wiki/Design_Patterns" rel="nofollow">Design Patterns</a> by Gamma, Helm, Johnson and Vlissides, sometimes also known as the "Gang of Four".</p>
+<h4>
+<a id="browser-vs-non-browser-code" class="anchor" href="#browser-vs-non-browser-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser vs non-browser code</h4>
+<p>In theory, Javascript code is highly portable, possible to run in a browser, desktop or server computer.  This is very appealing for testing, as it can be tricky to run automated tests in a browser, and continuous integration platforms are generally server-based.  (There do exist mechanisms for testing in "headless" browsers, but these can add complexity for a small project)</p>
+<p>In practice, there are a number of significant differences: Javascript language variants, run-time support, module loading mechanisms, and more.  We ran into several cases of code that would run as expected in a browser, but would fail when run in a non-browser test environment, due to differences in the ways in which modules were loaded.</p>
+<p>The original intent to test the HTTP interface was dependent on a significant amount of application logic being implemented on a server.  When this is not not the case, effective testing requires that it uses code-level APIs, with test code directly invoking APIs in a way that that resembles application code.</p>
+<p>Setting up even a very simple test environment for testing browser-based application code turned out to be challenging.  Theoretically, the testing framework would paper over any differences from the browser environment.  In practice, there were areas where differences would persist, and complex workarounds were adopted to avoid provoking these.</p>
+<h4>
+<a id="hello-meld-application-series" class="anchor" href="#hello-meld-application-series" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hello MELD application series</h4>
+<p>The "Hello MELD" applications were extremely helpful, both for learning the framework when bringing a new developer on board, as it allowed the various parts of a complex set of interfaces to be mastered separately, and creating code that was easier to test.  Also, the "Hello MELD" series of applications, which performed increasingly complex operations using MELD, provided fallback options when failures were encountered, allowing code-induced and environment-induced problems to be identified and separated.</p>
+<p>It was important that the first of these "Hello MELD" applications was so simple that one might easily think that there was nothing to go wrong.  In practice, things did go wrong, and even a trivially simple application served the important function of proving that a minimum set of runtime requirements had been set up correctly.  Having a trivial application provided a useful platform for exploring testing tools and frameworks without getting bogged down in application code minutiae, and allowed easy experimentation with application design options (using established MELD patterns) that would facilitate testing.</p>
+<h4>
+<a id="value-of-part-time-technical-expertise" class="anchor" href="#value-of-part-time-technical-expertise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Value of part-time technical expertise</h4>
+<p>The availability of occasional access to an experienced software developer was reported to be very valuable for project researchers who were primarily humanists, but engaged in software development.  While it can represent a significant cost to a project to employ a full-time developer, having part-time availability potentially offers many of the benefits of a full-time developer, and potentially facilitates training and technical capacity building for digital humanities projects.</p>
+<p>For MELD, the funded developer was at 20% FTE (1 day/week) for the duration of our study, with the effort split between (a) software maintenance and building testing capabilities (i.e. direct technical work), (b) supporting other project developers (indirect technical work) and (c) project management, SSI3 introspection and and reporting activities.  One day/week is relatively easy to schedule and manage, but the above suggests that 10%/0.5 day/week might be sufficient for technical support aspects.</p>
+<p>An area we noticed that might particularly benefit from a little technical expertise is in early review of software architecture choices.  We observed some areas where code maintenance was complicated by some initial choices of software structure that resulted in repetition of logic that an alternative structure would allow to appear just once.  (Such repetition makes it more likely that subsequent software changes will introduce inconsistencies and non-obvious problems).  Such architecture review could occur at the start of software development, but it be more effective if performed when a very early prototype has been created, and the method of implementation has been clarified and tested.  (In the observed example, some 6 different types of "annotation" has been implemented, each with different data model and user interaction requirements.  If just one or two annotation types had been implemented at the point of review, it would have been easier to suggest a software structure that would facilitate adding new annotation types with minimal changes to existing code.)</p>
+<h4>
+<a id="distributed-collaborative-working" class="anchor" href="#distributed-collaborative-working" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Distributed collaborative working</h4>
+<p>Work on MELD software involves researchers from multiple institutions in UK, Germany, Austria, Spain, and more.  Software development by a widely dispersed team is challenged by disparate goals of different groups and conflicting demands on their time, complicating the process of scheduling meetings to work through issues.  On the positive side, 2020 (the year of the Covid-19 pandemic) has seen a rise of tools to facilitate remote working, notably much improved videoconferencing systems.  Yet we have also seen that effective participation in remote meetings is much harder work, and more draining, than face-to-face meeting.  The MELD team has long used Slack instant messaging as a medium for ad-hoc coordination of activities and discussion of technical issues.  This is not new, and continued to be an important channel for communication.</p>
+<p>For the MELD sustainability work, we scheduled a week of remote <a href="https://en.wikipedia.org/wiki/Pair_programming#Remote_pair_programming" rel="nofollow">pair programming</a> work as a way to build MELD technical capacity for the <a href="https://www.dfg.de/en/research_funding/announcements_proposals/2020/info_wissenschaft_20_01/index.html" rel="nofollow">Beethoven in the House project</a>.  We found that Zoom screen sharing was an effective technique for this (other video conference systems might work as well or better; we found the affordances provided by Zoom seemed about right for this work).  There is a <a href="https://github.com/oerc-music/meld-hello-meld/blob/main/hello-meld-5/20210430-retrospective-review.md">retrospective review</a> of this activity with more details.</p>
+<p>More broadly, for supporting <em>Beethoven in the House</em>, the pattern we followed has been a series of short online development sessions building and understanding simple early incarnations of "Hello MELD", followed by the longer sprint to build a more complex application. This pattern seems to have been very effective, and reinforced value of simple early "Hello MELD" apps.  These focused development sessions did prove to be an effective way of making technical progress and transferring knowledge - an important aspect of these sessions was actually doing the work, to see all the details worked out.  Yet these online pair programming sessions are hard work, and we found it most effective to have frequent shorter online sessions (an hour or so) with longer breaks between for participants to work separately and consolidate their knowledge.  This observation was offered by Mark Saccomano, who participated in this process:</p>
+<blockquote>
+<p>I think any project needs to make judicious use of teleconferencing software, and be realistic about expectations.  I am finding meetings larger than 2 or 3 people to actually be counterproductive.  Chat in Slack, though, has been great since we began!  It is easier to take in information and you can always scroll back and refer to it when needed.</p>
+</blockquote>
+<p>Yet, talking to other project participants, it was noted that Slack (or similar) should not be seen as a replacement for other project planning and reporting documents.  Rather it should be seen as an alternative to a physical office presence, with recognition that Slack conversations are not a substitute for planning and scheduling activities.</p>
+<p>It was also noticeable that a the problems of dealing with code instability, noted elsewhere, are exacerbated by the challenges of remote working.  With limited contact time, it is easier to discuss an issue with reference points (e.g., a stable codebase and working tests) as a baseline.  These can help to focus attention on where problems have been introduced.  The "Hello MELD" series provided useful anchor points for our work, albeit somewhat hampered by failure to create a meaningful test suite.</p>
+<h1>
+<a id="4-sustainability-issues-encountered" class="anchor" href="#4-sustainability-issues-encountered" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Sustainability issues encountered</h1>
+<p>This section aims to highlight key issues encountered.  Raw observations and notes are contained in a separate document:  <a href="/Users/graham/workspace/github/oerc-music/meld-testing-ssi3/Notes/MELD-sustainability-issues-observed.md">MELD sustainability issues observed</a>.</p>
+<h2>
+<a id="41-working-with-a-complex-and-dynamic-software-ecosystem" class="anchor" href="#41-working-with-a-complex-and-dynamic-software-ecosystem" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.1 Working with a complex and dynamic software ecosystem</h2>
+<p>We ran into a number of compatibility problems while working with MELD on recent versions of NodeJS, React and Redux.  Attempting to update dependencies to later versions gave rise to failures that proved quite difficult to identify and remedy, and required changes to the MELD software.  Further, MELD itself is undergoing several changes in response to new application requirements, raising further library compatibility concerns.</p>
+<p>Keeping application and support code up-to-date with a complex evolving environment like React/Redux requires significant ongoing engineering effort, which can be challenging for a small research project.  This is especially true if the development is split over several research projects that don't necessarily have continuously available development effort - the wider world doesn't wait, and fragmented research activities are easily left behind.</p>
+<h3>
+<a id="suggested-mitigations" class="anchor" href="#suggested-mitigations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<ul>
+<li>
+<p>before adopting a complex support platform, consider whether the value provided (in terms of easy-to-use features) justifies the additional complexity and maintenance requirements.  (The consensus for MELD is that the features offered by the React/Redux platform did enable results that otherwise would probably not have been achieved.)</p>
+</li>
+<li>
+<p>when adopting a complex support platform, consider a strategy or practice to ensure that the underlying dependencies can be safely updated. Ideally, this will involve having some form of automated testing and continuous integration in place.  Try to keep dependencies up-to-date as you go, rather than relying on infrequent updates of multiple dependencies.</p>
+</li>
+<li>
+<p>in selecting dependencies, consider whether they are actively maintained.  We encountered some problems with dependencies that were not maintained, and as a result were not updated to use newer versions of the underlying React platform, leading to multiple incompatible versions.  The exhortation to keep dependencies up-to-date applies also to indirect dependencies (which depends on other developers).</p>
+</li>
+<li>
+<p>consider also that the code you create may become a dependency for some other "downstream" application.  Sustainability of any such downstream application can be improved if your code has frequent releases that are up-to-date with respect to changes in its own dependencies.  This allows any downstream application to use the latest versions of dependencies, mitigating one aspect of the so-called "dependency hell" problem where multiple (and potentially incompatible) versions of the same dependency are included.  (Note that this primarily facilitates new application developments, and does not necessarily force older applications to be upgraded to use newer versions of the dependencies.)</p>
+</li>
+<li>
+<p>consider how to create a complete snapshot, including all supporting components, of a working version of an application.  For example, as a Docker image?  (Bear in mind that for a web based application, there remains a possible dependency on the browser used.)</p>
+</li>
+</ul>
+<h2>
+<a id="42-inconsistent-build-and-runtime-environments" class="anchor" href="#42-inconsistent-build-and-runtime-environments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.2 Inconsistent build and runtime environments</h2>
+<p>We found different developers were using different versions of the runtime environment and build tools.  This led to applications that worked in some environments and failed in others.</p>
+<p>Some of the build tools used were not always reliable.  For example, Node Package Manager (npm) is supposed to record package versions used, and thus ensure consistency.  In practice, we found that differences between different development environments were not being corrected, leading to inconsistencies noted.</p>
+<p>Clear identification of supporting build tools used was lacking.  The Javascript/React/Redux environment in particular relies on a range of tools to compile code to a form that can be run in a base runtime environment.  The tools needed are themselves somewhat dependent on the NodeJS and/or web browser versions used to run the application code.</p>
+<h3>
+<a id="suggested-mitigations-1" class="anchor" href="#suggested-mitigations-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<ul>
+<li>
+<p>create automated scripts to create clean runtime and development environments from scratch.  Such scripts also serve usefully as documentation.  Creating a Docker container for an application is one way to achieve this, and may also provide a pre-built ready-to-go environment that others can use.</p>
+</li>
+<li>
+<p>establish a continuous integration environment:  this forces the environment to be rebuilt from scratch (or from established and documented resources) whenever the software is updated.</p>
+</li>
+<li>
+<p>maintain development/test environments separately from other aspects of the host system (e.g., using tools like Node's <code>nvm</code> or Python's <code>venv</code>).  Provide detailed instructions and/or automated script for setting up a new development/test environment, or resetting an existing one.</p>
+</li>
+</ul>
+<h2>
+<a id="43-lack-of-automated-testing-and-continuous-integration" class="anchor" href="#43-lack-of-automated-testing-and-continuous-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.3 Lack of automated testing and continuous integration</h2>
+<p>Although MELD has a simple test application, there was no automated test suite or continuous integration set up.  (Continuous integration is used here to mean an environment that automatically installs the software into a clean environment, runs the tests and reports any failures, whenever any changes are made to the software.  This allows problems to be detected rapidly, hence easier to fix because the breaking changes made are still fresh in a developer's mind.)</p>
+<p>The lack has resulted in uncertainty about the status of the software.  Attempts to install the simple test applications resulted in failures that would probably have been picked up by automated tests and continuous integration.</p>
+<h3>
+<a id="suggested-mitigations-2" class="anchor" href="#suggested-mitigations-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<ul>
+<li>
+<p>establish an automated testing regime at the outset of a project, or very early in its lifetime.  Much of the value of automated testing can be realized even by very lightweight tests - 90%+ test coverage is great of you can afford it, but even very minimal coverage can provide valuable proof of life, and can be quick to implement.  In practice, once a testing regime is in place, I find it tends to collect coverage-improving tests over time  with very little additional effort.  Expect automated testing to pay back any initial investment of effort within a few weeks of development activity.</p>
+</li>
+<li>
+<p>if it can be done quickly and easily, set up continuous integration early in the project.  A prerequisite for this is some form of automated testing, even if it only to ensure that system can be built and installed.  In practice, I've have found that having easy-to-run tests can be almost as valuable (but may be less effective for picking up installation and environment setup problems).  It should be very little effort to set up continuous integration that does no more than install the dependencies and build the package, which can help to catch a lot of problems, and provides a place where further tests can be added as the project evolves.</p>
+</li>
+<li>
+<p>consider testability when designing code: ensure that important features are easy to invoke and access for testing.  For example, separating data manipulation functions from I/O and user interface allows them to be tested in isolation with fewer execution environment dependencies.</p>
+</li>
+<li>
+<p>treat tests as an important source of documentation: some of the effort put into documenting an interface may be better directed toward creating tests that can also be used as examples.</p>
+</li>
+</ul>
+<h3>
+<a id="test-fixtures-and-mocking" class="anchor" href="#test-fixtures-and-mocking" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test fixtures and mocking</h3>
+<p>For data-intensive applications, including many DH applications, consideration should also be given to creation of text fixtures (e.g., datasets against which the tests are run), or "mocking" of the interfaces through which such data is accessed.  This aspect has not been explored as part of the project reported here.</p>
+<p>See also the section <a href="#47-data-preparation">Data preparation</a> below.</p>
+<h2>
+<a id="44-application-code-version-management-issues" class="anchor" href="#44-application-code-version-management-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4 Application code version management issues</h2>
+<p>The MELD libraries are being used by different developers in different institutions, who also apply fixes and updates to the libraries themselves.  This has meant that different branches of the MELD code being used in different applications over extended periods of time, exacerbating the consistency issues noted previously.</p>
+<p>There was some early lack of clarity about the code governance (e.g. the exact requirements for updating the reference version of the software that should be the basis of all new applications (and preferably any that are actively being developed).</p>
+<h3>
+<a id="suggested-mitigations-3" class="anchor" href="#suggested-mitigations-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<ul>
+<li>
+<p>use a code version management system, such as git.  This shouldn't need saying.</p>
+</li>
+<li>
+<p>establish a governance structure early in the project.  It doesn't need to be complex: one of it's main purposes is to let all developers know what is expected in order to update the main codebase.  An appropriate level of requirements imposed by project governance should take account of project resourcing constraints.  But also remember that, in the long term, sensible quality requirements save more effort than they cost.</p>
+</li>
+<li>
+<p>try to make use of available affordances to automate governance constraints; e.g. using GitHub reviewer requirements for merging a pull request.</p>
+</li>
+<li>
+<p>don't make "kitchen-sink" updates to the code base.  Tackle changes in small chunks, and include a clear statement of purpose with committed changes.</p>
+</li>
+</ul>
+<h2>
+<a id="45-application-code-complexity" class="anchor" href="#45-application-code-complexity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.5 Application code complexity</h2>
+<p>The MELD support libraries, and especially the underlying React/Redux framework, present a rich and flexible interface, which in turn forces a degree of complexity onto the application code that uses them.  This has meant that applications are initially difficult for new developers to understand.  We found that, in practice, it took a significant amount of hand-holding from an existing MELD application developer to bring a new developer up to speed using the MELD framework.</p>
+<h3>
+<a id="suggested-mitigations-4" class="anchor" href="#suggested-mitigations-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<p>There's no silver bullet for solving this - it's a perennial software problem.  But some things to consider might be:</p>
+<ul>
+<li>
+<p>create some very simple, easy-to-understand applications/instances with minimal functionality.  These can provide a gentle onramp, helping developers to understand which aspects of a platform or system are providing what kind of functionality (and which aspects might be ignored).</p>
+</li>
+<li>
+<p>try to conceive an application as independent modules with separate concerns.  An example of this approach is Unix command line tools that can be used alone, or combined in various ways.   It's not always easy or possible for web applications, but we had some success with SOFA (an earlier MELD application) using Solid (LDP) for data storage, and chainable command line tools for various features.</p>
+</li>
+<li>
+<p>use abstractions judiciously.  Sometimes, a well chosen abstraction (or encapsulation of some common pattern of operation) can lead to simpler code.  But abstractions bring their own additional layer of knowledge required to understand, so should be selected with care.  (See also <a href="#working-with-higher-level-abstractions">Working with higher level abstractions</a> and <a href="#callbacks-and-promises">Callbacks and Promises</a>.)</p>
+</li>
+<li>
+<p>don't let too much technical debt accumulate (for some value of "too much").  (See also: <a href="#48-accumulated-technical-debt">4.8 Accumulated technical debt</a>.)</p>
+</li>
+</ul>
+<h2>
+<a id="46-run-time-error-detection-and-reporting" class="anchor" href="#46-run-time-error-detection-and-reporting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.6 Run time error detection and reporting</h2>
+<p>Run time error detection  and reporting in the MELD libraries, and sometimes in the underlying React/Redux libraries, was very patchy.  This would result in applications failing for no apparent reason, or failing for indicated reasons that have no discernible connection with what the application is trying to do.  This can make problem diagnosis and rectification difficult and time-consuming.</p>
+<h3>
+<a id="suggested-mitigations-5" class="anchor" href="#suggested-mitigations-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<p>Mitigations here are common software coding practices.</p>
+<ul>
+<li>
+<p>don't fail silently.  If something is wrong, or if an option is not (yet) implemented, report it.  Such reports don't have to be pretty, just obvious.  If possible, they should refer to application data and concepts, not internal software concepts.</p>
+</li>
+<li>
+<p>code defensively!  Don't assume that certain inputs can't happen:  check them and generate a report (or crash with a stack dump) if they aren't satisfied.</p>
+</li>
+<li>
+<p>provide debug options to report inputs received, to help identify where any problem might be occurring.</p>
+</li>
+<li>
+<p>consider using an application monitoring tool such as <a href="https://sentry.io/welcome/" rel="nofollow">Sentry</a>, which allows an application to submit a diagnostic report when an error is encountered while running somewhere else - these reports can be useful for locating hard-to-replicate errors, or when users are not equipped or motivated to provide bug reports.  (There is some discussion of front-end application monitoring and alternatives to Sentry on this <a href="https://geekflare.com/frontend-web-monitoring/" rel="nofollow">Geekflare page</a>.)</p>
+</li>
+</ul>
+<h2>
+<a id="47-data-preparation" class="anchor" href="#47-data-preparation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.7 Data preparation</h2>
+<p>MELD applications, in common with many Digital Humanities applications, typically work with existing data, which may be created using other tools (e.g. music files), or extracted from existing public resources (e.g. Wikidata).  For an application to be useful, or testable, suitable input data must be available.</p>
+<p>The MELD framework does provide data for testing and demonstration use, but it wasn't always easy to find.</p>
+<p>For creating a simple stripped-down application, we needed to create a new dataset using tools that are not part of the MELD framework.  The MELD documentation did not contain pointers to easy-to-use options for creating such data, and this process alone took a few days of investigation and experimentation.</p>
+<h3>
+<a id="suggested-mitigations-6" class="anchor" href="#suggested-mitigations-6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<ul>
+<li>
+<p>for testing, provide ready-to-use datasets.  Ideally. they should be as simple as possible for the feature they are intended to test.</p>
+</li>
+<li>
+<p>for users, provide simple instructions for creating input data.  For example, in the case of MELD, an MEI file can be created from a MuseScore musical score, exported as MusicXML and then processed using the Verovio web service to convert it into MEI (e.g. as described for <a href="https://github.com/oerc-music/meld-hello-meld/tree/main/hello-meld-2#use-verovio-to-generate-mei-from-musescore-musicxml"><code>hello-meld-2</code></a>)</p>
+</li>
+<li>
+<p>provide pointers to file format and vocabulary term descriptions.</p>
+</li>
+</ul>
+<h2>
+<a id="48-accumulated-technical-debt" class="anchor" href="#48-accumulated-technical-debt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.8 Accumulated technical debt</h2>
+<p>This isn't really a separate issue, but more a consequence of the other factors reported above.</p>
+<p>Technical debt refers here to software additions and patches that are used to get some software running, but which don't represent an optimal way of solving the underlying problem.  It often results in code that has duplicated and/or tortured logic, and fails to maintain a clean separation of concerns between software elements.</p>
+<p>When developing software under time-and-resource constraints, it is often expedient to take short-cuts to validate an approach, or to demonstrate a result.  Individually, these shortcuts are often not problematic, but if they are allowed to accumulate in a codebase the resulting software can quickly become harder to understand and update.  And faced with with such difficulty, a developer will often use additional shortcuts or workarounds to avoid having to deal with the difficult code.  In this way, the accumulation of technical debt can grow exponentially, and the speed of making changes and fixes will decay accordingly.</p>
+<p>Further, for MELD, technical debt was accrued over a number of smaller side projects (MELD applications), each with their own priorities for what MELD should provide, but for which long term maintenance of MELD itself was not a central concern (apart from the fact that they would ultimately depend on sustainability of MELD).   Such debt accumulates when each side-project makes its own separate enhancements to the MELD code base, resulting (among other things) in code management issues <a href="#44-application-code-version-management-issues">noted previously</a>.</p>
+<p>Some technical debt recovery was performed as part of this sustainability work, and it was noticed by other project members that there is value in paying down technical debt separately from immediate pressures of application development.</p>
+<h3>
+<a id="suggested-mitigations-7" class="anchor" href="#suggested-mitigations-7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggested mitigations</h3>
+<p>Again, no magic bullets here.  It's mostly common software engineering practice and skills.</p>
+<ul>
+<li>
+<p>be aware of technical debt; keep notes of where it exists, and ideas for eliminating it.  When a change turns out to be more difficult than it should be, that may be an indication that the code first should be refined.</p>
+</li>
+<li>
+<p>don't let too much technical debt accumulate.</p>
+<p>How much is too much?  This is hard to say - it's also possible to spend too much time refining code.  A possible rule of thumb is this:  when a piece of code needs to be modified, first see if there are any changes that make the desired changes easier to apply while preserving its existing functionality.</p>
+</li>
+<li>
+<p>try to maintain separation of concerns between software components.</p>
+</li>
+<li>
+<p>try to avoid duplicated logic (also known as DRY: "don't repeat yourself").</p>
+</li>
+<li>
+<p>don't combine changes that address technical debt with changes that update functionality.  No existing test should fail as a result of refinements that pay down technical debt.</p>
+</li>
+</ul>
+<h1>
+<a id="5-lessons-in-sustainability-for-dh" class="anchor" href="#5-lessons-in-sustainability-for-dh" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. Lessons in sustainability for DH</h1>
+<p>Achieving long-lived utility for the software outputs of a digital humanities research activity (or any research activity?) is often a delicate balancing act between getting the work done, and putting in the extra effort to ensure longer term viability (i.e. so that the work done "stays done").</p>
+<p>This balancing act affects resource allocation, conduct of the project, and technical design choices, which are discussed below under the headings "Resourcing", "Technical activity" and "Technical design".</p>
+<p>The discussion that follows is not unique to DH software, but it is intended to focus on aspects that arise more commonly there.</p>
+<h2>
+<a id="51-resourcing" class="anchor" href="#51-resourcing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.1 Resourcing</h2>
+<p>Considerations of resourcing will necessarily involve trade-offs between immediate requirements and longer term utility and sustainability.  Such considerations are not unique to DH software: in "The Mythical Man-Month" chapter "The Tar Pit", Frederick Brooks discusses near order-of-magnitude costs associated with the evolution of a "program" (solving an immediate problem) into a "programming systems product" (providing long-term utility, and supporting evolution to address new problems).</p>
+<p>More recently, such trade-offs are considered by "agile development" practices, which propose that it is futile to expend up-front effort to address future problems, but which also propose that evolution is a fundamental element of software development, and needs to be supported by development practices (such as continuous testing, refactoring, etc.)</p>
+<h2>
+<a id="52-technical-activity-planning" class="anchor" href="#52-technical-activity-planning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.2 Technical activity planning</h2>
+<p>When planning (and budgeting) a development activity, some factors to consider are:</p>
+<ul>
+<li>code management</li>
+<li>dealing with technical debt</li>
+<li>combating software decay ("bitrot")</li>
+<li>code testing</li>
+<li>automated builds</li>
+</ul>
+<p>This is not an exhaustive list, but reflects some key concerns that have been raised by  our work with MELD.</p>
+<p>Code management probably needs little discussion, as it seems to be a given for just about any software project.  The existence of a shared repository of source code, which includes a history of all changes made, is very common practice and, among other things, helps to safeguard all the efforts that go into creating some piece of code.  A popular code management tool is <code>git</code>, which is supported by services such as GitHub and SourceForge.  There are plenty of challenges associated with source code management and version control, but these have not proved to be a major issue with MELD.</p>
+<p>Technical debt arises when the overall structure of some software is misaligned with the functionality it is required to provide.  It accumulates through the application of quick (or not-so-quick) fixes to add new functionality, without adjusting the software structure to accommodate the changes.  Addressing technical debt requires a level of ongoing effort that does not, of itself, advance the capabilities of the software.  Not attending to technical debt typically results in software that becomes harder to maintain or modify with the result that new features become more difficult and more expensive to add.  But paying too much attention can result in wasted effort.</p>
+<p>Where technical debt arises (mainly) from changes to the software itself, decay may arise from changes to the external environment in which it is deployed and/or developed, including operating system, language compilers, runtime libraries, external libraries and utilities used, etc.  In  particular, software may decay even when it is not being changed;  security mitigations are a particular source of such changes.  Combating decay requires a degree of ongoing engineering effort to recompile and retest software with updated tools, libraries and operating environments, and to apply any software changes that may be needed to ensure its continued operation.</p>
+<p>Testing is required in all stages of technical activity.  While manual testing may be deemed sufficient when initially developing some software, automated testing is generally a cornerstone of activities to combat technical debt and decay.  There are many forms of automated testing discussed in software engineering literature, but for the purposes of discussion here it is probably safe to say that <em>any</em> automated testing is better than none at all.</p>
+<p>To be confident of being able to successfully install and use a software system, an automated build and deployment system is extremely valuable.  Many modern programming languages have relatively easy-to-use automatic build systems (e.g. NodeJS has <code>npm</code>, Python has <code>pip</code> and <code>setuptools</code>, Ruby has <code>gem</code>, etc.).  Or one might write a shell script to perform the required installation steps.  A key benefit of an automated install system is that, when combined with automated testing, it allows continuous integration, where tests are run every time a code change is submitted to a code repository.</p>
+<h2>
+<a id="53-technical-design-choices" class="anchor" href="#53-technical-design-choices" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.3 Technical design choices</h2>
+<p>Sustainability of a codebase is affected by software architecture, and myriad technical design choices.  There is extensive technical literature on this subject, which is not covered here.  Just a few points for consideration are offered.</p>
+<p>When considering creation of sustainable software, there is a risk of creating inflexible monoliths.  Most software systems tend to ossify over time, becoming harder to adapt and evolve as early design choices become more pervasive though the system implementation.</p>
+<p>Large monolithic applications are often harder to maintain, and hence harder to sustain.  Does an application need to be monolithic?  Sometimes, especially where non-technical users are involved, the answer may be "yes". The alternatives here would be to conceive an application as consisting of a number of smaller, independent pieces that are run separately, and pass information via files or data handling pipelines.  But this can place a greater burden on a non-technical user learning to use the application.</p>
+<p>A monolith can sometimes be decomposed by separating data processing components from data presentation.  This can also facilitate testing, by creating explicit interfaces that can be used as easy test targets.</p>
+<p>In choosing to use a complex dynamic supporting framework (such as React, or any of numerous other web application frameworks), it is possible to incur dependencies that render the resulting software more prone to decay, and in needing additional effort for sustainability.</p>
+<p>Complex user interfaces require a lot of effort to build and maintain, and can be a source of sustainability problems.  Sometimes, sophisticated visualizations and flexible interactions are important for research software.  It may alternatively be the case that the important research value of the software can be achieved by simplified data presentation, or generating data in a form that can be consumed and presented by an off-the-shelf application.</p>
+<h1>
+<a id="6-recommendations-for-dh-software-sustainability" class="anchor" href="#6-recommendations-for-dh-software-sustainability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6. Recommendations for DH software sustainability</h1>
+<p>The following commentary is not intended to be prescriptive or definitive.   It is based on qualitative observations rather than detailed quantitative evidence, and as such offers topics to consider for improving sustainability rather than detailed guidelines.  Generally, all projects are different, and each will need to make its own trade-offs, but consideration of some common themes may help to improve outcomes.</p>
+<h2>
+<a id="61-recommendation-1-technical-architecture" class="anchor" href="#61-recommendation-1-technical-architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.1 Recommendation 1: Technical architecture</h2>
+<p>Can the research software be effective if conceived as a set of independent tools that are designed to work together, possibly sharing information via well defined interfaces (such as simple files or data pipelines)?  Smaller, independent programs are usually easier to write, test and maintain.  Consider separating data presentation from data processing and/or retrieval.  As long as the interfaces remain stable, changes to one part of an application suite should not require changes to another part.  The downside may be that multiple independent applications are harder for non-technical users to learn and use.</p>
+<p>Avoid creating complex user interfaces, or limit the complexity of any that are needed.  Implementing a sophisticated user interface can require development effort disproportionate to the value provided, and subsequent maintenance effort is similarly magnified.</p>
+<p>In choosing to use a supporting application support platform, consider whether the value provided by the platform outweighs the additional dependencies that are introduced, and that may require ongoing maintenance effort to keep up to date.  Note that such platforms can take significant effort to learn, which may lead to difficulties finding future developers to help with software maintenance.</p>
+<p>When writing or modifying code for execution in a Javascript environment, consider using <a href="https://www.typescriptlang.org/" rel="nofollow">Typescript</a>. Typescript is an enhanced form Javascript, which allows some checks for code correctness to be performed to catch errors before the code is executed, and providing diagnostic information that makes it easier to pinpoint and correct such errors.  A valid Javascript program remains valid and performs the same function when processed as Typescript;  this means that code changes that support the checking can be applied incrementally, without requiring a "flag day" change to the entire application codebase.  To use Typescript, ensure that the tool chain used can support automatic processing of Typescript code.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#complexity-of-supporting-software-environment">Complexity of supporting software environment</a></li>
+<li><a href="#working-with-higher-level-abstractions">Working with higher level abstractions</a></li>
+<li>
+<a href="#callbacks-and-promises">Callbacks and Promises</a>.)</li>
+<li><a href="#browser-vs-non-browser-code">Browser vs non-browser code</a></li>
+<li><a href="#41-working-with-a-complex-and-dynamic-software-ecosystem">Working with a complex and dynamic software ecosystem</a></li>
+<li><a href="#45-application-code-complexity">Application code complexity</a></li>
+<li><a href="#48-accumulated-technical-debt">Accumulated technical debt</a></li>
+<li><a href="#53-technical-design-choices">Technical design choices</a></li>
+<li><a href="#64-recommendation-4--incremental-development">Incremental development</a></li>
+</ul>
+<h2>
+<a id="62-recommendation-2-design-for-testing" class="anchor" href="#62-recommendation-2-design-for-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.2 Recommendation 2: Design for testing</h2>
+<p>When designing and planning a system implementation, think about how it can be tested.  Think about intermediate results that can provide insight into how the software is working, and how they can be made visible for testing.</p>
+<p>As the software is developed, implement some tests, however minimal.  These will serve to confirm that the software is (to some degree) testable, and also a simple "I'm alive" kind of test is extremely valuable.  Later, as problems are encountered, additional tests can be added to explore and diagnose the problem, and help to avoid future regression.</p>
+<p>Our experience of working with React and Redux also suggests that using a complex supporting framework increases the importance of having some kind of basic testing framework in place.  This helps to document and verify the way that application code is expected to interact with the framework, and will help to confirm that the framework-based code is actually testable.</p>
+<p>Consider budgeting (say) 20% development effort for implementing automatic tests.  This number is arbitrary, without supporting evidence, so a different number might be chosen.  But consider this:  if a piece of software is developed over a week, does spending one day of that week writing some basic tests significantly undermine what can be achieved?  Even if that effort is not recouped within the week of initial development, I estimate from personal experience that the time would be recouped over a further 2-3 weeks of continued development.   Such tests can serve several purposes:  thinking more clearly about how the software should work; confidence that the code is (at least partially) working as expected; examples for new developers to learn about the software; executable specification of how the software is intended to work.  The effort saved in manual testing, documentation and learning can quickly outweigh the effort of writing the tests in the first place.  Sometimes, writing tests first can even speed up the process of writing the code, in part by forcing clarity about what it is that the code needs to do.</p>
+<p>Software engineering literature discusses the desirability of high levels of test coverage.  Yet even lower levels of test coverage can be very valuable, and with a test framework in place, additional tests are relatively easy to add as problems are uncovered.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#undetected-problems-in-meld-code">Undetected problems in MELD code</a></li>
+<li><a href="#42-inconsistent-build-and-runtime-environments">Inconsistent build and runtime environments</a></li>
+<li><a href="#43-lack-of-automated-testing-and-continuous-integration">Lack of automated testing and continuous integration</a></li>
+<li><a href="#46-run-time-error-detection-and-reporting">Run time error detection and reporting</a></li>
+<li><a href="#47-data-preparation">Data preparation</a></li>
+<li><a href="#52-technical-activity-planning">Technical activity planning</a></li>
+</ul>
+<h2>
+<a id="63-recommendation-3-continuous-integration" class="anchor" href="#63-recommendation-3-continuous-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Recommendation 3: Continuous integration</h2>
+<p>With automated testing in place, even if very cursory, and assuming that software building and deployment is automated, it should be relatively easy to set up a continuous integration system so that errors can be detected very when code changes are applied.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#undetected-problems-in-meld-code">Undetected problems in MELD code</a></li>
+<li><a href="#42-inconsistent-build-and-runtime-environments">Inconsistent build and runtime environments</a></li>
+<li><a href="#43-lack-of-automated-testing-and-continuous-integration">Lack of automated testing and continuous integration</a></li>
+<li><a href="#52-technical-activity-planning">Technical activity planning</a></li>
+</ul>
+<h2>
+<a id="64-recommendation-4-incremental-development" class="anchor" href="#64-recommendation-4-incremental-development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.4 Recommendation 4: Incremental development</h2>
+<p>Develop in small increments, with testing at each stage.  When a failure occurs after a small number of changes have been made, it is easier to pinpoint the cause of failure compared with when many changes have been made to add multiple new features.</p>
+<p>At each stage, keep a copy of the working code (typically annotated in a version control system) along with instructions for running it (where the instructions can be as simple as identifying a script to use).</p>
+<p>When adding a new feature, consider first refactoring the code:  restructuring the code to accommodate the planned changes, without actually changing its functionality.  All existing tests should continue to pass.</p>
+<p>Ideally, any set of code changes should be a sufficiently small advance on an existing known working system that they can be thrown away if they don't work.  (This isn't always easy to do in practice, but something to think about.)</p>
+<p>See also:</p>
+<ul>
+<li><a href="#undetected-problems-in-meld-code">Undetected problems in MELD code</a></li>
+<li><a href="#43-lack-of-automated-testing-and-continuous-integration">Lack of automated testing and continuous integration</a></li>
+<li><a href="#44-application-code-version-management-issues">Application code version management issues</a></li>
+<li><a href="#48-accumulated-technical-debt">Accumulated technical debt</a></li>
+<li><a href="#52-technical-activity-planning">Technical activity planning</a></li>
+</ul>
+<h2>
+<a id="65-recommendation-5-dealing-with-technical-debt" class="anchor" href="#65-recommendation-5-dealing-with-technical-debt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.5 Recommendation 5: Dealing with technical debt</h2>
+<p>Don't allow too much technical debt to accumulate.</p>
+<p>This begs a question: how much is too much?  A rule of thumb might be to eliminate technical debt when it becomes an impediment to adding a new feature.  It's usually better to eliminate problem code before changing it's functionality, rather than trying to do so after it has been further modified.</p>
+<p>Treat elimination of technical debt separately from adding new functionality, and save changes so that any functional enhancements are made from a recoverable baseline.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#48-accumulated-technical-debt">Accumulated technical debt</a></li>
+<li><a href="#52-technical-activity-planning">Technical activity planning</a></li>
+</ul>
+<h2>
+<a id="66-recommendation-6-keep-dependencies-up-to-date" class="anchor" href="#66-recommendation-6-keep-dependencies-up-to-date" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.6 Recommendation 6: Keep dependencies up to date</h2>
+<p>Don't put off updating dependencies.  As with incremental development, it's easier to troubleshoot any problems if relatively few things have changed.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#complexity-of-supporting-software-environment">Complexity of supporting software environment</a></li>
+<li><a href="#undetected-problems-in-meld-code">Undetected problems in MELD code</a></li>
+<li><a href="#42-inconsistent-build-and-runtime-environments">Inconsistent build and runtime environments</a></li>
+<li><a href="#43-lack-of-automated-testing-and-continuous-integration">Lack of automated testing and continuous integration</a></li>
+<li><a href="#44-application-code-version-management-issues">Application code version management issues</a></li>
+<li><a href="#48-accumulated-technical-debt">Accumulated technical debt</a></li>
+<li><a href="#52-technical-activity-planning">Technical activity planning</a></li>
+</ul>
+<h2>
+<a id="67-recommendation-7-minimal-application-examples" class="anchor" href="#67-recommendation-7-minimal-application-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.7 Recommendation 7: Minimal application examples</h2>
+<p>The value of minimal applications for introducing computing concepts has been recognized since Kernighan and Ritchie presented "Hello world" in <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" rel="nofollow">The C Programming Language</a>.</p>
+<p>For any system that has aspirations to be community-sustained, such materials can be invaluable.  So include the simplest possible examples of how to use a piece of software, and make sure that they work when the software is installed as described.  Then build upon these to introduce more advanced concepts.  Minimal applications can also provide a useful platform for testing, as they help to keep important concepts isolated, or at least to ensure that common foundations are tested in isolation from more complex interactions that depend upon them.</p>
+<p>No application is too trivial to be worth presenting: even if it appears pointless, there may be tacit knowledge exposed that otherwise gets glossed over, or buried by other details.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#complexity-of-supporting-software-environment">Complexity of supporting software environment</a></li>
+<li><a href="#hello-meld-application-series">Hello MELD series</a></li>
+<li><a href="#45-application-code-complexity">Application code complexity</a></li>
+<li><a href="#47-data-preparation">Data preparation</a></li>
+</ul>
+<h2>
+<a id="68-recommendation-8-give-some-thought-to-project-governance" class="anchor" href="#68-recommendation-8-give-some-thought-to-project-governance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.8 Recommendation 8: Give some thought to project governance</h2>
+<p>Project governance shouldn't be a drag - it helps project members to understand how they are expected to be working together.  It can also help to establish a basic level of quality (e.g. requirements for code review, tests, etc.) that is expected for any new code added.</p>
+<p>See also:</p>
+<ul>
+<li><a href="#44-application-code-version-management-issues">Application code version management issues</a></li>
+<li><a href="#48-accumulated-technical-debt">Accumulated technical debt</a></li>
+<li><a href="#52-technical-activity-planning">Technical activity planning</a></li>
+</ul>
+<h1>
+<a id="7-proposed-further-investigations" class="anchor" href="#7-proposed-further-investigations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. Proposed further investigations</h1>
+<p>In this section, we suggest a number of additional sustainability issues that could usefully be investigated through the MELD use-case.</p>
+<p>The current short project has succeeded in exposing a number of sustainability issues with MELD, which this document has attempted to explain.  We have also described how many of these lessons are more widely applicable.</p>
+<p>Yet there are many questions and issues about MELD sustainability that have been raised, but which there has been no time to investigate.  Some of these questions and issues include:</p>
+<ul>
+<li>
+<p>Further development of MELD testing.  MELD is currently undergoing a version freeze, and this would be a great opportunity to "fix" the version functionality upon which applications depend in a test suite.  This would allow any changes to MELD that break this functionality to be detected quickly, and steps taken to ensure that dependent applications continue to work:  the sustainability advantages here are many-fold:  sustaining MELD itself, and also the diverse applications that depend upon it.</p>
+</li>
+<li>
+<p>Example test fixtures and "mocks".  These are aspects of testing that allow tests to be run independently of a complex deployment setup.  This in turn makes the tests easier to run (hence more likely to be used), and also facilitates continuous integration</p>
+</li>
+<li>
+<p>Continuous Integration (CI) setup.  The benefits of CI have been discussed above, but the present project has not been able to explore setting up a CI environment.</p>
+</li>
+<li>
+<p>Performance evaluation and tuning.  It has been noted that there are features of MELD whose performance is not as good as would be expected, but we have lacked tooling to isolate the inefficiencies.  A test suite is a great place to add in performance measurement options, and the results of this should greatly assist identification of performance bottlenecks.  Further, having performance instrumentation embodied in a test suite helps to evaluate any "improvements" made to the code - both to confirm that functionality is not impaired, and also to provide qualitative and repeatable information about the extent of any performance improvements achieved.</p>
+</li>
+<li>
+<p>Solid-based application examples and tests.  The <a href="https://solidproject.org/" rel="nofollow">Solid project</a>, led by Tim Berners-Lee and other web luminaries, is a layer for web application services that separates data custody from application logic.  These affordances of Solid play well to the goals of many DH applications where data custody is distributed among many independent players, as information provided and maintained by diverse sources is combined for the needs of some particular research.  Efforts are under way for common themes, such as people, places, artifacts, historical eras, etc., to be served by public hubs, but the nature of DH data means that these can rarely be complete for the requirements of any particular line of research.</p>
+<p>MELD is already being developed to use Solid servers for data storage - for both source data and intermediate results ("annotations").  But further exploration and testing is needed to better understand how Solid security models can best be used by DH research software.</p>
+</li>
+<li>
+<p>Documentation of abstractions used.  One of the problems we observed was the use of application-specific abstractions that were not adequately described.  An exercise to identify and document the various abstractions introduced by MELD to simplify creation of music and musicology applications, and how they may be composed, would be useful in its own right for MELD developers, and may lead to identification of design patterns that are more widely applicable in DH applications.</p>
+</li>
+</ul>
+<p>One lesson of the work reported here has been the value of a project having occasional access to a software engineer who has a good understanding of the goals and nature of the DH project, and experience with the kinds of issues faces by DH researchers.  Such occasional access can be very cost effective, yet is not always easy to arrange, and once in place can be difficult to maintain without some continuity of resource provision.  The MELD project is currently better-placed than many DH projects in this regard.</p>
+<h1>
+<a id="8-acknowledgements" class="anchor" href="#8-acknowledgements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. Acknowledgements</h1>
+<p>This work was funded by the <a href="https://www.software.ac.uk/" rel="nofollow">Software Sustainability Institute (SSI)</a>, <a href="https://software.ac.uk/tags/ssi-phase-3" rel="nofollow">SSI phase 3 </a>.</p>
+<p>It was performed with collaboration and feedback from the following MELD-related projects:</p>
+<ul>
+<li>
+<a href="https://meld.web.ox.ac.uk/" rel="nofollow">MELD framework</a>, part of the EPSRC-funded <a href="http://www.semanticaudio.ac.uk/" rel="nofollow">FAST project</a>.</li>
+<li><a href="https://um.web.ox.ac.uk/" rel="nofollow">Unlocking Musicology</a></li>
+<li>
+<a href="https://iwk.mdw.ac.at/trompa-clara/" rel="nofollow">Companion for Long-term Analyses of Rehearsal Attempts (CLARA)</a>.</li>
+<li><a href="https://meld.web.ox.ac.uk/apps#collapse2913841" rel="nofollow">Digital Delius</a></li>
+</ul>
+<p>Thanks to participants of the online <a href="https://docs.google.com/document/d/1TWl-lT7NI-GSIcXsQ3VyaWPNa2DEOh81Q-Jop7YJye0/edit#" rel="nofollow">MELD mini-fest</a> meeting on 8 February 2021 for comments and feedback on this work: Kevin Page, David Lewis, David Weigl, Mark Saccomano, Alastair Porter, Laurent Pugin, Stefan Münnich, David John Baker, Cynthia Liem.  Alastair Porter and Mark Saccomano provided particularly helpful review and commentary on an earlier version of this report.</p>
+</article></body></html>
