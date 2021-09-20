@@ -10,8 +10,6 @@ linkcolor: blue
 -->
 # Sustainability for Digital Humanities research software
 
-<!-- On branch revision-20210611 -->
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Graham Klyne, Oxford e-Research Centre, University of Oxford_
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _11 July 2021_
