@@ -12,10 +12,10 @@ Can access Wikidata OK, but GND/GeoNames give access error - looks like CORS-rel
 
 GK ACTIONS (subject to time):
 
-1. [ ] Characterize problem; mention application (MELD/BiTH) and collaborators; explain why it is safe.
+1. [x] Characterize problem; mention application (MELD/BiTH) and collaborators; explain why it is safe.
 2. [ ] Investigate issue trackers for GND/GeoNames
     1. [x] No joy d-nb.info
-3. [ ] Get app running locally (https://github.com/oerc-music/StarBrightlyShining)
+3. [x] Get app running locally (https://github.com/oerc-music/StarBrightlyShining)
 4. [x] Read up CORS specs
 5. [ ] Map design for proxy in MELD service
 
@@ -72,4 +72,19 @@ The StackExchange response also indicates that using a CORS proxy might be an op
 Other possibilities?
 
 - proxy capability in the MELD localhost server, with URL rewriting in `traverse`.
+
+
+## Survey of possible solutions considered
+
+1. Origin server adds appropriate CORS headers.
+    - Requires action by data provider organization(s)
+    - Maybe less easy for authenticated / access-controlled requests
+
+2. MELD application server provides application proxy capability that adds CORS headers to responses, and MELD application code (specifically `traverse`) translates retrieved URIs to route via this proxy.
+
+3. Use a local generic proxy service that adds CORS headers to response, and configure browser / app to send all requests via this proxy.  This might make the application deployment/setup a bit tricky.
+
+4. Use a local or global generic proxy service that adds CORS headers to responses, and modify the app to send all requests via this proxy.  This might make the app dependent on provision an external service.
+
+5. Use `no-cors` mode: doesn't work, see above.
 
